@@ -5,6 +5,7 @@ import TrustStrip from "@/components/sections/TrustStrip";
 import Process from "@/components/sections/Process";
 import FinalCTA from "@/components/sections/FinalCTA";
 import QuickEstimateForm from "@/components/sections/QuickEstimateForm";
+import FeaturedRemodels from "@/components/sections/FeaturedRemodels";
 
 const SERVICES = [
   {
@@ -42,14 +43,6 @@ const WHY_ITEMS = [
   "Daily project communication",
   "Waterproofing & workmanship focus",
   "Clean jobsite, respectful crew, daily cleanup",
-];
-
-const PROJECTS = [
-  { title: "Hall Bathroom Remodel", city: "Roseville", scope: "Full bath remodel — new shower, vanity, tile, lighting", photo: "BEFORE/AFTER · DROP IN REAL PROJECT PHOTO" },
-  { title: "Tub-to-Shower Conversion", city: "Folsom", scope: "Removed tub, curbless walk-in shower, panel walls, frameless glass", photo: "BEFORE/AFTER · DROP IN REAL PROJECT PHOTO" },
-  { title: "Primary Bath Remodel", city: "Granite Bay", scope: "Primary suite bath — new shower, double vanity, soaking tub", photo: "BEFORE/AFTER · DROP IN REAL PROJECT PHOTO" },
-  { title: "Vanity & Flooring Update", city: "Sacramento", scope: "New vanity, LVP flooring, mirror, lighting, paint", photo: "BEFORE/AFTER · DROP IN REAL PROJECT PHOTO" },
-  { title: "Walk-In Shower Remodel", city: "Rocklin", scope: "Tile shower, niche, linear drain, frameless glass door", photo: "BEFORE/AFTER · DROP IN REAL PROJECT PHOTO" },
 ];
 
 const REVIEWS = [
@@ -115,21 +108,21 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right — photos + form */}
-            <div style={{ position: "relative" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 12 }}>
-                <div className="sb-photo" style={{ height: 420, gridRow: "1 / span 2", borderRadius: 14 }}>
-                  <span className="sb-photo-label">HERO BATHROOM · UNSPLASH STOCK</span>
+            {/* Right — photo with floating form */}
+            <div className="hero-right" style={{ position: "relative", minHeight: 620 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 14 }}>
+                <div className="sb-photo" style={{ height: 540, gridRow: "1 / span 2", borderRadius: 14 }}>
+                  <span className="sb-photo-label">HERO BATHROOM · DROP IN PHOTO</span>
                 </div>
-                <div className="sb-photo" style={{ height: 200, borderRadius: 14 }}>
-                  <span className="sb-photo-label">VANITY DETAIL · STOCK</span>
+                <div className="sb-photo" style={{ height: 263, borderRadius: 14 }}>
+                  <span className="sb-photo-label">VANITY DETAIL · DROP IN PHOTO</span>
                 </div>
-                <div className="sb-photo" style={{ height: 200, borderRadius: 14 }}>
-                  <span className="sb-photo-label">TILE DETAIL · STOCK</span>
+                <div className="sb-photo" style={{ height: 263, borderRadius: 14 }}>
+                  <span className="sb-photo-label">TILE DETAIL · DROP IN PHOTO</span>
                 </div>
               </div>
-              {/* Floating form */}
-              <div style={{ marginTop: 24 }}>
+              {/* Floating form — absolute on desktop, inline on mobile */}
+              <div className="hero-form-float">
                 <QuickEstimateForm />
               </div>
             </div>
@@ -326,53 +319,31 @@ export default function HomePage() {
       {/* ── FEATURED PROJECTS ─────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-100)" }}>
         <div className="sb-container" style={{ padding: "0 56px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 16 }}>
-            <div>
-              <span className="sb-eyebrow">Featured Remodels</span>
-              <h2 style={{ fontSize: "clamp(32px, 3.5vw, 48px)", marginTop: 14, lineHeight: 1.05 }}>
-                See the difference a clear<br />remodel plan can make.
-              </h2>
-            </div>
-            <Link href="/gallery" className="sb-btn sb-btn-ghost">
-              View All Projects <ArrowIcon />
-            </Link>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
-            {PROJECTS.slice(0, 3).map((p) => (
-              <div key={p.title} style={{
-                background: "#fff", borderRadius: 14, overflow: "hidden",
-                border: "1px solid rgba(20,17,13,0.08)", boxShadow: "var(--shadow-sm)",
-              }}>
-                <div className="sb-photo" style={{ height: 240, borderRadius: 0 }}>
-                  <span className="sb-photo-label">{p.photo}</span>
-                </div>
-                <div style={{ padding: 24 }}>
-                  <div style={{ fontSize: 11, letterSpacing: "0.12em", color: "var(--color-stone-500)", textTransform: "uppercase", fontWeight: 600, marginBottom: 8 }}>
-                    {p.city}
-                  </div>
-                  <h3 style={{ fontSize: 20, color: "var(--color-navy-900)" }}>{p.title}</h3>
-                  <p style={{ marginTop: 8, fontSize: 13, color: "var(--color-ink-500)", lineHeight: 1.5 }}>{p.scope}</p>
-                  <div style={{ marginTop: 18 }}>
-                    <Link href="/gallery" style={{ fontSize: 13, color: "var(--color-navy-800)", fontWeight: 600, borderBottom: "1px solid var(--color-gold-500)", paddingBottom: 1 }}>
-                      View Project →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <FeaturedRemodels />
         </div>
       </section>
 
       {/* ── REVIEWS ───────────────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-navy-900)" }}>
         <div className="sb-container" style={{ padding: "0 56px" }}>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>What Homeowners Say</span>
+          <div style={{ textAlign: "center", marginBottom: 40 }}>
+            <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>Reviews · Verified</span>
             <h2 style={{ fontSize: "clamp(32px, 3.5vw, 48px)", marginTop: 14, color: "var(--color-cream-50)", lineHeight: 1.05 }}>
               Homeowners trust Stonebrite.
             </h2>
+          </div>
+          {/* Source badges — between title and cards (matching design) */}
+          <div style={{ textAlign: "center", marginBottom: 48, display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 20px", background: "rgba(255,255,255,0.06)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.1)" }}>
+              <span style={{ color: "var(--color-gold-500)", letterSpacing: 1 }}>★★★★★</span>
+              <span style={{ fontSize: 13, color: "var(--color-cream-200)", fontWeight: 600 }}>4.9</span>
+              <span style={{ fontSize: 12, color: "var(--color-stone-300)" }}>Google</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 20px", background: "rgba(255,255,255,0.06)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.1)" }}>
+              <span style={{ color: "var(--color-gold-500)", letterSpacing: 1 }}>★★★★★</span>
+              <span style={{ fontSize: 13, color: "var(--color-cream-200)", fontWeight: 600 }}>5.0</span>
+              <span style={{ fontSize: 12, color: "var(--color-stone-300)" }}>Thumbtack</span>
+            </div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
             {REVIEWS.map((r) => (
@@ -383,7 +354,7 @@ export default function HomePage() {
               }}>
                 <div style={{ color: "var(--color-gold-500)", letterSpacing: 1, fontSize: 16, marginBottom: 20 }}>★★★★★</div>
                 <p style={{ fontSize: 15, color: "var(--color-cream-100)", lineHeight: 1.65, fontStyle: "italic", fontFamily: "var(--font-serif)" }}>
-                  "{r.text}"
+                  &ldquo;{r.text}&rdquo;
                 </p>
                 <div style={{ marginTop: 20, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <span style={{ fontSize: 13, fontWeight: 600, color: "var(--color-stone-300)" }}>{r.name}</span>
@@ -393,16 +364,6 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-          <div style={{ textAlign: "center", marginTop: 48, display: "flex", justifyContent: "center", gap: 24, flexWrap: "wrap" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 24px", background: "rgba(255,255,255,0.06)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.1)" }}>
-              <span style={{ color: "var(--color-gold-500)" }}>★★★★★</span>
-              <span style={{ fontSize: 14, color: "var(--color-cream-200)" }}>4.9 · Google Reviews</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 24px", background: "rgba(255,255,255,0.06)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.1)" }}>
-              <span style={{ color: "var(--color-gold-500)" }}>★★★★★</span>
-              <span style={{ fontSize: 14, color: "var(--color-cream-200)" }}>5.0 · Thumbtack</span>
-            </div>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -9,18 +10,18 @@ export default function Footer() {
 
           {/* Brand col */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <svg viewBox="0 0 40 40" width={34} height={34} aria-hidden="true">
-                <path d="M6 33 L6 12 L20 6 L34 12 L34 33" fill="none" stroke="#E5B53A" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round"/>
-                <line x1="3" y1="33" x2="37" y2="33" stroke="#E5B53A" strokeWidth="2"/>
-              </svg>
-              <span style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 14, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--color-cream-50)" }}>
-                Stonebrite
-                <span style={{ display: "block", fontSize: 9, fontWeight: 400, letterSpacing: "0.22em", color: "var(--color-stone-300)", marginTop: 2 }}>
-                  Construction Group
-                </span>
-              </span>
-            </div>
+            <Image
+              src="/stonebrite-logo-trans.png"
+              alt="Stonebrite Construction Group"
+              width={700}
+              height={353}
+              style={{
+                height: 56,
+                width: "auto",
+                display: "block",
+                filter: "brightness(0) invert(1)",
+              }}
+            />
             <p style={{ marginTop: 18, color: "var(--color-stone-300)", fontSize: 14, maxWidth: 300, lineHeight: 1.6 }}>
               Family-owned, owner-led, local crew. Bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the East Bay.
             </p>

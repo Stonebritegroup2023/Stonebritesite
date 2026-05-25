@@ -182,3 +182,30 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .sb-rule-gold { height: 2px; width: 48px; background: var(--color-gold-500); border: 0; }
+
+/* ── Hero floating form (desktop only) ─────────────────────────────────── */
+.hero-form-float {
+  position: absolute;
+  left: -40px;
+  bottom: -60px;
+  width: 520px;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .hero-form-float {
+    position: static;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .hero-right {
+    min-height: auto !important;
+  }
+}
+
+/* Featured remodels grid responsive */
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
