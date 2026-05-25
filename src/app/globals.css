@@ -183,129 +183,59 @@ button { font-family: inherit; cursor: pointer; }
 
 .sb-rule-gold { height: 2px; width: 48px; background: var(--color-gold-500); border: 0; }
 
-/* ── Hero layered overlay ─────────────────────────────────────────────── */
-
-/* DESKTOP: two-column grid with image spanning the right column.
-   The form is its own grid item, absolutely positioned over the image. */
-.hero-grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 64px;
-  row-gap: 22px;
-  align-items: start;
-  grid-template-areas:
-    "pill     image"
-    "headline image"
-    "desc     image"
-    "cta      image"
-    "rating   image";
-}
-.g-pill     { grid-area: pill; }
-.g-headline { grid-area: headline; margin: 0; }
-.g-desc     { grid-area: desc; margin: 0; }
-.g-cta      { grid-area: cta; margin-top: 10px; }
-.g-rating   { grid-area: rating; margin-top: 14px; }
-
-/* Image collage occupies the entire right column */
-.g-image {
-  grid-area: image;
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  grid-template-rows: 263px 263px;
-  gap: 14px;
-  min-height: 540px;
-}
-.hero-photo-main {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  height: 540px;
-  border-radius: 14px;
-}
-.hero-photo-1 {
-  grid-column: 2;
-  grid-row: 1;
-  border-radius: 14px;
-}
-.hero-photo-2 {
-  grid-column: 2;
-  grid-row: 2;
-  border-radius: 14px;
-}
-
-/* Form card — floats over the image area on desktop */
-.g-form {
+/* ── Hero floating form ─────────────────────────────────── */
+/* Float at all widths above small phones */
+.hero-form-float {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-12%, -50%);
-  z-index: 5;
-  width: 460px;
-  max-width: 90%;
+  left: -40px;
+  bottom: 40px;          /* raised so it overlaps more of the photo area */
+  width: 520px;
+  z-index: 2;
 }
 
-/* Wider desktops: push card further left so more photo shows on the right */
-@media (min-width: 1280px) {
-  .g-form {
-    transform: translate(-18%, -50%);
-    width: 480px;
+/* Mid-size window: narrower form, still floating */
+@media (max-width: 1280px) {
+  .hero-form-float {
+    width: 460px;
+    left: -24px;
+    bottom: 32px;
   }
 }
 
-/* Laptop — keep overlay, pull card a bit right */
-@media (max-width: 1100px) {
-  .g-form {
-    transform: translate(-4%, -50%);
-    width: 420px;
-  }
-}
-
-/* Tablet — single column, form moves to its own row at the end */
-@media (max-width: 880px) {
+/* Stack the two hero columns when the window narrows */
+@media (max-width: 1024px) {
   .hero-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "pill"
-      "headline"
-      "image"
-      "desc"
-      "cta"
-      "rating"
-      "form";
-    column-gap: 0;
-    row-gap: 24px;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
   }
-  .g-image {
-    grid-template-columns: 1.4fr 1fr;
-    min-height: auto;
-  }
-  .hero-photo-main { height: 380px; }
-  .hero-photo-1, .hero-photo-2 { height: 183px; }
-  .g-form {
-    position: static;
-    grid-area: form;
-    transform: none;
-    width: 100%;
-    max-width: 100%;
+  .hero-form-float {
+    width: 440px;
+    left: 24px;
+    bottom: 32px;
   }
 }
 
-/* Phone — even simpler stacking */
-@media (max-width: 560px) {
-  .g-image {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+/* Narrow tablet — keep floating but scale the form down */
+@media (max-width: 720px) {
+  .hero-form-float {
+    width: calc(100% - 32px);
+    max-width: 440px;
+    left: 16px;
+    bottom: 24px;
   }
-  .hero-photo-main {
-    grid-column: 1;
-    grid-row: auto;
-    height: 280px;
+}
+
+/* Phone — only here do we stack and let the form sit below */
+@media (max-width: 480px) {
+  .hero-form-float {
+    position: static;
+    width: 100%;
+    margin-top: 24px;
+    left: auto;
+    bottom: auto;
   }
-  .hero-photo-1, .hero-photo-2 {
-    grid-column: 1;
-    grid-row: auto;
-    height: 160px;
+  .hero-right {
+    min-height: auto !important;
   }
 }
 

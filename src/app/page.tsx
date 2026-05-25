@@ -63,9 +63,9 @@ export default function HomePage() {
           backgroundImage: "radial-gradient(circle at 90% 0%, rgba(229,181,58,0.08), transparent 40%)",
         }} />
         <div className="sb-container" style={{ padding: "72px 56px 120px", position: "relative" }}>
-          <div className="hero-grid">
-            {/* 1. Booking pill */}
-            <div className="g-pill">
+          <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+            {/* Left — copy */}
+            <div>
               <div style={{
                 display: "inline-flex", alignItems: "center", gap: 10,
                 padding: "7px 14px", background: "#fff", borderRadius: 999,
@@ -74,60 +74,57 @@ export default function HomePage() {
                 <span style={{ width: 8, height: 8, borderRadius: 4, background: "var(--color-success)", display: "inline-block" }} />
                 <span style={{ fontWeight: 600 }}>Now booking — Spring/Summer 2026</span>
               </div>
-            </div>
 
-            {/* 2. Headline + 3. Subheadline */}
-            <h1 className="g-headline" style={{ fontSize: "clamp(44px, 5vw, 72px)", lineHeight: 1.02, letterSpacing: "-0.015em" }}>
-              Bathrooms &amp; Kitchens<br />
-              <span style={{ color: "var(--color-gold-600)" }}>Built to Last.</span>
-              <span style={{ display: "block", fontSize: "clamp(28px, 3vw, 44px)", marginTop: 16, fontStyle: "italic", color: "var(--color-navy-700)", lineHeight: 1.1, fontWeight: 400 }}>
-                Designed to feel like they<br />were always meant to be.
-              </span>
-            </h1>
+              <h1 style={{ fontSize: "clamp(44px, 5vw, 72px)", marginTop: 22, lineHeight: 1.02, letterSpacing: "-0.015em" }}>
+                Bathrooms &amp; Kitchens<br />
+                <span style={{ color: "var(--color-gold-600)" }}>Built to Last.</span>
+                <span style={{ display: "block", fontSize: "clamp(28px, 3vw, 44px)", marginTop: 16, fontStyle: "italic", color: "var(--color-navy-700)", lineHeight: 1.1, fontWeight: 400 }}>
+                  Designed to feel like they<br />were always meant to be.
+                </span>
+              </h1>
 
-            {/* 4. Hero image collage */}
-            <div className="g-image">
-              <div className="sb-photo hero-photo-main">
-                <span className="sb-photo-label">HERO BATHROOM · DROP IN PHOTO</span>
+              <p style={{ marginTop: 28, fontSize: 18, color: "var(--color-ink-700)", lineHeight: 1.65, maxWidth: 520 }}>
+                Family-owned, owner-led, and locally crewed, Stonebrite helps homeowners remodel bathrooms, showers, and kitchens with a clear process, thoughtful design support, and a 5-year workmanship warranty.
+              </p>
+
+              <div style={{ marginTop: 32, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
+                <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
+                  Get My Free Estimate <ArrowIcon />
+                </Link>
+                <Link href="/gallery" className="sb-btn sb-btn-ghost sb-btn-lg">
+                  View Our Work
+                </Link>
               </div>
-              <div className="sb-photo hero-photo-1">
-                <span className="sb-photo-label">VANITY DETAIL · DROP IN PHOTO</span>
-              </div>
-              <div className="sb-photo hero-photo-2">
-                <span className="sb-photo-label">TILE DETAIL · DROP IN PHOTO</span>
-              </div>
-            </div>
 
-            {/* Description copy */}
-            <p className="g-desc" style={{ fontSize: 18, color: "var(--color-ink-700)", lineHeight: 1.65, maxWidth: 520 }}>
-              Family-owned, owner-led, and locally crewed, Stonebrite helps homeowners remodel bathrooms, showers, and kitchens with a clear process, thoughtful design support, and a 5-year workmanship warranty.
-            </p>
-
-            {/* 5. CTA buttons */}
-            <div className="g-cta" style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-              <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
-                Get My Free Estimate <ArrowIcon />
-              </Link>
-              <Link href="/gallery" className="sb-btn sb-btn-ghost sb-btn-lg">
-                View Our Work
-              </Link>
-            </div>
-
-            {/* Ratings */}
-            <div className="g-rating" style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span style={{ color: "var(--color-gold-500)", letterSpacing: 1 }}>★★★★★</span>
-                <span style={{ fontSize: 13, color: "var(--color-ink-700)" }}><strong>4.9</strong> · Google &amp; Thumbtack</span>
-              </div>
-              <div style={{ height: 20, width: 1, background: "rgba(20,17,13,0.16)" }} />
-              <div style={{ fontSize: 13, color: "var(--color-ink-700)" }}>
-                <strong>120+</strong> completed projects since 2018
+              <div style={{ marginTop: 36, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ color: "var(--color-gold-500)", letterSpacing: 1 }}>★★★★★</span>
+                  <span style={{ fontSize: 13, color: "var(--color-ink-700)" }}><strong>4.9</strong> · Google &amp; Thumbtack</span>
+                </div>
+                <div style={{ height: 20, width: 1, background: "rgba(20,17,13,0.16)" }} />
+                <div style={{ fontSize: 13, color: "var(--color-ink-700)" }}>
+                  <strong>120+</strong> completed projects since 2018
+                </div>
               </div>
             </div>
 
-            {/* 6. Estimate form card — floats over .g-image on desktop, sits below everything on mobile */}
-            <div className="g-form">
-              <QuickEstimateForm />
+            {/* Right — photo with floating form */}
+            <div className="hero-right" style={{ position: "relative", minHeight: 620 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 14 }}>
+                <div className="sb-photo" style={{ height: 540, gridRow: "1 / span 2", borderRadius: 14 }}>
+                  <span className="sb-photo-label">HERO BATHROOM · DROP IN PHOTO</span>
+                </div>
+                <div className="sb-photo" style={{ height: 263, borderRadius: 14 }}>
+                  <span className="sb-photo-label">VANITY DETAIL · DROP IN PHOTO</span>
+                </div>
+                <div className="sb-photo" style={{ height: 263, borderRadius: 14 }}>
+                  <span className="sb-photo-label">TILE DETAIL · DROP IN PHOTO</span>
+                </div>
+              </div>
+              {/* Floating form — absolute on desktop, inline on mobile */}
+              <div className="hero-form-float">
+                <QuickEstimateForm />
+              </div>
             </div>
           </div>
         </div>
