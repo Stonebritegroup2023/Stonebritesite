@@ -187,12 +187,12 @@ button { font-family: inherit; cursor: pointer; }
 .hero-form-float {
   position: absolute;
   left: -40px;
-  bottom: -60px;
-  width: 520px;
+  bottom: -40px;
+  width: 460px;
   z-index: 2;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
   .hero-form-float {
     position: static;
     width: 100%;

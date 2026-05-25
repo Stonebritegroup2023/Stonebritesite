@@ -36,7 +36,7 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
         zIndex: 50,
       }}
     >
-      <div className="sb-container" style={{ display: "flex", alignItems: "center", gap: 32, padding: "0 56px", height: 80 }}>
+      <div className="sb-container" style={{ display: "flex", alignItems: "center", gap: 32, padding: "0 56px", height: 88 }}>
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
           <Image
@@ -45,8 +45,10 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
             width={700}
             height={353}
             priority
+            quality={100}
+            sizes="180px"
             style={{
-              height: 48,
+              height: 56,
               width: "auto",
               display: "block",
               filter: dark ? "brightness(0) invert(1)" : "none",

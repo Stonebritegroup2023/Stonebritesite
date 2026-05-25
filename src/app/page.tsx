@@ -109,15 +109,15 @@ export default function HomePage() {
             </div>
 
             {/* Right — photo with floating form */}
-            <div className="hero-right" style={{ position: "relative", minHeight: 620 }}>
+            <div className="hero-right" style={{ position: "relative", minHeight: 720 }}>
               <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 14 }}>
-                <div className="sb-photo" style={{ height: 540, gridRow: "1 / span 2", borderRadius: 14 }}>
+                <div className="sb-photo" style={{ height: 660, gridRow: "1 / span 2", borderRadius: 14 }}>
                   <span className="sb-photo-label">HERO BATHROOM · DROP IN PHOTO</span>
                 </div>
-                <div className="sb-photo" style={{ height: 263, borderRadius: 14 }}>
+                <div className="sb-photo" style={{ height: 323, borderRadius: 14 }}>
                   <span className="sb-photo-label">VANITY DETAIL · DROP IN PHOTO</span>
                 </div>
-                <div className="sb-photo" style={{ height: 263, borderRadius: 14 }}>
+                <div className="sb-photo" style={{ height: 323, borderRadius: 14 }}>
                   <span className="sb-photo-label">TILE DETAIL · DROP IN PHOTO</span>
                 </div>
               </div>
