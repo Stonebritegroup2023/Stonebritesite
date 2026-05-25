@@ -4,7 +4,6 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import TrustStrip from "@/components/sections/TrustStrip";
 import Process from "@/components/sections/Process";
-import FinalCTA from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
   title: "Tub-to-Shower Conversions | Stonebrite Construction Group",
@@ -81,13 +80,12 @@ const FAQS = [
 export default function TubToShowerPage() {
   return (
     <>
-      <Nav activeHref="/tub-to-shower" dark />
+      <Nav activeHref="/tub-to-shower" />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: "var(--color-navy-900)",
-          color: "var(--color-cream-50)",
+          background: "var(--color-cream-50)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -97,53 +95,67 @@ export default function TubToShowerPage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "radial-gradient(circle at 70% 15%, rgba(229,181,58,0.14), transparent 45%), radial-gradient(circle at 5% 85%, rgba(229,181,58,0.07), transparent 40%)",
+              "radial-gradient(circle at 90% 0%, rgba(229,181,58,0.08), transparent 40%)",
           }}
         />
         <div
           className="sb-container"
-          style={{ padding: "96px 56px 104px", position: "relative" }}
+          style={{ padding: "40px 56px 96px", position: "relative" }}
         >
+          {/* Breadcrumb */}
+          <nav
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              fontSize: 13,
+              color: "var(--color-ink-500)",
+              marginBottom: 28,
+            }}
+            aria-label="Breadcrumb"
+          >
+            <Link href="/" style={{ color: "var(--color-ink-500)" }}>Home</Link>
+            <span style={{ color: "var(--color-ink-300)" }}>›</span>
+            <span style={{ color: "var(--color-ink-500)" }}>Services</span>
+            <span style={{ color: "var(--color-ink-300)" }}>›</span>
+            <span style={{ color: "var(--color-navy-900)", fontWeight: 600 }}>Tub-to-Shower Conversion</span>
+          </nav>
+
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
-              gap: 72,
+              gap: 64,
               alignItems: "center",
             }}
+            className="t2s-hero-grid"
           >
             <div>
-              <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>
-                Tub-to-Shower Conversion
-              </span>
+              <span className="sb-eyebrow">Service · Tub-to-Shower Conversion</span>
               <h1
                 style={{
-                  fontSize: "clamp(38px, 4.5vw, 62px)",
+                  fontSize: "clamp(38px, 4.5vw, 60px)",
                   marginTop: 18,
                   lineHeight: 1.04,
-                  color: "var(--color-cream-50)",
                   letterSpacing: "-0.015em",
                 }}
               >
-                Tub-to-Shower Conversions —{" "}
-                <span style={{ color: "var(--color-gold-300)" }}>
-                  Safer Access, Better Use of Space
-                </span>
+                Safer, easier shower access — done in days, built to last.
               </h1>
               <p
                 style={{
-                  marginTop: 24,
-                  fontSize: 18,
-                  color: "var(--color-stone-300)",
+                  marginTop: 22,
+                  fontSize: 17,
+                  color: "var(--color-ink-700)",
                   lineHeight: 1.65,
                   maxWidth: 520,
                 }}
               >
-                We remove the tub and build a custom walk-in shower in its place — proper waterproofing, tile or panel walls, frameless glass, and grab bar blocking. All in a clear written scope with a 5-year workmanship warranty.
+                Family-owned, owner-led, local crew. Remove an outdated tub. Add a walk-in shower with tile or panel walls, frameless or framed glass, and grab-bar blocking ready for the future.
               </p>
               <div
                 style={{
-                  marginTop: 36,
+                  marginTop: 32,
                   display: "flex",
                   gap: 14,
                   flexWrap: "wrap",
@@ -153,8 +165,8 @@ export default function TubToShowerPage() {
                 <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
                   Get My Free Estimate <ArrowIcon />
                 </Link>
-                <Link href="/gallery" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
-                  View Gallery
+                <Link href="/gallery" className="sb-btn sb-btn-ghost sb-btn-lg">
+                  View Our Work
                 </Link>
               </div>
             </div>
@@ -177,7 +189,7 @@ export default function TubToShowerPage() {
       </section>
 
       {/* ── TRUST STRIP ───────────────────────────────────────────────── */}
-      <TrustStrip dark />
+      <TrustStrip />
 
       {/* ── WHY CONVERT ───────────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
@@ -283,333 +295,251 @@ export default function TubToShowerPage() {
         </div>
       </section>
 
-      {/* ── WALL SYSTEM OPTIONS ───────────────────────────────────────── */}
+      {/* ── WHY START — Tile vs Wall-Panel ────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-100)" }}>
         <div className="sb-container" style={{ padding: "0 56px" }}>
-          <div style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 56px" }}>
-            <span className="sb-eyebrow">Wall System Options</span>
+          <div style={{ maxWidth: 720, marginBottom: 40 }}>
+            <span className="sb-eyebrow">Why Start</span>
             <h2
               style={{
-                fontSize: "clamp(32px, 3.5vw, 48px)",
-                marginTop: 16,
+                fontSize: "clamp(30px, 3.2vw, 42px)",
+                marginTop: 14,
                 lineHeight: 1.05,
               }}
             >
-              Tile shower or manufactured stone?
+              Tile shower or wall-panel shower<br />— we build both, honestly.
             </h2>
-            <p
-              style={{
-                marginTop: 16,
-                color: "var(--color-ink-500)",
-                fontSize: 16,
-                lineHeight: 1.6,
-              }}
-            >
-              Both are excellent systems. The right choice depends on your design goals, maintenance preferences, and budget. We carry samples and will help you decide at the estimate.
-            </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-            {/* Tile card */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 16,
+            }}
+            className="t2s-choice-grid"
+          >
+            {/* Tile Shower card */}
             <div
               style={{
                 background: "#fff",
+                border: "1px solid rgba(20,17,13,0.08)",
                 borderRadius: 14,
                 overflow: "hidden",
-                border: "1px solid rgba(20,17,13,0.08)",
-                boxShadow: "var(--shadow-md)",
+                boxShadow: "var(--shadow-sm)",
+                display: "flex",
+                flexDirection: "column",
               }}
             >
-              <div
-                style={{
-                  background: "var(--color-navy-900)",
-                  padding: "28px 32px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 14,
-                }}
-              >
-                <span
+              <div className="sb-photo" style={{ height: 220, borderRadius: 0 }}>
+                <span className="sb-photo-label">TILE SHOWER · DROP IN PHOTO</span>
+              </div>
+              <div style={{ padding: "26px 28px 28px" }}>
+                <div
                   style={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: 8,
-                    background: "rgba(229,181,58,0.15)",
-                    display: "inline-flex",
+                    display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
-                    color: "var(--color-gold-300)",
+                    justifyContent: "space-between",
+                    marginBottom: 8,
                   }}
                 >
-                  <TileIcon />
-                </span>
-                <div>
-                  <div
+                  <span
                     style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: 24,
-                      color: "var(--color-cream-50)",
-                      lineHeight: 1,
+                      fontSize: 10,
+                      fontWeight: 700,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "var(--color-gold-600)",
                     }}
                   >
                     Tile Shower
-                  </div>
-                  <div style={{ fontSize: 12, color: "var(--color-stone-300)", marginTop: 4 }}>
-                    Custom look · unlimited design options
-                  </div>
+                  </span>
+                  <span style={{ fontSize: 11, color: "var(--color-ink-300)", fontFamily: "monospace" }}>
+                    1 / 2
+                  </span>
                 </div>
-              </div>
-              <div style={{ padding: "28px 32px" }}>
-                <div className="sb-photo" style={{ height: 180, borderRadius: 10, marginBottom: 24 }}>
-                  <span className="sb-photo-label">TILE SHOWER EXAMPLE</span>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: 11,
-                        fontWeight: 700,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "var(--color-success)",
-                        marginBottom: 10,
-                      }}
-                    >
-                      Advantages
-                    </div>
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        padding: 0,
-                        margin: 0,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 8,
-                      }}
-                    >
-                      {[
-                        "Fully custom — any size, color, or pattern",
-                        "Premium, high-end aesthetic",
-                        "Design flexibility with niche placement",
-                        "Wide range of price points",
-                        "Long-lasting when waterproofed correctly",
-                      ].map((item) => (
-                        <li
-                          key={item}
-                          style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "var(--color-ink-700)", lineHeight: 1.45 }}
-                        >
-                          <span style={{ color: "var(--color-success)", flexShrink: 0, marginTop: 2 }}>
-                            <SmallCheckIcon />
-                          </span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: 11,
-                        fontWeight: 700,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "var(--color-ink-300)",
-                        marginBottom: 10,
-                      }}
-                    >
-                      Consider
-                    </div>
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        padding: 0,
-                        margin: 0,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 8,
-                      }}
-                    >
-                      {[
-                        "Grout lines require periodic sealing",
-                        "Slightly longer install time",
-                      ].map((item) => (
-                        <li
-                          key={item}
-                          style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "var(--color-ink-500)", lineHeight: 1.45 }}
-                        >
-                          <span style={{ color: "var(--color-ink-300)", flexShrink: 0, marginTop: 2 }}>
-                            <DashIcon />
-                          </span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                <h3 style={{ fontSize: 24, color: "var(--color-navy-900)", lineHeight: 1.2 }}>
+                  Tile Shower
+                </h3>
+                <p style={{ marginTop: 10, fontSize: 14, color: "var(--color-ink-500)", lineHeight: 1.6 }}>
+                  Waterproofing membrane, custom layout, custom niches, and trim — designed for your space and styled to your taste.
+                </p>
+                <ul
+                  style={{
+                    marginTop: 18,
+                    padding: 0,
+                    listStyle: "none",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                  }}
+                >
+                  {[
+                    "Custom tile & insert layout",
+                    "Niches, accents, and trim work",
+                    "Curbless options (zero-step entry)",
+                    "Frameless glass available",
+                  ].map((b) => (
+                    <li key={b} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 13.5, color: "var(--color-ink-700)" }}>
+                      <span style={{ color: "var(--color-gold-500)", marginTop: 4, flexShrink: 0 }}>
+                        <DotIcon />
+                      </span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
-            {/* Panel card */}
+            {/* Wall Panel card */}
             <div
               style={{
                 background: "#fff",
+                border: "1px solid rgba(20,17,13,0.08)",
                 borderRadius: 14,
                 overflow: "hidden",
-                border: "1px solid rgba(20,17,13,0.08)",
-                boxShadow: "var(--shadow-md)",
+                boxShadow: "var(--shadow-sm)",
+                display: "flex",
+                flexDirection: "column",
               }}
             >
-              <div
-                style={{
-                  background: "var(--color-navy-800)",
-                  padding: "28px 32px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 14,
-                }}
-              >
-                <span
+              <div className="sb-photo" style={{ height: 220, borderRadius: 0 }}>
+                <span className="sb-photo-label">WALL PANEL SHOWER · DROP IN PHOTO</span>
+              </div>
+              <div style={{ padding: "26px 28px 28px" }}>
+                <div
                   style={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: 8,
-                    background: "rgba(229,181,58,0.15)",
-                    display: "inline-flex",
+                    display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
-                    color: "var(--color-gold-300)",
+                    justifyContent: "space-between",
+                    marginBottom: 8,
                   }}
                 >
-                  <PanelIcon />
-                </span>
-                <div>
-                  <div
+                  <span
                     style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: 24,
-                      color: "var(--color-cream-50)",
-                      lineHeight: 1,
+                      fontSize: 10,
+                      fontWeight: 700,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "var(--color-gold-600)",
                     }}
                   >
-                    Manufactured Stone / Panel
-                  </div>
-                  <div style={{ fontSize: 12, color: "var(--color-stone-300)", marginTop: 4 }}>
-                    Seamless look · no grout lines
-                  </div>
+                    Wall Panel
+                  </span>
+                  <span style={{ fontSize: 11, color: "var(--color-ink-300)", fontFamily: "monospace" }}>
+                    2 / 2
+                  </span>
                 </div>
-              </div>
-              <div style={{ padding: "28px 32px" }}>
-                <div className="sb-photo" style={{ height: 180, borderRadius: 10, marginBottom: 24 }}>
-                  <span className="sb-photo-label">PANEL WALL EXAMPLE</span>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: 11,
-                        fontWeight: 700,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "var(--color-success)",
-                        marginBottom: 10,
-                      }}
-                    >
-                      Advantages
-                    </div>
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        padding: 0,
-                        margin: 0,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 8,
-                      }}
-                    >
-                      {[
-                        "No grout lines — easier to clean & maintain",
-                        "Seamless, spa-like aesthetic",
-                        "Faster installation",
-                        "Consistent look throughout the shower",
-                        "Excellent durability",
-                      ].map((item) => (
-                        <li
-                          key={item}
-                          style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "var(--color-ink-700)", lineHeight: 1.45 }}
-                        >
-                          <span style={{ color: "var(--color-success)", flexShrink: 0, marginTop: 2 }}>
-                            <SmallCheckIcon />
-                          </span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: 11,
-                        fontWeight: 700,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "var(--color-ink-300)",
-                        marginBottom: 10,
-                      }}
-                    >
-                      Consider
-                    </div>
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        padding: 0,
-                        margin: 0,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 8,
-                      }}
-                    >
-                      {[
-                        "Fewer color/pattern options vs. tile",
-                        "Pattern is set by the manufacturer",
-                      ].map((item) => (
-                        <li
-                          key={item}
-                          style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 14, color: "var(--color-ink-500)", lineHeight: 1.45 }}
-                        >
-                          <span style={{ color: "var(--color-ink-300)", flexShrink: 0, marginTop: 2 }}>
-                            <DashIcon />
-                          </span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                <h3 style={{ fontSize: 24, color: "var(--color-navy-900)", lineHeight: 1.2 }}>
+                  Manufactured Stone / Panel
+                </h3>
+                <p style={{ marginTop: 10, fontSize: 14, color: "var(--color-ink-500)", lineHeight: 1.6 }}>
+                  Engineered solid-surface or stone panel walls — a seamless, grout-free look that installs faster.
+                </p>
+                <ul
+                  style={{
+                    marginTop: 18,
+                    padding: 0,
+                    listStyle: "none",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                  }}
+                >
+                  {[
+                    "3–5 large-format panel walls",
+                    "Engineered stone or solid surface",
+                    "Fewer maintenance points",
+                    "Faster install than full tile builds",
+                  ].map((b) => (
+                    <li key={b} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 13.5, color: "var(--color-ink-700)" }}>
+                      <span style={{ color: "var(--color-gold-500)", marginTop: 4, flexShrink: 0 }}>
+                        <DotIcon />
+                      </span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <p
+      {/* ── BUILT FOR NOW — READY FOR WHAT'S NEXT ─────────────────── */}
+      <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
+        <div className="sb-container" style={{ padding: "0 56px" }}>
+          <div
             style={{
-              textAlign: "center",
-              marginTop: 32,
-              fontSize: 14,
-              color: "var(--color-ink-500)",
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 64,
+              alignItems: "center",
             }}
+            className="t2s-future-grid"
           >
-            Not sure which system is right for you?{" "}
-            <Link
-              href="/contact"
-              style={{
-                color: "var(--color-navy-800)",
-                fontWeight: 600,
-                borderBottom: "1px solid var(--color-gold-500)",
-                paddingBottom: 1,
-              }}
-            >
-              Schedule an estimate and we'll bring samples.
-            </Link>
-          </p>
+            <div className="sb-photo" style={{ height: 380, borderRadius: 14 }}>
+              <span className="sb-photo-label">FUTURE-READY SHOWER · DROP IN PHOTO</span>
+            </div>
+            <div>
+              <span className="sb-eyebrow">Good At Every Stage</span>
+              <h2
+                style={{
+                  fontSize: "clamp(30px, 3vw, 40px)",
+                  marginTop: 14,
+                  lineHeight: 1.05,
+                }}
+              >
+                Built for now —<br />ready for what's next.
+              </h2>
+              <p
+                style={{
+                  marginTop: 18,
+                  fontSize: 16,
+                  color: "var(--color-ink-700)",
+                  lineHeight: 1.65,
+                  maxWidth: 460,
+                }}
+              >
+                Whether for yourself, a parent, or a future resale, we install blocking and plan layouts so a daily-use shower today is grab-bar ready later.
+              </p>
+              <ul
+                style={{
+                  marginTop: 24,
+                  padding: 0,
+                  listStyle: "none",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 11,
+                }}
+              >
+                {[
+                  "Wall blocking behind future grab-bar locations",
+                  "Curbless entry option (zero-step base)",
+                  "Slip-resistant pan textures and tile guidance",
+                  "Comfort-height fixtures and ADA-aware clearances",
+                  "Bench seating, handheld diverter on slide bar",
+                ].map((b) => (
+                  <li
+                    key={b}
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: 12,
+                      fontSize: 15,
+                      color: "var(--color-ink-700)",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    <span style={{ color: "var(--color-gold-500)", marginTop: 5, flexShrink: 0 }}>
+                      <DotIcon />
+                    </span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -751,136 +681,146 @@ export default function TubToShowerPage() {
       </section>
 
       {/* ── PROCESS ───────────────────────────────────────────────────── */}
-      <section style={{ background: "var(--color-cream-100)", paddingTop: 96, paddingBottom: 0 }}>
+      <section style={{ background: "var(--color-navy-900)", paddingTop: 96, paddingBottom: 0 }}>
         <div className="sb-container" style={{ padding: "0 56px", marginBottom: 48 }}>
-          <span className="sb-eyebrow">How It Works</span>
+          <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>A Simple, Focused Timeline</span>
           <h2
             style={{
               fontSize: "clamp(32px, 3.5vw, 48px)",
               marginTop: 16,
               lineHeight: 1.05,
               maxWidth: 640,
+              color: "var(--color-cream-50)",
             }}
           >
-            A clear process from estimate to final walkthrough
+            The tub-to-shower timeline.
           </h2>
           <p
             style={{
               marginTop: 16,
-              color: "var(--color-ink-500)",
+              color: "var(--color-stone-300)",
               fontSize: 16,
               lineHeight: 1.6,
               maxWidth: 520,
             }}
           >
-            No guessing, no uncertainty. You'll know what's happening week by week before a single tool hits your bathroom.
+            Most tub-to-shower projects wrap in 5–7 business days, depending on glass and finish complexity.
           </p>
         </div>
-        <Process dark={false} />
+        <Process dark />
         <div style={{ padding: "56px 0 96px", textAlign: "center" }}>
-          <Link href="/contact" className="sb-btn sb-btn-dark sb-btn-lg">
-            Schedule Your Estimate <ArrowIcon />
+          <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
+            See Our Tub-to-Shower Process <ArrowIcon />
           </Link>
         </div>
       </section>
 
-      {/* ── PRICING GUIDANCE ──────────────────────────────────────────── */}
-      <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
+      {/* ── PRICING — What affects the cost? (6 numbered cards) ───── */}
+      <section style={{ padding: "96px 0", background: "var(--color-cream-100)" }}>
         <div className="sb-container" style={{ padding: "0 56px" }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 80,
+              gridTemplateColumns: "1fr 1.4fr",
+              gap: 56,
               alignItems: "start",
             }}
+            className="t2s-cost-grid"
           >
             <div>
-              <span className="sb-eyebrow">Pricing</span>
+              <span className="sb-eyebrow">Pricing & Timeline</span>
               <h2
                 style={{
-                  fontSize: "clamp(32px, 3.5vw, 46px)",
-                  marginTop: 16,
+                  fontSize: "clamp(32px, 3.5vw, 44px)",
+                  marginTop: 14,
                   lineHeight: 1.05,
                 }}
               >
-                What affects the cost of a conversion?
+                What affects<br />the cost?
               </h2>
               <p
                 style={{
-                  marginTop: 20,
-                  fontSize: 16,
+                  marginTop: 18,
+                  fontSize: 15,
                   color: "var(--color-ink-700)",
-                  lineHeight: 1.7,
+                  lineHeight: 1.65,
+                  maxWidth: 420,
                 }}
               >
-                Every conversion is different. The price depends on shower size, wall system choice, door type, fixture grade, and whether any plumbing needs to move. During your estimate, we walk through every factor so you know exactly where the investment goes.
+                Every conversion is different. We don\'t publish flat prices because the price hinges on glass type, plumbing changes, and whether the wall finish is tile or panel.
               </p>
-              <div
-                style={{
-                  marginTop: 28,
-                  padding: "24px 28px",
-                  background: "var(--color-cream-100)",
-                  border: "1px solid rgba(20,17,13,0.08)",
-                  borderRadius: 12,
-                }}
-              >
-                <div style={{ fontSize: 14, fontWeight: 600, color: "var(--color-navy-900)", marginBottom: 8 }}>
-                  Good news for smaller bathrooms
-                </div>
-                <p style={{ fontSize: 14, color: "var(--color-ink-500)", lineHeight: 1.6 }}>
-                  Tub-to-shower conversions are often more affordable than a full bathroom remodel because the scope is focused. You're not replacing the vanity or flooring throughout — just the tub area. This makes it a great value upgrade.
-                </p>
-              </div>
-              <div style={{ marginTop: 28 }}>
-                <Link href="/contact" className="sb-btn sb-btn-primary">
-                  Get a Precise Estimate <ArrowIcon />
+              <div style={{ marginTop: 24, display: "flex", gap: 8 }}>
+                <input
+                  type="text"
+                  placeholder="Your ZIP code (e.g. 95661)"
+                  className="sb-input"
+                  style={{ flex: 1, maxWidth: 240 }}
+                />
+                <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-sm">
+                  Get Estimate <ArrowIcon />
                 </Link>
               </div>
             </div>
-            <div>
-              <h3
-                style={{
-                  fontSize: 20,
-                  color: "var(--color-navy-900)",
-                  marginBottom: 24,
-                }}
-              >
-                Cost factors we review with you:
-              </h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {COST_FACTORS.map((factor, i) => (
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: 12,
+              }}
+              className="t2s-cost-cards"
+            >
+              {[
+                { t: "Shower Style", d: "Tile vs. panel, framed vs. frameless glass, walls and curb height all shift the price." },
+                { t: "Glass Style", d: "Framed, semi-frameless, and frameless options — each at a different price band." },
+                { t: "Glass Type", d: "Clear, low-iron, textured, or showerguard-coated change material cost." },
+                { t: "Plumbing Changes", d: "Moving drain or modifying the valve adds rough-in time and cost." },
+                { t: "Grab Bar Prep", d: "Blocking in walls now is inexpensive; later it means opening tile." },
+                { t: "Surrounding Updates", d: "New floor, vanity, or paint affects scope and timeline together." },
+              ].map((card, i) => (
+                <div
+                  key={card.t}
+                  style={{
+                    background: "#fff",
+                    border: "1px solid rgba(20,17,13,0.08)",
+                    borderRadius: 10,
+                    padding: "20px 22px 22px",
+                    boxShadow: "var(--shadow-sm)",
+                  }}
+                >
                   <div
-                    key={factor}
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 16,
-                      padding: "16px 20px",
-                      background: "#fff",
-                      border: "1px solid rgba(20,17,13,0.08)",
-                      borderRadius: 8,
-                      boxShadow: "var(--shadow-sm)",
+                      fontFamily: "var(--font-serif)",
+                      fontSize: 14,
+                      fontWeight: 600,
+                      color: "var(--color-gold-600)",
+                      letterSpacing: "0.12em",
+                      marginBottom: 8,
                     }}
                   >
-                    <span
-                      style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: 22,
-                        fontWeight: 600,
-                        color: "var(--color-gold-500)",
-                        minWidth: 28,
-                        lineHeight: 1,
-                      }}
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span style={{ fontSize: 14, fontWeight: 500, color: "var(--color-ink-900)" }}>
-                      {factor}
-                    </span>
+                    {String(i + 1).padStart(2, "0")}
                   </div>
-                ))}
-              </div>
+                  <h3
+                    style={{
+                      fontSize: 17,
+                      color: "var(--color-navy-900)",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {card.t}
+                  </h3>
+                  <p
+                    style={{
+                      marginTop: 8,
+                      fontSize: 13,
+                      color: "var(--color-ink-500)",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    {card.d}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -893,7 +833,7 @@ export default function TubToShowerPage() {
           style={{ padding: "0 56px", maxWidth: 900, margin: "0 auto" }}
         >
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <span className="sb-eyebrow">FAQ</span>
+            <span className="sb-eyebrow">Common Questions</span>
             <h2
               style={{
                 fontSize: "clamp(32px, 3.5vw, 48px)",
@@ -901,7 +841,7 @@ export default function TubToShowerPage() {
                 lineHeight: 1.05,
               }}
             >
-              Common questions about tub-to-shower conversions
+              Tub-to-shower FAQ.
             </h2>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -1051,7 +991,6 @@ export default function TubToShowerPage() {
         </div>
       </section>
 
-      <FinalCTA />
       <Footer />
     </>
   );
@@ -1061,6 +1000,14 @@ function ArrowIcon() {
   return (
     <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
+function DotIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="8" height="8" fill="currentColor" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
     </svg>
   );
 }

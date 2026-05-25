@@ -274,3 +274,25 @@ button { font-family: inherit; cursor: pointer; }
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ── Tub-to-shower page responsive ─────────────────────────────────────── */
+@media (max-width: 880px) {
+  .t2s-hero-grid,
+  .t2s-future-grid,
+  .t2s-cost-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .t2s-choice-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .t2s-cost-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .t2s-cost-cards {
+    grid-template-columns: 1fr !important;
+  }
+}
