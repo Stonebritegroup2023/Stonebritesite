@@ -245,3 +245,32 @@ button { font-family: inherit; cursor: pointer; }
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ── Bathrooms page responsive ─────────────────────────────────────────── */
+@media (max-width: 880px) {
+  .bath-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .included-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .design-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .cost-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .cost-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .included-grid,
+  .cost-cards {
+    grid-template-columns: 1fr !important;
+  }
+}

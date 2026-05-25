@@ -4,7 +4,6 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import TrustStrip from "@/components/sections/TrustStrip";
 import Process from "@/components/sections/Process";
-import FinalCTA from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
   title: "Bathroom Remodeling | Stonebrite Construction Group",
@@ -14,27 +13,92 @@ export const metadata: Metadata = {
     "bathroom remodeling Sacramento, bathroom renovation Roseville, full bathroom remodel Folsom, tile shower installation, bathroom contractor",
 };
 
-const SCOPE_ITEMS = [
-  "Demolition & hauling",
-  "Shower / tub area rebuild",
-  "Waterproofing system (membrane + seams sealed)",
-  "Plumbing fixtures & valve",
-  "Electrical (GFCI outlets, exhaust fan, lighting)",
-  "Vanity & mirror",
-  "Flooring (tile or LVP)",
-  "Paint & drywall",
-  "Final cleanup & walkthrough",
-  "5-year workmanship warranty",
+// ── What's Included — 9-card grid ──────────────────────────────────────────
+const INCLUDED = [
+  {
+    title: "Shower & Tub Area",
+    desc: "Full tile or panel walls, waterproofing membrane, valve, drain, and glass enclosure — sealed and water-tight.",
+  },
+  {
+    title: "Vanity & Storage",
+    desc: "Custom or stock vanity, top, hardware, mirror, and storage planned around how you use the space.",
+  },
+  {
+    title: "Flooring",
+    desc: "Tile, LVP, or stone — leveled, set, and grouted by our team. Heat mats and trim included where needed.",
+  },
+  {
+    title: "Paint & Drywall",
+    desc: "Repair, patch, and paint walls, ceiling, and trim to a clean, even finish.",
+  },
+  {
+    title: "Electrical & Lighting",
+    desc: "GFCI receptacles, exhaust fan, vanity and ceiling lighting, switches, and dedicated circuits.",
+  },
+  {
+    title: "Plumbing Fixtures",
+    desc: "Showerhead, valve, faucet, drain, and supply lines — installed to manufacturer spec.",
+  },
+  {
+    title: "Tile Layout",
+    desc: "We plan tile direction, niches, accents, and trim with you before any order is placed.",
+  },
+  {
+    title: "Design Support",
+    desc: "Selection guidance for tile, fixtures, finish, and color so you avoid decision fatigue.",
+  },
+  {
+    title: "Final Touch",
+    desc: "Punch list closed, deep clean, warranty packet, and a care guide for everything we installed.",
+  },
 ];
 
-const COST_FACTORS = [
-  "Scope of demolition",
-  "Plumbing relocations",
-  "Shower size & waterproofing system",
-  "Tile vs. panel wall systems",
-  "Vanity & fixture grade",
-  "Electrical changes (lighting, fan, GFCI)",
-  "Layout changes vs. in-place replacements",
+// ── Design & Materials bullets ─────────────────────────────────────────────
+const DESIGN_POINTS = [
+  "Tile, stone, mosaic, and shower wall panel selection",
+  "Vanity, knobs, mirror, and lighting fixture pairing",
+  "Faucet, valve, drain, and shower system selection",
+  "Lighting plans (general, task, vanity, accent)",
+  "Paint, trim, and door hardware coordination",
+];
+
+// ── Cost factors — 6 numbered cards ────────────────────────────────────────
+const COST_CARDS = [
+  {
+    title: "Bathroom Size",
+    desc: "Sq ft and ceiling height drive demo, tile, paint, and material quantities.",
+  },
+  {
+    title: "Layout Changes",
+    desc: "Moving fixtures, opening or closing walls, and relocating drains.",
+  },
+  {
+    title: "Waterproofing System",
+    desc: "Schluter, membrane choice, niche count, and shower size.",
+  },
+  {
+    title: "Shower Choice",
+    desc: "Tile vs. panel, frameless vs. framed glass, curbless vs. standard.",
+  },
+  {
+    title: "Finish Tier",
+    desc: "Standard vs. premium tile, fixture grade, and vanity material.",
+  },
+  {
+    title: "Electrical Work",
+    desc: "Existing capacity, new circuits, fan upgrades, and lighting plan.",
+  },
+];
+
+// ── Recent bathrooms gallery thumbnails ────────────────────────────────────
+const RECENT = [
+  { city: "Roseville", scope: "Hall Bath" },
+  { city: "Folsom", scope: "Tub-to-Shower" },
+  { city: "Granite Bay", scope: "Primary Bath" },
+  { city: "Sacramento", scope: "Vanity & Floor" },
+  { city: "Rocklin", scope: "Walk-In Shower" },
+  { city: "Citrus Heights", scope: "Aging-in-Place" },
+  { city: "Lincoln", scope: "Guest Bath" },
 ];
 
 const FAQS = [
@@ -73,13 +137,12 @@ const FAQS = [
 export default function BathroomsPage() {
   return (
     <>
-      <Nav activeHref="/bathrooms" dark />
+      <Nav activeHref="/bathrooms" />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: "var(--color-navy-900)",
-          color: "var(--color-cream-50)",
+          background: "var(--color-cream-50)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -89,31 +152,48 @@ export default function BathroomsPage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "radial-gradient(circle at 75% 20%, rgba(229,181,58,0.14), transparent 45%), radial-gradient(circle at 10% 80%, rgba(229,181,58,0.06), transparent 40%)",
+              "radial-gradient(circle at 90% 0%, rgba(229,181,58,0.08), transparent 40%)",
           }}
         />
         <div
           className="sb-container"
-          style={{ padding: "96px 56px 104px", position: "relative" }}
+          style={{ padding: "40px 56px 96px", position: "relative" }}
         >
+          {/* Breadcrumb */}
+          <nav
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              fontSize: 13,
+              color: "var(--color-ink-500)",
+              marginBottom: 28,
+            }}
+            aria-label="Breadcrumb"
+          >
+            <Link href="/" style={{ color: "var(--color-ink-500)" }}>Home</Link>
+            <span style={{ color: "var(--color-ink-300)" }}>›</span>
+            <span style={{ color: "var(--color-ink-500)" }}>Services</span>
+            <span style={{ color: "var(--color-ink-300)" }}>›</span>
+            <span style={{ color: "var(--color-navy-900)", fontWeight: 600 }}>Bathrooms</span>
+          </nav>
+
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
-              gap: 72,
+              gap: 64,
               alignItems: "center",
             }}
+            className="bath-hero-grid"
           >
             <div>
-              <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>
-                Bathroom Remodeling
-              </span>
+              <span className="sb-eyebrow">Service · Bathrooms</span>
               <h1
                 style={{
-                  fontSize: "clamp(40px, 4.5vw, 64px)",
+                  fontSize: "clamp(40px, 4.5vw, 60px)",
                   marginTop: 18,
                   lineHeight: 1.03,
-                  color: "var(--color-cream-50)",
                   letterSpacing: "-0.015em",
                 }}
               >
@@ -121,9 +201,9 @@ export default function BathroomsPage() {
               </h1>
               <p
                 style={{
-                  marginTop: 24,
-                  fontSize: 18,
-                  color: "var(--color-stone-300)",
+                  marginTop: 22,
+                  fontSize: 17,
+                  color: "var(--color-ink-700)",
                   lineHeight: 1.65,
                   maxWidth: 520,
                 }}
@@ -132,7 +212,7 @@ export default function BathroomsPage() {
               </p>
               <div
                 style={{
-                  marginTop: 36,
+                  marginTop: 32,
                   display: "flex",
                   gap: 14,
                   flexWrap: "wrap",
@@ -142,266 +222,428 @@ export default function BathroomsPage() {
                 <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
                   Get My Free Estimate <ArrowIcon />
                 </Link>
-                <Link href="/gallery" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
-                  View Gallery
+                <Link href="/gallery" className="sb-btn sb-btn-ghost sb-btn-lg">
+                  View Our Work
                 </Link>
               </div>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 12 }}>
-              <div
-                className="sb-photo"
-                style={{ height: 440, gridRow: "1 / span 2", borderRadius: 14 }}
-              >
-                <span className="sb-photo-label">FULL BATH REMODEL · DROP IN REAL PROJECT PHOTO</span>
-              </div>
-              <div className="sb-photo" style={{ height: 210, borderRadius: 14 }}>
-                <span className="sb-photo-label">SHOWER TILE DETAIL</span>
-              </div>
-              <div className="sb-photo" style={{ height: 210, borderRadius: 14 }}>
-                <span className="sb-photo-label">VANITY & MIRROR</span>
-              </div>
+            <div
+              className="sb-photo"
+              style={{ height: 460, borderRadius: 14 }}
+            >
+              <span className="sb-photo-label">FULL BATH REMODEL · DROP IN REAL PROJECT PHOTO</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── TRUST STRIP ───────────────────────────────────────────────── */}
-      <TrustStrip dark />
+      <TrustStrip />
 
-      {/* ── WHAT'S INCLUDED ───────────────────────────────────────────── */}
+      {/* ── WHAT'S INCLUDED — 9 cards ─────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
-        <div
-          className="sb-container"
-          style={{
-            padding: "0 56px",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 72,
-            alignItems: "start",
-          }}
-        >
-          <div>
-            <span className="sb-eyebrow">What's Included</span>
-            <h2
-              style={{
-                fontSize: "clamp(32px, 3.5vw, 48px)",
-                marginTop: 16,
-                lineHeight: 1.05,
-              }}
-            >
-              Everything covered in a full bathroom remodel
-            </h2>
-            <p
-              style={{
-                marginTop: 18,
-                color: "var(--color-ink-500)",
-                fontSize: 16,
-                lineHeight: 1.65,
-                maxWidth: 480,
-              }}
-            >
-              A full bathroom remodel with Stonebrite is a single, coordinated project. We don't sub out the critical work — our team owns the waterproofing, plumbing, and electrical from demo to finish.
-            </p>
-            <ul style={{ marginTop: 32, listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
-              {SCOPE_ITEMS.map((item) => (
-                <li key={item} style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                  <span
-                    style={{
-                      width: 26,
-                      height: 26,
-                      borderRadius: "50%",
-                      background: "var(--color-navy-900)",
-                      color: "var(--color-gold-300)",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <CheckIcon />
-                  </span>
-                  <span style={{ fontSize: 15, color: "var(--color-ink-900)", fontWeight: 500 }}>
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div style={{ marginTop: 36 }}>
-              <Link href="/contact" className="sb-btn sb-btn-dark">
-                Start With a Free Estimate <ArrowIcon />
-              </Link>
-            </div>
-          </div>
-          <div>
-            <div
-              className="sb-photo"
-              style={{ height: 500, borderRadius: 14 }}
-            >
-              <span className="sb-photo-label">BATHROOM REMODEL · DROP IN REAL PROJECT PHOTO</span>
-            </div>
-            <div
-              style={{
-                marginTop: 16,
-                padding: "20px 24px",
-                background: "var(--color-navy-900)",
-                borderRadius: 10,
-                display: "flex",
-                gap: 16,
-                alignItems: "center",
-              }}
-            >
-              <span
+        <div className="sb-container" style={{ padding: "0 56px" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              marginBottom: 48,
+              gap: 32,
+              flexWrap: "wrap",
+            }}
+          >
+            <div style={{ maxWidth: 620 }}>
+              <span className="sb-eyebrow">What's Included</span>
+              <h2
                 style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg, var(--color-gold-500), var(--color-gold-600))",
-                  color: "var(--color-navy-900)",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                  fontFamily: "var(--font-serif)",
-                  fontWeight: 600,
-                  fontSize: 18,
+                  fontSize: "clamp(32px, 3.5vw, 46px)",
+                  marginTop: 14,
+                  lineHeight: 1.05,
                 }}
               >
-                5
-              </span>
-              <div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: "var(--color-cream-50)" }}>
-                  5-Year Workmanship Warranty
-                </div>
-                <div style={{ fontSize: 13, color: "var(--color-stone-300)", marginTop: 3 }}>
-                  Covers waterproofing, plumbing & electrical workmanship
-                </div>
-              </div>
+                Every part of the bathroom<br />— handled together.
+              </h2>
             </div>
+            <p
+              style={{
+                maxWidth: 320,
+                color: "var(--color-ink-500)",
+                fontSize: 15,
+                lineHeight: 1.6,
+              }}
+            >
+              One scope, one team, one accountable owner — so the finish details land the way you imagined them.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 14,
+            }}
+            className="included-grid"
+          >
+            {INCLUDED.map((item) => (
+              <div
+                key={item.title}
+                style={{
+                  background: "#fff",
+                  border: "1px solid rgba(20,17,13,0.08)",
+                  borderRadius: 12,
+                  padding: "24px 24px 26px",
+                  boxShadow: "var(--shadow-sm)",
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: 19,
+                    color: "var(--color-navy-900)",
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p
+                  style={{
+                    marginTop: 10,
+                    fontSize: 13.5,
+                    color: "var(--color-ink-500)",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── PROCESS ───────────────────────────────────────────────────── */}
-      <section style={{ background: "var(--color-cream-100)", paddingTop: 96, paddingBottom: 0 }}>
+      <section style={{ background: "var(--color-navy-900)", paddingTop: 96, paddingBottom: 0 }}>
         <div className="sb-container" style={{ padding: "0 56px", marginBottom: 48 }}>
-          <span className="sb-eyebrow">How It Works</span>
+          <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>How It Works</span>
           <h2
             style={{
               fontSize: "clamp(32px, 3.5vw, 48px)",
-              marginTop: 16,
+              marginTop: 14,
               lineHeight: 1.05,
+              color: "var(--color-cream-50)",
               maxWidth: 640,
             }}
           >
-            Our remodeling process — clear from start to finish
+            From first visit to final walkthrough.
           </h2>
-          <p
-            style={{
-              marginTop: 16,
-              color: "var(--color-ink-500)",
-              fontSize: 16,
-              lineHeight: 1.6,
-              maxWidth: 520,
-            }}
-          >
-            We designed our process to remove the anxiety from remodeling. You'll know exactly what's happening, when, and what's next.
-          </p>
         </div>
-        <Process dark={false} />
+        <Process dark />
         <div style={{ padding: "56px 0 96px", textAlign: "center" }}>
-          <Link href="/contact" className="sb-btn sb-btn-dark sb-btn-lg">
-            Schedule Your Estimate <ArrowIcon />
+          <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
+            See Our Process <ArrowIcon />
           </Link>
         </div>
       </section>
 
-      {/* ── PRICING GUIDANCE ──────────────────────────────────────────── */}
+      {/* ── DESIGN & MATERIALS ────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
         <div className="sb-container" style={{ padding: "0 56px" }}>
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
-              gap: 80,
-              alignItems: "start",
+              gap: 64,
+              alignItems: "center",
             }}
+            className="design-grid"
           >
+            {/* Left: 2x2 photo grid */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+              <div className="sb-photo" style={{ height: 200, borderRadius: 12 }}>
+                <span className="sb-photo-label">TILE BOARD · DROP IN PHOTO</span>
+              </div>
+              <div className="sb-photo" style={{ height: 200, borderRadius: 12 }}>
+                <span className="sb-photo-label">VANITY DETAIL · DROP IN PHOTO</span>
+              </div>
+              <div className="sb-photo" style={{ height: 200, borderRadius: 12 }}>
+                <span className="sb-photo-label">FIXTURE DETAIL · DROP IN PHOTO</span>
+              </div>
+              <div className="sb-photo" style={{ height: 200, borderRadius: 12 }}>
+                <span className="sb-photo-label">FINISH BOARD · DROP IN PHOTO</span>
+              </div>
+            </div>
+
+            {/* Right: copy + bullets */}
             <div>
-              <span className="sb-eyebrow">Pricing</span>
+              <span className="sb-eyebrow">Design & Materials</span>
               <h2
                 style={{
                   fontSize: "clamp(32px, 3.5vw, 46px)",
-                  marginTop: 16,
+                  marginTop: 14,
                   lineHeight: 1.05,
                 }}
               >
-                What affects the cost of a bathroom remodel?
+                Design guidance, not<br />a guessing game.
               </h2>
               <p
                 style={{
-                  marginTop: 20,
+                  marginTop: 18,
                   fontSize: 16,
                   color: "var(--color-ink-700)",
-                  lineHeight: 1.7,
+                  lineHeight: 1.65,
+                  maxWidth: 460,
                 }}
               >
-                Every bathroom is different. Pricing depends on layout, materials, plumbing and electrical changes, waterproofing system, shower size, tile or wall panel choices, and finish selections. During your estimate, we'll help you understand what affects cost and what options fit your goals.
+                We provide finish boards, sample pickups, and trade-day showroom support so you can choose tile, fixtures, lighting, and finishes with confidence.
               </p>
-              <div style={{ marginTop: 32 }}>
-                <Link href="/contact" className="sb-btn sb-btn-primary">
-                  Get a Precise Estimate <ArrowIcon />
-                </Link>
-              </div>
-            </div>
-            <div>
-              <h3
+              <ul
                 style={{
-                  fontSize: 20,
-                  color: "var(--color-navy-900)",
-                  marginBottom: 24,
+                  marginTop: 24,
+                  padding: 0,
+                  listStyle: "none",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 11,
                 }}
               >
-                Common cost factors we review with you:
-              </h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {COST_FACTORS.map((factor, i) => (
-                  <div
-                    key={factor}
+                {DESIGN_POINTS.map((point) => (
+                  <li
+                    key={point}
                     style={{
                       display: "flex",
-                      alignItems: "center",
-                      gap: 16,
-                      padding: "16px 20px",
-                      background: "#fff",
-                      border: "1px solid rgba(20,17,13,0.08)",
-                      borderRadius: 8,
-                      boxShadow: "var(--shadow-sm)",
+                      alignItems: "flex-start",
+                      gap: 12,
+                      fontSize: 15,
+                      color: "var(--color-ink-700)",
+                      lineHeight: 1.5,
                     }}
                   >
-                    <span
-                      style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: 22,
-                        fontWeight: 600,
-                        color: "var(--color-gold-500)",
-                        minWidth: 28,
-                        lineHeight: 1,
-                      }}
-                    >
-                      {String(i + 1).padStart(2, "0")}
+                    <span style={{ color: "var(--color-gold-500)", marginTop: 2, flexShrink: 0 }}>
+                      <DotIcon />
                     </span>
-                    <span style={{ fontSize: 14, fontWeight: 500, color: "var(--color-ink-900)" }}>
-                      {factor}
-                    </span>
-                  </div>
+                    {point}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ───────────────────────────────────────────────────────── */}
+      {/* ── PRICING — What affects the cost? (6 numbered cards) ───────── */}
+      <section style={{ padding: "96px 0", background: "var(--color-cream-100)" }}>
+        <div className="sb-container" style={{ padding: "0 56px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1.4fr",
+              gap: 56,
+              alignItems: "start",
+            }}
+            className="cost-grid"
+          >
+            <div>
+              <span className="sb-eyebrow">Pricing & Timeline</span>
+              <h2
+                style={{
+                  fontSize: "clamp(32px, 3.5vw, 44px)",
+                  marginTop: 14,
+                  lineHeight: 1.05,
+                }}
+              >
+                What affects<br />the cost?
+              </h2>
+              <p
+                style={{
+                  marginTop: 18,
+                  fontSize: 15,
+                  color: "var(--color-ink-700)",
+                  lineHeight: 1.65,
+                  maxWidth: 420,
+                }}
+              >
+                Every bathroom is different. We'd rather quote the actual project than print a vague range. Share a few details and we'll come measure.
+              </p>
+              <div style={{ marginTop: 24, display: "flex", gap: 8 }}>
+                <input
+                  type="text"
+                  placeholder="Your ZIP code (e.g. 95661)"
+                  className="sb-input"
+                  style={{ flex: 1, maxWidth: 240 }}
+                />
+                <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-sm">
+                  Get Estimate <ArrowIcon />
+                </Link>
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: 12,
+              }}
+              className="cost-cards"
+            >
+              {COST_CARDS.map((card, i) => (
+                <div
+                  key={card.title}
+                  style={{
+                    background: "#fff",
+                    border: "1px solid rgba(20,17,13,0.08)",
+                    borderRadius: 10,
+                    padding: "20px 22px 22px",
+                    boxShadow: "var(--shadow-sm)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "var(--font-serif)",
+                      fontSize: 14,
+                      fontWeight: 600,
+                      color: "var(--color-gold-600)",
+                      letterSpacing: "0.12em",
+                      marginBottom: 8,
+                    }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: 17,
+                      color: "var(--color-navy-900)",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {card.title}
+                  </h3>
+                  <p
+                    style={{
+                      marginTop: 8,
+                      fontSize: 13,
+                      color: "var(--color-ink-500)",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    {card.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── RECENT BATHROOMS GALLERY (horizontal scroll) ──────────────── */}
+      <section style={{ padding: "96px 0 80px", background: "var(--color-cream-50)" }}>
+        <div className="sb-container" style={{ padding: "0 56px" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              marginBottom: 32,
+              gap: 24,
+              flexWrap: "wrap",
+            }}
+          >
+            <div>
+              <span className="sb-eyebrow">Before & After</span>
+              <h2
+                style={{
+                  fontSize: "clamp(28px, 3vw, 38px)",
+                  marginTop: 12,
+                  lineHeight: 1.05,
+                }}
+              >
+                Recent bathroom remodels.
+              </h2>
+            </div>
+            <Link href="/gallery" className="sb-btn sb-btn-ghost sb-btn-sm">
+              View Full Gallery <ArrowIcon />
+            </Link>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              gap: 14,
+              overflowX: "auto",
+              padding: "4px 0 16px",
+              scrollSnapType: "x mandatory",
+            }}
+          >
+            {RECENT.map((p, i) => (
+              <Link
+                key={i}
+                href="/gallery"
+                style={{
+                  flex: "0 0 auto",
+                  width: 232,
+                  scrollSnapAlign: "start",
+                  display: "block",
+                  textDecoration: "none",
+                }}
+              >
+                <div
+                  style={{
+                    height: 180,
+                    background: "linear-gradient(135deg, var(--color-navy-800), var(--color-navy-900))",
+                    borderRadius: 10,
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      backgroundImage:
+                        "repeating-linear-gradient(135deg, rgba(229,181,58,0.04) 0 10px, transparent 10px 20px)",
+                    }}
+                  />
+                  <span
+                    style={{
+                      position: "absolute",
+                      bottom: 10,
+                      left: 10,
+                      fontFamily: "monospace",
+                      fontSize: 9.5,
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      padding: "3px 7px",
+                      background: "rgba(11,31,51,0.65)",
+                      color: "var(--color-gold-300)",
+                      borderRadius: 3,
+                    }}
+                  >
+                    BEFORE / AFTER
+                  </span>
+                </div>
+                <div style={{ padding: "12px 4px 0" }}>
+                  <div
+                    style={{
+                      fontSize: 10.5,
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      fontWeight: 600,
+                      color: "var(--color-stone-500)",
+                    }}
+                  >
+                    {p.city}
+                  </div>
+                  <div style={{ fontSize: 15, color: "var(--color-navy-900)", marginTop: 4, fontWeight: 500 }}>
+                    {p.scope}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ (unchanged) ───────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-100)" }}>
         <div
           className="sb-container"
@@ -511,7 +753,7 @@ export default function BathroomsPage() {
         </div>
       </section>
 
-      {/* ── FINAL CTA BAND ────────────────────────────────────────────── */}
+      {/* ── FINAL CTA BAND (single, not duplicated) ───────────────────── */}
       <section
         style={{
           background: "var(--color-navy-900)",
@@ -530,9 +772,7 @@ export default function BathroomsPage() {
           }}
         />
         <div className="sb-container" style={{ padding: "0 56px", position: "relative" }}>
-          <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>
-            Next Step
-          </span>
+          <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>Next Step</span>
           <h2
             style={{
               fontSize: "clamp(32px, 4vw, 52px)",
@@ -566,7 +806,6 @@ export default function BathroomsPage() {
         </div>
       </section>
 
-      <FinalCTA />
       <Footer />
     </>
   );
@@ -589,19 +828,10 @@ function ArrowIcon() {
   );
 }
 
-function CheckIcon() {
+function DotIcon() {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      width="12"
-      height="12"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="4 13 9 18 20 6" />
+    <svg viewBox="0 0 24 24" width="8" height="8" fill="currentColor" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
     </svg>
   );
 }
