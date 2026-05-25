@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -9,35 +10,18 @@ export default function Footer() {
 
           {/* Brand col */}
           <div>
-            {/* Inverted logo lockup for dark footer: cream wordmark + gold house */}
-            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-              <svg viewBox="0 0 200 100" width={88} height={44} aria-hidden="true" style={{ flexShrink: 0 }}>
-                <path d="M20 95 L20 35 L100 8 L180 35 L180 95"
-                      fill="none" stroke="#E5B53A" strokeWidth="7"
-                      strokeLinejoin="round" strokeLinecap="round"/>
-              </svg>
-              <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
-                <span style={{
-                  fontFamily: "var(--font-sans)",
-                  fontWeight: 700,
-                  fontSize: 22,
-                  letterSpacing: "0.10em",
-                  color: "var(--color-cream-50)",
-                }}>
-                  STONEBRITE
-                </span>
-                <span style={{
-                  marginTop: 5,
-                  fontSize: 10,
-                  fontWeight: 500,
-                  letterSpacing: "0.18em",
-                  color: "var(--color-stone-300)",
-                  textTransform: "uppercase",
-                }}>
-                  Construction Group
-                </span>
-              </div>
-            </div>
+            <Image
+              src="/stonebrite-logo-trans.png"
+              alt="Stonebrite Construction Group"
+              width={700}
+              height={353}
+              style={{
+                height: 56,
+                width: "auto",
+                display: "block",
+                filter: "brightness(0) invert(1)",
+              }}
+            />
             <p style={{ marginTop: 18, color: "var(--color-stone-300)", fontSize: 14, maxWidth: 300, lineHeight: 1.6 }}>
               Family-owned, owner-led, local crew. Bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the East Bay.
             </p>
