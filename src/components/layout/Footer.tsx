@@ -3,45 +3,42 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--color-ink-900)", color: "var(--color-cream-200)", paddingTop: 72 }}>
+    <footer style={{
+      background: "rgba(251, 247, 238, 0.92)",
+      color: "var(--color-ink-700)",
+      paddingTop: 72,
+      borderTop: "1px solid rgba(20,17,13,0.08)",
+    }}>
       <div className="sb-container" style={{ padding: "0 56px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1.2fr", gap: 48, paddingBottom: 56 }}
           className="grid-cols-1 md:grid-cols-5">
 
-          {/* Brand col — same logo as header, on a light backdrop card so it reads on dark footer */}
+          {/* Brand col — logo directly on cream, no card backdrop */}
           <div>
-            <div style={{
-              display: "inline-flex",
-              alignItems: "center",
-              padding: "14px 18px",
-              background: "var(--color-cream-50)",
-              borderRadius: 10,
-            }}>
-              <Image
-                src="/stonebrite-logo-trans.png"
-                alt="Stonebrite Construction Group"
-                width={700}
-                height={353}
-                quality={100}
-                sizes="180px"
-                style={{
-                  height: 52,
-                  width: "auto",
-                  display: "block",
-                }}
-              />
-            </div>
-            <p style={{ marginTop: 18, color: "var(--color-stone-300)", fontSize: 14, maxWidth: 300, lineHeight: 1.6 }}>
+            <Image
+              src="/stonebrite-logo-trans.png"
+              alt="Stonebrite Construction Group"
+              width={700}
+              height={353}
+              quality={100}
+              sizes="180px"
+              style={{
+                height: 52,
+                width: "auto",
+                display: "block",
+              }}
+            />
+            <p style={{ marginTop: 18, color: "var(--color-ink-500)", fontSize: 14, maxWidth: 300, lineHeight: 1.6 }}>
               Family-owned, owner-led, local crew. Bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the East Bay.
             </p>
             <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 10, fontSize: 13 }}>
-              <a href="tel:9165550188" style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-cream-100)" }}>
+              <a href="tel:9165550188" style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-navy-900)", fontWeight: 600 }}>
                 <PhoneIcon /> (916) 555-0188
               </a>
-              <a href="mailto:hello@stonebritecg.com" style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-cream-100)" }}>
+              <a href="mailto:hello@stonebritecg.com" style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-navy-900)", fontWeight: 600 }}>
                 <MailIcon /> hello@stonebritecg.com
               </a>
-              <span style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-stone-300)" }}>
+              <span style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-ink-500)" }}>
                 <PinIcon /> Roseville, CA · CSLB Lic. #[placeholder]
               </span>
             </div>
@@ -49,8 +46,8 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-300)", textTransform: "uppercase", fontWeight: 600 }}>Services</h4>
-            <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-cream-200)" }}>
+            <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-600)", textTransform: "uppercase", fontWeight: 700 }}>Services</h4>
+            <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-ink-700)" }}>
               {[
                 { href: "/bathrooms", label: "Bathroom Remodeling" },
                 { href: "/tub-to-shower", label: "Tub-to-Shower" },
@@ -64,8 +61,8 @@ export default function Footer() {
 
           {/* Explore */}
           <div>
-            <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-300)", textTransform: "uppercase", fontWeight: 600 }}>Explore</h4>
-            <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-cream-200)" }}>
+            <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-600)", textTransform: "uppercase", fontWeight: 700 }}>Explore</h4>
+            <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-ink-700)" }}>
               {[
                 { href: "/gallery", label: "Gallery" },
                 { href: "/blog", label: "Blog" },
@@ -79,22 +76,22 @@ export default function Footer() {
 
           {/* Client */}
           <div>
-            <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-300)", textTransform: "uppercase", fontWeight: 600 }}>Client</h4>
-            <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-cream-200)" }}>
+            <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-600)", textTransform: "uppercase", fontWeight: 700 }}>Client</h4>
+            <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-ink-700)" }}>
               <li><Link href="/login">Client Login</Link></li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-300)", textTransform: "uppercase", fontWeight: 600 }}>Notes from the field</h4>
-            <p style={{ marginTop: 18, fontSize: 13, color: "var(--color-stone-300)", lineHeight: 1.6 }}>One short remodel-planning email a month. No spam, ever.</p>
+            <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-600)", textTransform: "uppercase", fontWeight: 700 }}>Notes from the field</h4>
+            <p style={{ marginTop: 18, fontSize: 13, color: "var(--color-ink-500)", lineHeight: 1.6 }}>One short remodel-planning email a month. No spam, ever.</p>
             <div style={{ marginTop: 14, display: "flex", gap: 8 }}>
               <input
                 type="email"
                 placeholder="you@email.com"
                 className="sb-input"
-                style={{ background: "rgba(255,255,255,0.05)", color: "var(--color-cream-100)", borderColor: "rgba(255,255,255,0.16)", flex: 1 }}
+                style={{ flex: 1 }}
               />
               <button className="sb-btn sb-btn-primary sb-btn-sm">
                 <ArrowIcon />
@@ -103,7 +100,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", padding: "20px 0 40px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12, fontSize: 12, color: "var(--color-stone-500)" }}>
+        <div style={{ borderTop: "1px solid rgba(20,17,13,0.08)", padding: "20px 0 40px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12, fontSize: 12, color: "var(--color-ink-500)" }}>
           <span>© 2026 Stonebrite Construction Group. CSLB Lic. #[placeholder] · Licensed & Insured.</span>
           <span>Privacy · Terms · Accessibility</span>
         </div>
