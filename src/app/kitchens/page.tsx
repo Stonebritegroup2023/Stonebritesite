@@ -3,7 +3,6 @@ import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import TrustStrip from "@/components/sections/TrustStrip";
-import FinalCTA from "@/components/sections/FinalCTA";
 
 export const metadata: Metadata = {
   title: "Kitchen Remodeling | Stonebrite Construction Group",
@@ -55,7 +54,7 @@ const FAQS = [
 export default function KitchensPage() {
   return (
     <>
-      <Nav activeHref="/kitchens" dark />
+      <Nav activeHref="/kitchens" />
 
       {/* HERO */}
       <section style={{
@@ -219,7 +218,6 @@ export default function KitchensPage() {
         </div>
       </section>
 
-      <FinalCTA />
       <Footer />
     </>
   );
