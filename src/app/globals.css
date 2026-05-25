@@ -184,26 +184,49 @@ button { font-family: inherit; cursor: pointer; }
 .sb-rule-gold { height: 2px; width: 48px; background: var(--color-gold-500); border: 0; }
 
 /* ── Hero floating form ─────────────────────────────────── */
-/* Float on desktop & laptop; stack only on tablets/phones */
+/* Float at all widths above small phones */
 .hero-form-float {
   position: absolute;
   left: -40px;
-  bottom: -60px;
+  bottom: 40px;          /* raised so it overlaps more of the photo area */
   width: 520px;
   z-index: 2;
 }
 
-/* Slightly narrower form when window gets tighter, but still float */
-@media (max-width: 1200px) {
+/* Mid-size window: narrower form, still floating */
+@media (max-width: 1280px) {
   .hero-form-float {
     width: 460px;
     left: -24px;
-    bottom: -48px;
+    bottom: 32px;
   }
 }
 
-/* Only stack below tablet portrait width */
-@media (max-width: 760px) {
+/* Stack the two hero columns when the window narrows */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .hero-form-float {
+    width: 440px;
+    left: 24px;
+    bottom: 32px;
+  }
+}
+
+/* Narrow tablet — keep floating but scale the form down */
+@media (max-width: 720px) {
+  .hero-form-float {
+    width: calc(100% - 32px);
+    max-width: 440px;
+    left: 16px;
+    bottom: 24px;
+  }
+}
+
+/* Phone — only here do we stack and let the form sit below */
+@media (max-width: 480px) {
   .hero-form-float {
     position: static;
     width: 100%;

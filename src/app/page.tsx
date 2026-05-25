@@ -63,7 +63,7 @@ export default function HomePage() {
           backgroundImage: "radial-gradient(circle at 90% 0%, rgba(229,181,58,0.08), transparent 40%)",
         }} />
         <div className="sb-container" style={{ padding: "72px 56px 120px", position: "relative" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+          <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
             {/* Left — copy */}
             <div>
               <div style={{
