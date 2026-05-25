@@ -183,7 +183,8 @@ button { font-family: inherit; cursor: pointer; }
 
 .sb-rule-gold { height: 2px; width: 48px; background: var(--color-gold-500); border: 0; }
 
-/* ── Hero floating form (desktop only) ─────────────────────────────────── */
+/* ── Hero floating form ─────────────────────────────────── */
+/* Float on desktop & laptop; stack only on tablets/phones */
 .hero-form-float {
   position: absolute;
   left: -40px;
@@ -192,11 +193,23 @@ button { font-family: inherit; cursor: pointer; }
   z-index: 2;
 }
 
-@media (max-width: 1024px) {
+/* Slightly narrower form when window gets tighter, but still float */
+@media (max-width: 1200px) {
+  .hero-form-float {
+    width: 460px;
+    left: -24px;
+    bottom: -48px;
+  }
+}
+
+/* Only stack below tablet portrait width */
+@media (max-width: 760px) {
   .hero-form-float {
     position: static;
     width: 100%;
     margin-top: 24px;
+    left: auto;
+    bottom: auto;
   }
   .hero-right {
     min-height: auto !important;
