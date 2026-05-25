@@ -184,55 +184,55 @@ button { font-family: inherit; cursor: pointer; }
 .sb-rule-gold { height: 2px; width: 48px; background: var(--color-gold-500); border: 0; }
 
 /* ── Hero floating form ─────────────────────────────────── */
-/* Float at all widths above small phones */
+/* Form floats over the photo collage on desktop */
 .hero-form-float {
   position: absolute;
-  left: -40px;
-  bottom: 40px;          /* raised so it overlaps more of the photo area */
-  width: 520px;
-  z-index: 2;
+  left: 0;
+  top: 45%;
+  transform: translate(-8%, -20%);
+  z-index: 20;
+  width: 460px;
+  max-width: 90%;
 }
 
-/* Mid-size window: narrower form, still floating */
-@media (max-width: 1280px) {
+/* Wider desktops — push slightly further left so more of photos peek on the right */
+@media (min-width: 1400px) {
   .hero-form-float {
-    width: 460px;
-    left: -24px;
-    bottom: 32px;
+    transform: translate(-14%, -22%);
+    width: 480px;
   }
 }
 
-/* Stack the two hero columns when the window narrows */
-@media (max-width: 1024px) {
+/* Laptop — slightly smaller form, pull right so it stays within the collage */
+@media (max-width: 1100px) {
+  .hero-form-float {
+    transform: translate(0, -20%);
+    width: 420px;
+  }
+}
+
+/* Tablet — stack hero columns, keep form floating over the photos */
+@media (max-width: 880px) {
   .hero-grid {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
   .hero-form-float {
-    width: 440px;
-    left: 24px;
-    bottom: 32px;
+    transform: translate(8%, -20%);
+    width: 420px;
   }
 }
 
-/* Narrow tablet — keep floating but scale the form down */
-@media (max-width: 720px) {
-  .hero-form-float {
-    width: calc(100% - 32px);
-    max-width: 440px;
-    left: 16px;
-    bottom: 24px;
-  }
-}
-
-/* Phone — only here do we stack and let the form sit below */
-@media (max-width: 480px) {
+/* Phone — stop floating; let form sit at the bottom of the natural flow */
+@media (max-width: 560px) {
   .hero-form-float {
     position: static;
+    transform: none;
     width: 100%;
+    max-width: 100%;
     margin-top: 24px;
     left: auto;
-    bottom: auto;
+    top: auto;
   }
   .hero-right {
     min-height: auto !important;
