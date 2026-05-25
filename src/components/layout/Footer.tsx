@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import SBLogo from "@/components/ui/SBLogo";
 
 export default function Footer() {
   return (
@@ -8,29 +8,9 @@ export default function Footer() {
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1.2fr", gap: 48, paddingBottom: 56 }}
           className="grid-cols-1 md:grid-cols-5">
 
-          {/* Brand col — same logo as header, on a light backdrop card so it reads on dark footer */}
+          {/* Brand col — light-on-dark logo variant, no backdrop card */}
           <div>
-            <div style={{
-              display: "inline-flex",
-              alignItems: "center",
-              padding: "14px 18px",
-              background: "var(--color-cream-50)",
-              borderRadius: 10,
-            }}>
-              <Image
-                src="/stonebrite-logo-trans.png"
-                alt="Stonebrite Construction Group"
-                width={700}
-                height={353}
-                quality={100}
-                sizes="180px"
-                style={{
-                  height: 52,
-                  width: "auto",
-                  display: "block",
-                }}
-              />
-            </div>
+            <SBLogo inverted height={58} />
             <p style={{ marginTop: 18, color: "var(--color-stone-300)", fontSize: 14, maxWidth: 300, lineHeight: 1.6 }}>
               Family-owned, owner-led, local crew. Bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the East Bay.
             </p>

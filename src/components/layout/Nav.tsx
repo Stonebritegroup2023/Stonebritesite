@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SBLogo from "@/components/ui/SBLogo";
 
 const NAV_ITEMS = [
   { href: "/bathrooms", label: "Bathrooms" },
@@ -39,19 +39,7 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
       <div className="sb-container" style={{ display: "flex", alignItems: "center", gap: 32, padding: "0 56px", height: 80 }}>
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
-          <Image
-            src="/stonebrite-logo-trans.png"
-            alt="Stonebrite Construction Group"
-            width={700}
-            height={353}
-            priority
-            style={{
-              height: 48,
-              width: "auto",
-              display: "block",
-              filter: dark ? "brightness(0) invert(1)" : "none",
-            }}
-          />
+          <SBLogo inverted={dark} height={50} />
         </Link>
 
         {/* Desktop nav */}
