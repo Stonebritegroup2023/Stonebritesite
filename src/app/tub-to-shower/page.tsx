@@ -80,12 +80,13 @@ const FAQS = [
 export default function TubToShowerPage() {
   return (
     <>
-      <Nav activeHref="/tub-to-shower" />
+      <Nav activeHref="/tub-to-shower" dark />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: "var(--color-cream-50)",
+          background: "var(--color-navy-900)",
+          color: "var(--color-cream-50)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -95,7 +96,7 @@ export default function TubToShowerPage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "radial-gradient(circle at 90% 0%, rgba(229,181,58,0.08), transparent 40%)",
+              "radial-gradient(circle at 80% 30%, rgba(229,181,58,0.14), transparent 50%)",
           }}
         />
         <div
@@ -109,16 +110,16 @@ export default function TubToShowerPage() {
               alignItems: "center",
               gap: 8,
               fontSize: 13,
-              color: "var(--color-ink-500)",
+              color: "var(--color-stone-300)",
               marginBottom: 28,
             }}
             aria-label="Breadcrumb"
           >
-            <Link href="/" style={{ color: "var(--color-ink-500)" }}>Home</Link>
-            <span style={{ color: "var(--color-ink-300)" }}>›</span>
-            <span style={{ color: "var(--color-ink-500)" }}>Services</span>
-            <span style={{ color: "var(--color-ink-300)" }}>›</span>
-            <span style={{ color: "var(--color-navy-900)", fontWeight: 600 }}>Tub-to-Shower Conversion</span>
+            <Link href="/" style={{ color: "var(--color-stone-300)" }}>Home</Link>
+            <span style={{ color: "var(--color-stone-500)" }}>›</span>
+            <span style={{ color: "var(--color-stone-300)" }}>Services</span>
+            <span style={{ color: "var(--color-stone-500)" }}>›</span>
+            <span style={{ color: "var(--color-gold-300)", fontWeight: 600 }}>Tub-to-Shower Conversion</span>
           </nav>
 
           <div
@@ -131,13 +132,14 @@ export default function TubToShowerPage() {
             className="t2s-hero-grid"
           >
             <div>
-              <span className="sb-eyebrow">Service · Tub-to-Shower Conversion</span>
+              <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>Service · Tub-to-Shower Conversion</span>
               <h1
                 style={{
                   fontSize: "clamp(38px, 4.5vw, 60px)",
                   marginTop: 18,
                   lineHeight: 1.04,
                   letterSpacing: "-0.015em",
+                  color: "var(--color-cream-50)",
                 }}
               >
                 Safer, easier shower access — done in days, built to last.
@@ -146,7 +148,7 @@ export default function TubToShowerPage() {
                 style={{
                   marginTop: 22,
                   fontSize: 17,
-                  color: "var(--color-ink-700)",
+                  color: "var(--color-stone-300)",
                   lineHeight: 1.65,
                   maxWidth: 520,
                 }}
@@ -165,7 +167,7 @@ export default function TubToShowerPage() {
                 <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
                   Get My Free Estimate <ArrowIcon />
                 </Link>
-                <Link href="/gallery" className="sb-btn sb-btn-ghost sb-btn-lg">
+                <Link href="/gallery" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
                   View Our Work
                 </Link>
               </div>

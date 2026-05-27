@@ -101,7 +101,7 @@ export default function KitchensPage() {
         </div>
       </section>
 
-      <TrustStrip dark />
+      <TrustStrip />
 
       {/* WHAT'S INCLUDED */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
