@@ -331,10 +331,19 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
-/* ── Brand promise card responsive ─────────────────────────────────────── */
-@media (max-width: 600px) {
-  .promise-card {
-    padding: 40px 28px 36px !important;
+/* ── Brand promise split editorial layout responsive ──────────────────── */
+@media (max-width: 880px) {
+  .promise-grid {
+    grid-template-columns: 1fr !important;
+    column-gap: 0 !important;
+    row-gap: 28px !important;
+  }
+  /* Transform the vertical rule into a horizontal one on mobile */
+  .promise-divider {
+    width: 100% !important;
+    height: 1px !important;
+    min-height: 0 !important;
+    align-self: auto !important;
   }
 }
 

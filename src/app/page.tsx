@@ -369,76 +369,132 @@ export default function HomePage() {
       </section>
 
       {/* ── BRIDGE: Brand promise between Reviews and Final CTA ───────── */}
-      <section style={{ background: "var(--color-cream-100)", padding: "88px 0" }}>
-        <div className="sb-container" style={{ padding: "0 56px" }}>
+      <section style={{ background: "var(--color-cream-50)", padding: "104px 0", position: "relative", overflow: "hidden" }}>
+        {/* Soft cream radial glow on the left */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "10%",
+            left: "-10%",
+            width: 520,
+            height: 520,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(229,181,58,0.05), transparent 65%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div className="sb-container" style={{ padding: "0 56px", position: "relative" }}>
           <div
-            className="promise-card"
+            className="promise-grid"
             style={{
-              maxWidth: 760,
-              margin: "0 auto",
-              background: "#fff",
-              border: "1px solid rgba(20,17,13,0.08)",
-              borderRadius: 14,
-              padding: "52px 64px 48px",
-              boxShadow: "var(--shadow-md)",
-              textAlign: "center",
-              position: "relative",
-              overflow: "hidden",
+              display: "grid",
+              gridTemplateColumns: "1fr auto 1fr",
+              columnGap: 64,
+              alignItems: "start",
             }}
           >
-            {/* Subtle gold corner glow */}
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                top: -120,
-                right: -120,
-                width: 280,
-                height: 280,
-                borderRadius: "50%",
-                background:
-                  "radial-gradient(circle, rgba(229,181,58,0.12), transparent 65%)",
-                pointerEvents: "none",
-              }}
-            />
-            <div style={{ position: "relative" }}>
-              <span className="sb-eyebrow">Our Promise</span>
+            {/* Left — eyebrow + headline */}
+            <div>
+              <span
+                style={{
+                  display: "block",
+                  fontFamily: "monospace",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "var(--color-gold-600)",
+                }}
+              >
+                Why This Matters
+              </span>
+              <hr
+                style={{
+                  width: 40,
+                  height: 2,
+                  background: "var(--color-gold-500)",
+                  border: 0,
+                  margin: "10px 0 36px",
+                }}
+              />
               <h2
                 style={{
-                  fontSize: "clamp(30px, 3.2vw, 42px)",
-                  marginTop: 14,
-                  lineHeight: 1.1,
+                  fontSize: "clamp(36px, 4vw, 56px)",
+                  lineHeight: 1.05,
                   letterSpacing: "-0.01em",
                   textWrap: "balance",
+                  color: "var(--color-navy-900)",
                 }}
               >
-                A remodel should feel clear before it starts.
+                We&apos;d rather over-explain than over-promise.
               </h2>
-              <hr className="sb-rule-gold" style={{ margin: "24px auto 26px" }} />
+            </div>
+
+            {/* Center — thin vertical gold rule */}
+            <div
+              className="promise-divider"
+              aria-hidden="true"
+              style={{
+                width: 1,
+                alignSelf: "stretch",
+                background: "rgba(229,181,58,0.45)",
+                minHeight: 240,
+              }}
+            />
+
+            {/* Right — body paragraphs + footer line */}
+            <div>
               <p
                 style={{
-                  fontSize: 16.5,
+                  fontSize: 17,
                   color: "var(--color-ink-700)",
-                  lineHeight: 1.7,
-                  maxWidth: 580,
-                  margin: "0 auto",
+                  lineHeight: 1.75,
                 }}
               >
-                By the time you receive a proposal from Stonebrite, the goal is simple: you should understand the scope, the process, the investment, and the next step.
+                The biggest source of remodel regret is the gap between what was discussed and what got delivered. We close that gap with a written scope, an open client portal, and the same crew you met on day one.
               </p>
               <p
                 style={{
-                  marginTop: 14,
-                  fontSize: 16.5,
+                  marginTop: 22,
+                  fontSize: 17,
                   color: "var(--color-ink-700)",
-                  lineHeight: 1.7,
-                  maxWidth: 580,
-                  marginLeft: "auto",
-                  marginRight: "auto",
+                  lineHeight: 1.75,
                 }}
               >
-                We take time to talk through the details before work begins so the project feels planned, not rushed.
+                If something is unclear at any point in the process, that&apos;s where we&apos;ll spend our time.
               </p>
+
+              <hr
+                style={{
+                  marginTop: 40,
+                  height: 1,
+                  background: "rgba(20,17,13,0.12)",
+                  border: 0,
+                }}
+              />
+
+              <div
+                style={{
+                  marginTop: 18,
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontFamily: "monospace",
+                  fontSize: 11,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  flexWrap: "wrap",
+                  gap: 14,
+                }}
+              >
+                <span style={{ color: "var(--color-stone-500)", fontWeight: 600 }}>
+                  Stonebrite · Sacramento &amp; East Bay
+                </span>
+                <span style={{ color: "var(--color-gold-600)", fontWeight: 700 }}>
+                  Est. 2018
+                </span>
+              </div>
             </div>
           </div>
         </div>
