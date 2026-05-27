@@ -331,6 +331,13 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
+/* ── Brand promise card responsive ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .promise-card {
+    padding: 40px 28px 36px !important;
+  }
+}
+
 /* ── Blog page responsive ──────────────────────────────────────────────── */
 @media (max-width: 980px) {
   .blog-featured {

@@ -369,46 +369,77 @@ export default function HomePage() {
       </section>
 
       {/* ── BRIDGE: Brand promise between Reviews and Final CTA ───────── */}
-      <section style={{ background: "var(--color-cream-50)", padding: "112px 0" }}>
+      <section style={{ background: "var(--color-cream-100)", padding: "88px 0" }}>
         <div className="sb-container" style={{ padding: "0 56px" }}>
-          <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
-            <span className="sb-eyebrow">Our Promise</span>
-            <h2
+          <div
+            className="promise-card"
+            style={{
+              maxWidth: 760,
+              margin: "0 auto",
+              background: "#fff",
+              border: "1px solid rgba(20,17,13,0.08)",
+              borderRadius: 14,
+              padding: "52px 64px 48px",
+              boxShadow: "var(--shadow-md)",
+              textAlign: "center",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            {/* Subtle gold corner glow */}
+            <div
+              aria-hidden="true"
               style={{
-                fontSize: "clamp(34px, 3.8vw, 52px)",
-                marginTop: 18,
-                lineHeight: 1.08,
-                letterSpacing: "-0.01em",
-                textWrap: "balance",
+                position: "absolute",
+                top: -120,
+                right: -120,
+                width: 280,
+                height: 280,
+                borderRadius: "50%",
+                background:
+                  "radial-gradient(circle, rgba(229,181,58,0.12), transparent 65%)",
+                pointerEvents: "none",
               }}
-            >
-              A remodel should feel clear<br />before it starts.
-            </h2>
-            <hr className="sb-rule-gold" style={{ margin: "32px auto" }} />
-            <p
-              style={{
-                fontSize: 17,
-                color: "var(--color-ink-700)",
-                lineHeight: 1.75,
-                maxWidth: 640,
-                margin: "0 auto",
-              }}
-            >
-              By the time you receive a proposal from Stonebrite, the goal is simple: you should understand the scope, the process, the investment, and the next step.
-            </p>
-            <p
-              style={{
-                marginTop: 18,
-                fontSize: 17,
-                color: "var(--color-ink-700)",
-                lineHeight: 1.75,
-                maxWidth: 640,
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            >
-              We take time to talk through the details before work begins so the project feels planned, not rushed.
-            </p>
+            />
+            <div style={{ position: "relative" }}>
+              <span className="sb-eyebrow">Our Promise</span>
+              <h2
+                style={{
+                  fontSize: "clamp(30px, 3.2vw, 42px)",
+                  marginTop: 14,
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.01em",
+                  textWrap: "balance",
+                }}
+              >
+                A remodel should feel clear before it starts.
+              </h2>
+              <hr className="sb-rule-gold" style={{ margin: "24px auto 26px" }} />
+              <p
+                style={{
+                  fontSize: 16.5,
+                  color: "var(--color-ink-700)",
+                  lineHeight: 1.7,
+                  maxWidth: 580,
+                  margin: "0 auto",
+                }}
+              >
+                By the time you receive a proposal from Stonebrite, the goal is simple: you should understand the scope, the process, the investment, and the next step.
+              </p>
+              <p
+                style={{
+                  marginTop: 14,
+                  fontSize: 16.5,
+                  color: "var(--color-ink-700)",
+                  lineHeight: 1.7,
+                  maxWidth: 580,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              >
+                We take time to talk through the details before work begins so the project feels planned, not rushed.
+              </p>
+            </div>
           </div>
         </div>
       </section>
