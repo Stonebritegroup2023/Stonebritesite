@@ -368,6 +368,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── BRIDGE: Brand promise between Reviews and Final CTA ───────── */}
+      <section style={{ background: "var(--color-cream-50)", padding: "112px 0" }}>
+        <div className="sb-container" style={{ padding: "0 56px" }}>
+          <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
+            <span className="sb-eyebrow">Our Promise</span>
+            <h2
+              style={{
+                fontSize: "clamp(34px, 3.8vw, 52px)",
+                marginTop: 18,
+                lineHeight: 1.08,
+                letterSpacing: "-0.01em",
+                textWrap: "balance",
+              }}
+            >
+              A remodel should feel clear<br />before it starts.
+            </h2>
+            <hr className="sb-rule-gold" style={{ margin: "32px auto" }} />
+            <p
+              style={{
+                fontSize: 17,
+                color: "var(--color-ink-700)",
+                lineHeight: 1.75,
+                maxWidth: 640,
+                margin: "0 auto",
+              }}
+            >
+              By the time you receive a proposal from Stonebrite, the goal is simple: you should understand the scope, the process, the investment, and the next step.
+            </p>
+            <p
+              style={{
+                marginTop: 18,
+                fontSize: 17,
+                color: "var(--color-ink-700)",
+                lineHeight: 1.75,
+                maxWidth: 640,
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+            >
+              We take time to talk through the details before work begins so the project feels planned, not rushed.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── FINAL CTA ─────────────────────────────────────────────────── */}
       <FinalCTA />
 
