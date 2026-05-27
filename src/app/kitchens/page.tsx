@@ -60,7 +60,6 @@ export default function KitchensPage() {
       <section style={{
         background: "var(--color-navy-900)",
         color: "var(--color-cream-50)",
-        padding: "96px 0",
         position: "relative",
         overflow: "hidden",
       }}>
@@ -68,7 +67,27 @@ export default function KitchensPage() {
           position: "absolute", inset: 0,
           backgroundImage: "radial-gradient(circle at 80% 30%, rgba(229,181,58,0.14), transparent 50%)",
         }} />
-        <div className="sb-container" style={{ padding: "0 56px", position: "relative", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+        <div className="sb-container" style={{ padding: "40px 56px 96px", position: "relative" }}>
+          {/* Breadcrumb */}
+          <nav
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              fontSize: 13,
+              color: "var(--color-stone-300)",
+              marginBottom: 28,
+            }}
+            aria-label="Breadcrumb"
+          >
+            <Link href="/" style={{ color: "var(--color-stone-300)" }}>Home</Link>
+            <span style={{ color: "var(--color-stone-500)" }}>›</span>
+            <span style={{ color: "var(--color-stone-300)" }}>Services</span>
+            <span style={{ color: "var(--color-stone-500)" }}>›</span>
+            <span style={{ color: "var(--color-gold-300)", fontWeight: 600 }}>Kitchens</span>
+          </nav>
+
+          <div className="kitchens-hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
           <div>
             <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>Kitchen Remodeling</span>
             <h1 style={{ fontSize: "clamp(40px, 4.5vw, 64px)", marginTop: 16, color: "var(--color-cream-50)", lineHeight: 1.05 }}>
@@ -97,6 +116,7 @@ export default function KitchensPage() {
             <div className="sb-photo" style={{ height: 143, borderRadius: 14 }}>
               <span className="sb-photo-label">CABINET DETAIL · STOCK</span>
             </div>
+          </div>
           </div>
         </div>
       </section>

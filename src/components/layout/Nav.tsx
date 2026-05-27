@@ -55,7 +55,7 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
         </Link>
 
         {/* Desktop nav */}
-        <nav style={{ display: "flex", gap: 28, marginLeft: 24 }} className="hidden md:flex">
+        <nav className="sb-nav-desktop" style={{ gap: 28, marginLeft: 24 }}>
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
@@ -72,6 +72,7 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
                   : "1.5px solid transparent",
                 paddingBottom: 2,
                 transition: "color 0.15s",
+                whiteSpace: "nowrap",
               }}
             >
               {item.label}
@@ -83,25 +84,25 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 18 }}>
           <a
             href="tel:9165550188"
-            className="hidden lg:flex"
-            style={{ alignItems: "center", gap: 8, fontSize: 13, fontWeight: 600, color: dark ? "var(--color-cream-100)" : "var(--color-navy-900)" }}
+            className="sb-nav-phone"
+            style={{ gap: 8, fontSize: 13, fontWeight: 600, color: dark ? "var(--color-cream-100)" : "var(--color-navy-900)", whiteSpace: "nowrap" }}
           >
             <PhoneIcon />
             (916) 555-0188
           </a>
           <Link
             href="/login"
-            className="hidden md:block"
-            style={{ fontSize: 12, color: dark ? "var(--color-cream-200)" : "var(--color-ink-500)", letterSpacing: "0.05em" }}
+            className="sb-nav-login"
+            style={{ fontSize: 12, color: dark ? "var(--color-cream-200)" : "var(--color-ink-500)", letterSpacing: "0.05em", whiteSpace: "nowrap" }}
           >
             Client Login
           </Link>
-          <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-sm">
+          <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-sm sb-nav-cta">
             Get My Free Estimate
           </Link>
           {/* Mobile hamburger */}
           <button
-            className="flex md:hidden"
+            className="sb-nav-hamburger"
             onClick={() => setMenuOpen(!menuOpen)}
             style={{
               background: "var(--color-navy-900)",
@@ -110,7 +111,6 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
               width: 38,
               height: 38,
               borderRadius: 6,
-              display: "flex",
               alignItems: "center",
               justifyContent: "center",
             }}
