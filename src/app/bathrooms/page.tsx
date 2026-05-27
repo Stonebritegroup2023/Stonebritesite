@@ -137,7 +137,7 @@ const FAQS = [
 export default function BathroomsPage() {
   return (
     <>
-      <Nav activeHref="/bathrooms" dark />
+      <Nav activeHref="/bathrooms" />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section

@@ -80,7 +80,7 @@ const FAQS = [
 export default function TubToShowerPage() {
   return (
     <>
-      <Nav activeHref="/tub-to-shower" dark />
+      <Nav activeHref="/tub-to-shower" />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
       <section

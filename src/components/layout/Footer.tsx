@@ -65,7 +65,7 @@ export default function Footer() {
             <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-ink-700)" }}>
               {[
                 { href: "/gallery", label: "Gallery" },
-                { href: "/blog", label: "Blog" },
+                { href: "/blog", label: "Learning Center" },
                 { href: "/about", label: "About" },
                 { href: "/contact", label: "Get My Free Estimate" },
               ].map(({ href, label }) => (

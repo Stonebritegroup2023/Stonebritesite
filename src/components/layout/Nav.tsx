@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { href: "/tub-to-shower", label: "Tub-to-Shower" },
   { href: "/kitchens", label: "Kitchens" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Learning Center" },
   { href: "/about", label: "About" },
 ];
 
