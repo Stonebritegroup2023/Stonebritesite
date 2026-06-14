@@ -71,7 +71,7 @@ export default function AboutPage() {
       {/* ── STORY ─────────────────────────────────────────────────────── */}
       <section style={{ background: "var(--color-cream-100)", padding: "96px 0" }}>
         <div className="sb-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 72, alignItems: "start" }}>
+          <div className="about-story-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 72, alignItems: "start" }}>
             <div>
               <span className="sb-eyebrow">Our Story</span>
               <h2 style={{ fontSize: "clamp(32px, 3.5vw, 48px)", marginTop: 16, lineHeight: 1.06 }}>
@@ -143,7 +143,7 @@ export default function AboutPage() {
               The values behind every project.
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div className="about-values-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
             {VALUES.map((v) => (
               <div
                 key={v.title}
@@ -199,7 +199,7 @@ export default function AboutPage() {
             display: "grid",
             gridTemplateColumns: "340px 1fr",
             marginBottom: 32,
-          }}>
+          }} className="about-founder-grid">
             <div className="sb-photo" style={{ minHeight: 320, borderRadius: 0 }}>
               <span className="sb-photo-label">FOUNDER · DROP IN REAL PHOTO</span>
             </div>
@@ -223,7 +223,7 @@ export default function AboutPage() {
           </div>
 
           {/* Crew grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+          <div className="about-crew-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
             {CREW.map((member, i) => (
               <div
                 key={i}

@@ -102,7 +102,13 @@ export default function Footer() {
 
         <div style={{ borderTop: "1px solid rgba(20,17,13,0.08)", padding: "20px 0 40px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 12, fontSize: 12, color: "var(--color-ink-500)" }}>
           <span>© 2026 Stonebrite Construction Group. CSLB Lic. #[placeholder] · Licensed & Insured.</span>
-          <span>Privacy · Terms · Accessibility</span>
+          <span style={{ display: "inline-flex", gap: 6 }}>
+            <Link href="/privacy">Privacy</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/terms">Terms</Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/accessibility">Accessibility</Link>
+          </span>
         </div>
       </div>
     </footer>

@@ -16,12 +16,34 @@ const manrope = Manrope({
   display: "swap",
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.stonebritecg.com";
+
 export const metadata: Metadata = {
-  title: "Stonebrite Construction Group | Bathroom & Kitchen Remodeling",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Stonebrite Construction Group | Bathroom & Kitchen Remodeling",
+    template: "%s | Stonebrite Construction Group",
+  },
   description:
     "Family-owned bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the Bay Area. Clear scope, thoughtful design support, 5-year workmanship warranty.",
   keywords:
     "bathroom remodeling Sacramento, tub to shower conversion, kitchen remodel, aging in place bathroom",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Stonebrite Construction Group",
+    title: "Stonebrite Construction Group | Bathroom & Kitchen Remodeling",
+    description:
+      "Family-owned bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the Bay Area.",
+    url: SITE_URL,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stonebrite Construction Group | Bathroom & Kitchen Remodeling",
+    description:
+      "Family-owned bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the Bay Area.",
+  },
 };
 
 export default function RootLayout({
