@@ -98,9 +98,18 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <div className="sb-photo" style={{ height: 500 }}>
-                <span className="sb-photo-label">FOUNDER PHOTO · DROP IN REAL PHOTO</span>
-              </div>
+              <img
+                src="/photos/owner.jpg"
+                alt="Founder and owner of Stonebrite Construction Group"
+                style={{
+                  height: 500,
+                  width: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center 22%",
+                  borderRadius: 14,
+                  display: "block",
+                }}
+              />
             </div>
           </div>
         </div>
@@ -200,9 +209,18 @@ export default function AboutPage() {
             gridTemplateColumns: "340px 1fr",
             marginBottom: 32,
           }} className="about-founder-grid">
-            <div className="sb-photo" style={{ minHeight: 320, borderRadius: 0 }}>
-              <span className="sb-photo-label">FOUNDER · DROP IN REAL PHOTO</span>
-            </div>
+            <img
+              src="/photos/owner.jpg"
+              alt="Founder and owner of Stonebrite Construction Group"
+              style={{
+                minHeight: 320,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center 22%",
+                display: "block",
+              }}
+            />
             <div style={{ padding: "48px 48px 48px 44px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-gold-600)", marginBottom: 12, display: "block" }}>
                 Founder &amp; Owner
