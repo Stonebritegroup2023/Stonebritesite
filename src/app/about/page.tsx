@@ -99,7 +99,7 @@ export default function AboutPage() {
 
             <div>
               <img
-                src="/photos/owner.jpg"
+                src="/photos/owner.png"
                 alt="Founder and owner of Stonebrite Construction Group"
                 style={{
                   height: 500,
@@ -210,7 +210,7 @@ export default function AboutPage() {
             marginBottom: 32,
           }} className="about-founder-grid">
             <img
-              src="/photos/owner.jpg"
+              src="/photos/owner.png"
               alt="Founder and owner of Stonebrite Construction Group"
               style={{
                 minHeight: 320,
