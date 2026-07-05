@@ -145,7 +145,7 @@ export default async function BlogPostPage({
       {/* ── MAIN CONTENT + SIDEBAR ───────────────────────────────────── */}
       <section style={{ background: "var(--color-cream-50)", padding: "48px 0 96px" }}>
         <div className="sb-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: 56, alignItems: "start" }}>
+          <div className="blogpost-layout" style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: 56, alignItems: "start" }}>
 
             {/* ── MAIN CONTENT ─────────────────────────────────────── */}
             <div>

@@ -10,8 +10,7 @@ export default function Footer() {
       borderTop: "1px solid rgba(20,17,13,0.08)",
     }}>
       <div className="sb-container" style={{ padding: "0 56px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1.2fr", gap: 48, paddingBottom: 56 }}
-          className="grid-cols-1 md:grid-cols-5">
+        <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr 1.2fr", gap: 48, paddingBottom: 56 }}>
 
           {/* Brand col — logo directly on cream, no card backdrop */}
           <div>

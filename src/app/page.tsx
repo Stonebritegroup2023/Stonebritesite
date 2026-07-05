@@ -110,7 +110,7 @@ export default function HomePage() {
 
             {/* Right — photo with floating form */}
             <div className="hero-right" style={{ position: "relative", minHeight: 620 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 14 }}>
+              <div className="hero-photos" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 14 }}>
                 <div className="sb-photo" style={{ height: 540, gridRow: "1 / span 2", borderRadius: 14 }}>
                   <span className="sb-photo-label">HERO BATHROOM · DROP IN PHOTO</span>
                 </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
               We focus where craftsmanship matters most: waterproofing, plumbing, electrical, and the finish details you'll see every day.
             </p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div className="home-services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
             {SERVICES.map((s) => (
               <div key={s.title} style={{
                 background: "#fff", borderRadius: 14, overflow: "hidden",
@@ -178,7 +178,7 @@ export default function HomePage() {
 
       {/* ── WHY STONEBRITE ────────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-100)" }}>
-        <div className="sb-container" style={{ padding: "0 56px", display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
+        <div className="sb-container home-why-grid" style={{ padding: "0 56px", display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 72, alignItems: "center" }}>
           <div>
             <span className="sb-eyebrow">The Stonebrite Difference</span>
             <h2 style={{ fontSize: "clamp(36px, 4vw, 52px)", marginTop: 14, lineHeight: 1.02 }}>
@@ -208,7 +208,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, height: 580 }}>
+          <div className="home-why-photos" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, height: 580 }}>
             <div className="sb-photo" style={{ height: 283 }}>
               <span className="sb-photo-label">OWNER ON SITE · DROP IN REAL PHOTO</span>
             </div>
@@ -247,8 +247,8 @@ export default function HomePage() {
 
       {/* ── WARRANTY ──────────────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
-        <div className="sb-container" style={{ padding: "0 56px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
-          <div style={{
+        <div className="sb-container home-warranty-grid" style={{ padding: "0 56px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+          <div className="home-warranty-card" style={{
             position: "relative",
             background: "linear-gradient(140deg, var(--color-navy-900), var(--color-navy-800))",
             borderRadius: 18, padding: 56,
@@ -345,7 +345,7 @@ export default function HomePage() {
               <span style={{ fontSize: 12, color: "var(--color-stone-300)" }}>Thumbtack</span>
             </div>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div className="home-reviews-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
             {REVIEWS.map((r) => (
               <div key={r.name} style={{
                 background: "rgba(255,255,255,0.04)", borderRadius: 14,

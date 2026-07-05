@@ -196,7 +196,7 @@ export default function TubToShowerPage() {
       {/* ── WHY CONVERT ───────────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
         <div
-          className="sb-container"
+          className="sb-container t2s-why-grid"
           style={{
             padding: "0 56px",
             display: "grid",
@@ -548,7 +548,7 @@ export default function TubToShowerPage() {
       {/* ── WHAT'S INCLUDED ───────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
         <div
-          className="sb-container"
+          className="sb-container t2s-why-grid"
           style={{
             padding: "0 56px",
             display: "grid",

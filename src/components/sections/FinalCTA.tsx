@@ -10,7 +10,7 @@ export default function FinalCTA() {
       <div className="sb-container" style={{ padding: "96px 56px", position: "relative", display: "flex", alignItems: "center", gap: 64, flexWrap: "wrap" }}>
         <div style={{ flex: 1, minWidth: 280 }}>
           <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>The Next Step</span>
-          <h2 style={{ fontSize: 56, marginTop: 16, color: "var(--color-cream-50)", lineHeight: 1.05 }}>
+          <h2 style={{ fontSize: "clamp(32px, 6vw, 56px)", marginTop: 16, color: "var(--color-cream-50)", lineHeight: 1.05 }}>
             Ready to talk through<br />your remodel?
           </h2>
           <p style={{ marginTop: 18, color: "var(--color-stone-300)", fontSize: 17, maxWidth: 520, lineHeight: 1.65 }}>
@@ -25,7 +25,7 @@ export default function FinalCTA() {
             </Link>
           </div>
         </div>
-        <div style={{ flexShrink: 0, width: 340 }}>
+        <div className="finalcta-photo" style={{ flexShrink: 0, width: 340, maxWidth: "100%" }}>
           <div
             className="sb-photo"
             style={{ height: 280, borderRadius: 14 }}

@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <div className="login-split" style={{ display: "flex", minHeight: "100vh" }}>
 
       {/* ── LEFT PANEL — Navy ──────────────────────────────────────────── */}
-      <div style={{
+      <div className="login-left" style={{
         width: "40%",
         background: "linear-gradient(160deg, var(--color-navy-900), var(--color-navy-800))",
         padding: "56px 48px",

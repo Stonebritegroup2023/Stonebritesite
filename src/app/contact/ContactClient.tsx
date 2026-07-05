@@ -89,7 +89,7 @@ export default function ContactClient() {
       {/* ── MAIN CONTENT ─────────────────────────────────────────────── */}
       <section style={{ background: "var(--color-cream-50)", padding: "64px 0 96px" }}>
         <div className="sb-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 380px", gap: 40, alignItems: "start" }}>
+          <div className="contact-layout" style={{ display: "grid", gridTemplateColumns: "1fr 380px", gap: 40, alignItems: "start" }}>
 
             {/* ── FORM CARD ────────────────────────────────────────── */}
             <div style={{
@@ -159,7 +159,7 @@ export default function ContactClient() {
                   </div>
 
                   {/* Name + Phone */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+                  <div className="contact-fields" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
                     <div>
                       <label className="sb-label" htmlFor="name">Full Name *</label>
                       <input
@@ -189,7 +189,7 @@ export default function ContactClient() {
                   </div>
 
                   {/* Email + City/ZIP */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+                  <div className="contact-fields" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
                     <div>
                       <label className="sb-label" htmlFor="email">Email *</label>
                       <input
@@ -248,7 +248,7 @@ export default function ContactClient() {
                   </div>
 
                   {/* Timeline + Budget + Contact Time */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 24 }}>
+                  <div className="contact-fields3" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 14, marginBottom: 24 }}>
                     <div>
                       <label className="sb-label" htmlFor="timeline">Desired Timeline</label>
                       <select

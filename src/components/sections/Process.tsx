@@ -9,7 +9,7 @@ const STEPS = [
 
 export default function Process({ dark = false }: { dark?: boolean }) {
   return (
-    <div style={{
+    <div className="process-grid" style={{
       display: "grid",
       gridTemplateColumns: "repeat(3, 1fr)",
       gap: 1,
