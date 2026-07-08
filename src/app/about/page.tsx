@@ -71,8 +71,7 @@ export default function AboutPage() {
       {/* ── STORY ─────────────────────────────────────────────────────── */}
       <section style={{ background: "var(--color-cream-100)", padding: "96px 0" }}>
         <div className="sb-container">
-          <div className="about-story-grid" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 72, alignItems: "start" }}>
-            <div>
+          <div style={{ maxWidth: 760 }}>
               <span className="sb-eyebrow">Our Story</span>
               <h2 style={{ fontSize: "clamp(32px, 3.5vw, 48px)", marginTop: 16, lineHeight: 1.06 }}>
                 We started Stonebrite because remodeling often feels more confusing than it should.
@@ -95,22 +94,6 @@ export default function AboutPage() {
                   Work With Us <ArrowIcon />
                 </Link>
               </div>
-            </div>
-
-            <div>
-              <img
-                src="/photos/owner.png"
-                alt="Founder and owner of Stonebrite Construction Group"
-                style={{
-                  height: 500,
-                  width: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center 22%",
-                  borderRadius: 14,
-                  display: "block",
-                }}
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -225,7 +208,7 @@ export default function AboutPage() {
               <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-gold-600)", marginBottom: 12, display: "block" }}>
                 Founder &amp; Owner
               </span>
-              <h3 style={{ fontSize: 30, color: "var(--color-navy-900)" }}>Owner Name</h3>
+              <h3 style={{ fontSize: 30, color: "var(--color-navy-900)" }}>Abel Vaniyev</h3>
               <p style={{ marginTop: 16, fontSize: 15, color: "var(--color-ink-500)", lineHeight: 1.75 }}>
                 Over 15 years of hands-on experience in tile installation, plumbing, and full remodel management. Founded Stonebrite in 2018 with the belief that homeowners deserve a remodel experience that's honest, organized, and worth the investment. Present on every project from the estimate visit to the final walkthrough.
               </p>
