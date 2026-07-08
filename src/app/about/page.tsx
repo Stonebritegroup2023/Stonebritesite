@@ -193,7 +193,7 @@ export default function AboutPage() {
             marginBottom: 32,
           }} className="about-founder-grid">
             <img
-              src="/photos/owner.png"
+              src="/photos/owner.jpg"
               alt="Founder and owner of Stonebrite Construction Group"
               style={{
                 minHeight: 320,
