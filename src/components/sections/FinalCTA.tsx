@@ -20,7 +20,7 @@ export default function FinalCTA() {
             <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
               Get My Free Estimate <ArrowIcon />
             </Link>
-            <Link href="/gallery" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
+            <Link href="/#featured-projects" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
               View Our Work
             </Link>
           </div>

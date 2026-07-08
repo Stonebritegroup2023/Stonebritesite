@@ -65,9 +65,6 @@ export default function FeaturedRemodels() {
             A curated look at recent bathroom, shower, and kitchen conversions — each with a written scope and a 5-year workmanship warranty.
           </p>
         </div>
-        <Link href="/gallery" className="sb-btn sb-btn-ghost sb-btn-sm">
-          Open Full Gallery <ArrowIcon />
-        </Link>
       </div>
 
       {/* Carousel */}
@@ -149,8 +146,8 @@ export default function FeaturedRemodels() {
               <h3 style={{ fontSize: 20, color: "var(--color-navy-900)" }}>{project.title}</h3>
               <p style={{ marginTop: 8, fontSize: 13, color: "var(--color-ink-500)", lineHeight: 1.5, flex: 1 }}>{project.scope}</p>
               <div style={{ marginTop: 18 }}>
-                <Link href="/gallery" style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-navy-800)", borderBottom: "1px solid var(--color-gold-500)", paddingBottom: 1 }}>
-                  View Project →
+                <Link href="/contact" style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-navy-800)", borderBottom: "1px solid var(--color-gold-500)", paddingBottom: 1 }}>
+                  Start a Similar Project →
                 </Link>
               </div>
             </div>

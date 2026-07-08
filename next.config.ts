@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        // The Gallery page was replaced by the homepage "Featured Projects" section.
+        source: "/gallery",
+        destination: "/#featured-projects",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

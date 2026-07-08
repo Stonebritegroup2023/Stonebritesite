@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { href: "/bathrooms", label: "Bathrooms" },
   { href: "/tub-to-shower", label: "Tub-to-Shower" },
   { href: "/kitchens", label: "Kitchens" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/#featured-projects", label: "Featured Projects" },
   { href: "/blog", label: "Learning Center" },
   { href: "/about", label: "About" },
 ];

@@ -224,7 +224,7 @@ export default function BathroomsPage() {
                 <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
                   Get My Free Estimate <ArrowIcon />
                 </Link>
-                <Link href="/gallery" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
+                <Link href="/#featured-projects" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
                   View Our Work
                 </Link>
               </div>
@@ -561,7 +561,7 @@ export default function BathroomsPage() {
                 Recent bathroom remodels.
               </h2>
             </div>
-            <Link href="/gallery" className="sb-btn sb-btn-ghost sb-btn-sm">
+            <Link href="/#featured-projects" className="sb-btn sb-btn-ghost sb-btn-sm">
               View Full Gallery <ArrowIcon />
             </Link>
           </div>
@@ -578,7 +578,7 @@ export default function BathroomsPage() {
             {RECENT.map((p, i) => (
               <Link
                 key={i}
-                href="/gallery"
+                href="/#featured-projects"
                 style={{
                   flex: "0 0 auto",
                   width: 232,
@@ -801,7 +801,7 @@ export default function BathroomsPage() {
             <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
               Get My Free Estimate <ArrowIcon />
             </Link>
-            <Link href="/gallery" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
+            <Link href="/#featured-projects" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
               View Our Work
             </Link>
           </div>

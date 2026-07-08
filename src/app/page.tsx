@@ -91,7 +91,7 @@ export default function HomePage() {
                 <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
                   Get My Free Estimate <ArrowIcon />
                 </Link>
-                <Link href="/gallery" className="sb-btn sb-btn-ghost sb-btn-lg">
+                <Link href="/#featured-projects" className="sb-btn sb-btn-ghost sb-btn-lg">
                   View Our Work
                 </Link>
               </div>
@@ -317,7 +317,10 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURED PROJECTS ─────────────────────────────────────────── */}
-      <section style={{ padding: "96px 0", background: "var(--color-cream-100)" }}>
+      <section
+        id="featured-projects"
+        style={{ padding: "96px 0", background: "var(--color-cream-100)", scrollMarginTop: 96 }}
+      >
         <div className="sb-container" style={{ padding: "0 56px" }}>
           <FeaturedRemodels />
         </div>

@@ -63,7 +63,7 @@ export default function Footer() {
             <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-600)", textTransform: "uppercase", fontWeight: 700 }}>Explore</h4>
             <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-ink-700)" }}>
               {[
-                { href: "/gallery", label: "Gallery" },
+                { href: "/#featured-projects", label: "Featured Projects" },
                 { href: "/blog", label: "Learning Center" },
                 { href: "/about", label: "About" },
                 { href: "/contact", label: "Get My Free Estimate" },
