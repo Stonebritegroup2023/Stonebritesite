@@ -210,7 +210,7 @@ export default function AboutPage() {
               </span>
               <h3 style={{ fontSize: 30, color: "var(--color-navy-900)" }}>Abel Vaniyev</h3>
               <p style={{ marginTop: 16, fontSize: 15, color: "var(--color-ink-500)", lineHeight: 1.75 }}>
-                Over 15 years of hands-on experience in tile installation, plumbing, and full remodel management. Founded Stonebrite in 2018 with the belief that homeowners deserve a remodel experience that's honest, organized, and worth the investment. Present on every project from the estimate visit to the final walkthrough.
+                Abel started in construction at 15, sweeping job sites — and worked his way up to lead carpenter within a year. He went on to lead large residential projects in San Francisco and helped build modular homes for Sonoma County families rebuilding after the wildfires. Along the way, his skill in finish carpentry and tile set him apart, and those trades became his obsession. Today he&apos;s present on every Stonebrite project, from the estimate visit to the final walkthrough.
               </p>
               <div style={{ marginTop: 24, display: "flex", gap: 20, fontSize: 13, color: "var(--color-ink-300)" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
