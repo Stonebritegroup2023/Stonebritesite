@@ -11,24 +11,6 @@ function formatDate(dateStr: string) {
   return d.toLocaleDateString("en-US", { month: "short", year: "numeric" }).toUpperCase();
 }
 
-function CategoryBadge({ category, small = false }: { category: string; small?: boolean }) {
-  return (
-    <span style={{
-      display: "inline-block",
-      padding: small ? "3px 9px" : "4px 11px",
-      background: "var(--color-cream-200)",
-      color: "var(--color-navy-800)",
-      fontSize: small ? 10 : 11,
-      fontWeight: 700,
-      letterSpacing: "0.08em",
-      textTransform: "uppercase",
-      borderRadius: 4,
-    }}>
-      {category}
-    </span>
-  );
-}
-
 function CtaBand() {
   return (
     <div
@@ -42,6 +24,7 @@ function CtaBand() {
         flexWrap: "wrap",
         borderRadius: 4,
       }}
+      className="blog-ctaband"
     >
       <div style={{ maxWidth: 560 }}>
         <p style={{ color: "var(--color-gold-300)", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: 10 }}>
@@ -68,55 +51,25 @@ function CtaBand() {
   );
 }
 
-function ArticleCard({ post }: { post: BlogPost }) {
+function ArticleRow({ post, featured = false }: { post: BlogPost; featured?: boolean }) {
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      style={{
-        background: "#fff",
-        borderRadius: 4,
-        overflow: "hidden",
-        border: "1px solid rgba(20,17,13,0.08)",
-        display: "flex",
-        flexDirection: "column",
-        textDecoration: "none",
-        color: "inherit",
-        transition: "transform 0.18s, box-shadow 0.18s",
-      }}
-      className="blog-card"
-    >
-      <div className="sb-photo" style={{ height: 200, borderRadius: 0 }}>
-        <span className="sb-photo-label">ARTICLE · DROP IN PHOTO</span>
-      </div>
-      <div style={{ padding: "22px 22px 24px", flex: 1, display: "flex", flexDirection: "column" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, gap: 10 }}>
-          <CategoryBadge category={post.category} small />
-          <span style={{ fontSize: 11, color: "var(--color-ink-500)" }}>{post.readTime} read</span>
+    <Link href={`/blog/${post.slug}`} className="blog-row">
+      <div>
+        <div className="blog-row-eyebrow">
+          {featured && <span className="blog-row-featured">Featured</span>}
+          {post.category}
         </div>
-        <h3 style={{ fontSize: 19, marginTop: 4, lineHeight: 1.25, color: "var(--color-navy-900)", fontFamily: "var(--font-serif)", fontWeight: 500 }}>
+        <h3 className="blog-row-title" style={{ fontSize: featured ? "clamp(24px, 3vw, 30px)" : "clamp(21px, 2.4vw, 24px)" }}>
           {post.title}
         </h3>
-        <p style={{ marginTop: 10, fontSize: 13, color: "var(--color-ink-500)", lineHeight: 1.55, flex: 1 }}>
-          {post.description}
-        </p>
-        <div style={{ marginTop: 18, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <span style={{
-            fontSize: 12,
-            fontWeight: 700,
-            letterSpacing: "0.06em",
-            color: "var(--color-navy-800)",
-            borderBottom: "1px solid var(--color-gold-500)",
-            paddingBottom: 1,
-            display: "flex",
-            alignItems: "center",
-            gap: 4,
-          }}>
-            Read <ArrowIcon />
-          </span>
-          <span style={{ fontSize: 11, color: "var(--color-ink-300)", letterSpacing: "0.06em", fontWeight: 600 }}>
-            {formatDate(post.publishedAt)}
-          </span>
-        </div>
+        <p className="blog-row-desc">{post.description}</p>
+      </div>
+      <div className="blog-row-meta">
+        <span className="blog-row-rt">{post.readTime.toUpperCase()} READ</span>
+        <span className="blog-row-date">{formatDate(post.publishedAt)}</span>
+        <span className="blog-row-arrow" aria-hidden>
+          <ArrowIcon />
+        </span>
       </div>
     </Link>
   );
@@ -135,8 +88,12 @@ export default function BlogPage() {
     });
   }, [activeCategory, search]);
 
+  // Show the featured article first, then the rest in order.
   const featured = filtered.find((p) => p.featured) ?? filtered[0];
-  const rest = filtered.filter((p) => p !== featured);
+  const ordered = featured ? [featured, ...filtered.filter((p) => p !== featured)] : filtered;
+  const splitAt = 9;
+  const first = ordered.slice(0, splitAt);
+  const second = ordered.slice(splitAt);
 
   return (
     <>
@@ -168,7 +125,7 @@ export default function BlogPage() {
       </section>
 
       {/* ── FILTER + SEARCH ───────────────────────────────────────────── */}
-      <section style={{ background: "var(--color-cream-50)", padding: "0 0 40px", borderBottom: "1px solid rgba(20,17,13,0.06)" }}>
+      <section style={{ background: "var(--color-cream-50)", padding: "0 0 32px", borderBottom: "1px solid rgba(20,17,13,0.06)" }}>
         <div className="sb-container">
           <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", justifyContent: "space-between" }}>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
@@ -228,96 +185,40 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* ── FEATURED ARTICLE ─────────────────────────────────────────── */}
-      {featured && (
-        <section style={{ background: "var(--color-cream-50)", padding: "40px 0 32px" }}>
-          <div className="sb-container">
-            <div style={{
-              background: "#fff",
-              borderRadius: 6,
-              overflow: "hidden",
-              border: "1px solid rgba(20,17,13,0.08)",
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-            }} className="blog-featured">
-              <div className="sb-photo" style={{ height: 360, borderRadius: 0 }}>
-                <span className="sb-photo-label">FEATURED ARTICLE · DROP IN PHOTO</span>
-              </div>
-              <div style={{ padding: "48px 48px 48px 44px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                <span style={{
-                  fontSize: 11,
-                  fontWeight: 700,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "var(--color-gold-600)",
-                  marginBottom: 12,
-                }}>
-                  Featured Article
-                </span>
-                <h2 style={{
-                  fontSize: "clamp(26px, 2.5vw, 36px)",
-                  lineHeight: 1.1,
-                  color: "var(--color-navy-900)",
-                  fontFamily: "var(--font-serif)",
-                  fontWeight: 500,
-                }}>
-                  {featured.title}
-                </h2>
-                <p style={{ marginTop: 16, fontSize: 15, color: "var(--color-ink-500)", lineHeight: 1.65 }}>
-                  {featured.description}
-                </p>
-                <div style={{ marginTop: 22, display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
-                  <CategoryBadge category={featured.category} />
-                  <span style={{ fontSize: 12, color: "var(--color-ink-500)" }}>{featured.readTime} read</span>
-                  <span style={{ fontSize: 12, color: "var(--color-ink-300)", letterSpacing: "0.06em", fontWeight: 600 }}>{formatDate(featured.publishedAt)}</span>
-                </div>
-                <div style={{ marginTop: 28 }}>
-                  <Link href={`/blog/${featured.slug}`} className="sb-btn sb-btn-primary">
-                    Read article <ArrowIcon />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── ARTICLE GRID (with full-width CTA after 9 articles) ───────── */}
-      <section style={{ background: "var(--color-cream-50)", padding: "32px 0 96px" }}>
+      {/* ── ARTICLE INDEX (with full-width CTA after 9 articles) ──────── */}
+      <section style={{ background: "var(--color-cream-50)", padding: "8px 0 96px" }}>
         <div className="sb-container">
-          {(() => {
-            const splitAt = 9;
-            const first = rest.slice(0, splitAt);
-            const second = rest.slice(splitAt);
-            return (
-              <>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }} className="blog-grid">
-                  {first.map((post) => <ArticleCard key={post.slug} post={post} />)}
-                </div>
-                {second.length > 0 && (
-                  <>
-                    <div style={{ margin: "44px 0" }}>
-                      <CtaBand />
-                    </div>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 22 }} className="blog-grid">
-                      {second.map((post) => <ArticleCard key={post.slug} post={post} />)}
-                    </div>
-                  </>
-                )}
-                {filtered.length === 0 && (
-                  <div style={{ textAlign: "center", padding: "60px 20px", color: "var(--color-ink-500)" }}>
-                    <p style={{ fontSize: 16, marginBottom: 10 }}>No articles match your search.</p>
-                    <button
-                      onClick={() => { setActiveCategory("All"); setSearch(""); }}
-                      style={{ background: "none", border: 0, color: "var(--color-navy-800)", fontWeight: 600, fontSize: 14, cursor: "pointer", borderBottom: "1px solid var(--color-gold-500)" }}
-                    >
-                      Clear filters
-                    </button>
+          {ordered.length > 0 ? (
+            <>
+              <div className="blog-index">
+                {first.map((post, i) => (
+                  <ArticleRow key={post.slug} post={post} featured={i === 0 && !!post.featured} />
+                ))}
+              </div>
+              {second.length > 0 && (
+                <>
+                  <div style={{ margin: "44px 0" }}>
+                    <CtaBand />
                   </div>
-                )}
-              </>
-            );
-          })()}
+                  <div className="blog-index">
+                    {second.map((post) => (
+                      <ArticleRow key={post.slug} post={post} />
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          ) : (
+            <div style={{ textAlign: "center", padding: "60px 20px", color: "var(--color-ink-500)" }}>
+              <p style={{ fontSize: 16, marginBottom: 10 }}>No articles match your search.</p>
+              <button
+                onClick={() => { setActiveCategory("All"); setSearch(""); }}
+                style={{ background: "none", border: 0, color: "var(--color-navy-800)", fontWeight: 600, fontSize: 14, cursor: "pointer", borderBottom: "1px solid var(--color-gold-500)" }}
+              >
+                Clear filters
+              </button>
+            </div>
+          )}
         </div>
       </section>
 

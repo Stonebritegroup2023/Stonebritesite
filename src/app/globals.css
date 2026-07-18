@@ -355,18 +355,98 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
-/* ── Blog page responsive ──────────────────────────────────────────────── */
-@media (max-width: 980px) {
-  .blog-featured {
-    grid-template-columns: 1fr !important;
-  }
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+/* ── Blog index (editorial rows) ───────────────────────────────────────── */
+.blog-index {
+  border-top: 1px solid rgba(20, 17, 13, 0.10);
+}
+.blog-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: start;
+  padding: 24px 14px 24px 18px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(20, 17, 13, 0.10);
+  border-left: 2px solid transparent;
+  transition: background 0.16s ease, border-color 0.16s ease, padding 0.16s ease;
+}
+.blog-row:hover {
+  background: #fff;
+  border-left-color: var(--color-gold-500);
+  padding-left: 22px;
+}
+.blog-row-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-600);
+  margin-bottom: 8px;
+}
+.blog-row-featured {
+  letter-spacing: 0.06em;
+  color: var(--color-cream-50);
+  background: var(--color-navy-900);
+  padding: 3px 9px;
+  border-radius: 3px;
+}
+.blog-row-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-navy-900);
+  margin: 0;
+}
+.blog-row-desc {
+  font-size: 13.5px;
+  color: var(--color-ink-500);
+  line-height: 1.55;
+  margin: 8px 0 0;
+  max-width: 66ch;
+}
+.blog-row-meta {
+  text-align: right;
+  white-space: nowrap;
+  font-size: 11.5px;
+  color: var(--color-ink-300);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding-top: 4px;
+  line-height: 1.7;
+}
+.blog-row-rt {
+  color: var(--color-ink-500);
+  display: block;
+}
+.blog-row-arrow {
+  display: block;
+  margin-top: 10px;
+  color: var(--color-gold-600);
 }
 @media (max-width: 600px) {
-  .blog-grid {
-    grid-template-columns: 1fr !important;
+  .blog-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .blog-row-meta {
+    text-align: left;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .blog-row-rt {
+    display: inline;
+  }
+  .blog-row-arrow {
+    display: none;
+  }
+  .blog-ctaband {
+    padding: 32px 24px !important;
   }
 }
 
