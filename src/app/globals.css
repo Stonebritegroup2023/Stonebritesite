@@ -386,23 +386,15 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ── About page responsive ─────────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .about-story-grid {
-    grid-template-columns: 1fr !important;
-    gap: 36px !important;
-  }
   .about-values-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
   .about-founder-grid {
     grid-template-columns: 1fr !important;
   }
-  .about-crew-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
 }
 @media (max-width: 560px) {
-  .about-values-grid,
-  .about-crew-grid {
+  .about-values-grid {
     grid-template-columns: 1fr !important;
   }
 }

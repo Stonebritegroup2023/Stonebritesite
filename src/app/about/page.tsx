@@ -43,49 +43,32 @@ const VALUES = [
   },
 ];
 
-const CREW = [
-  { name: "Team Member", role: "Lead Tile Installer", label: "CREW · DROP IN PHOTO" },
-  { name: "Team Member", role: "Plumbing Specialist", label: "CREW · DROP IN PHOTO" },
-  { name: "Team Member", role: "Project Coordinator", label: "CREW · DROP IN PHOTO" },
-  { name: "Team Member", role: "Finish Carpenter", label: "CREW · DROP IN PHOTO" },
-];
-
 export default function AboutPage() {
   return (
     <>
       <Nav activeHref="/about" />
 
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section style={{ background: "var(--color-cream-50)", padding: "96px 0 88px", borderBottom: "1px solid rgba(20,17,13,0.08)" }}>
-        <div className="sb-container" style={{ textAlign: "center" }}>
-          <span className="sb-eyebrow">About Stonebrite</span>
-          <h1 style={{ fontSize: "clamp(38px, 5vw, 68px)", marginTop: 20, lineHeight: 1.02, maxWidth: 840, margin: "20px auto 0", letterSpacing: "-0.015em" }}>
-            Remodeling Built Around Clarity,<br />Care, and Trust
-          </h1>
-          <p style={{ marginTop: 24, fontSize: 18, color: "var(--color-ink-500)", maxWidth: 580, margin: "24px auto 0", lineHeight: 1.7 }}>
-            We're a family-owned remodeling company serving homeowners in Greater Sacramento and the Bay Area — built from the ground up to fix the things that frustrate people most about the remodeling experience.
-          </p>
-        </div>
-      </section>
-
-      {/* ── STORY ─────────────────────────────────────────────────────── */}
-      <section style={{ background: "var(--color-cream-100)", padding: "96px 0" }}>
+      {/* ── STORY (page opener) ──────────────────────────────────────── */}
+      <section style={{ background: "var(--color-cream-100)", padding: "72px 0 96px" }}>
         <div className="sb-container">
           <div style={{ maxWidth: 760 }}>
               <span className="sb-eyebrow">Our Story</span>
-              <h2 style={{ fontSize: "clamp(32px, 3.5vw, 48px)", marginTop: 16, lineHeight: 1.06 }}>
-                We started Stonebrite because remodeling often feels more confusing than it should.
-              </h2>
+              <h1 style={{ fontSize: "clamp(34px, 4vw, 54px)", marginTop: 16, lineHeight: 1.05, letterSpacing: "-0.01em" }}>
+                A bathroom you&apos;ll love — without the runaround.
+              </h1>
 
               <div style={{ marginTop: 28, display: "flex", flexDirection: "column", gap: 20 }}>
-                <p style={{ fontSize: 16, color: "var(--color-ink-700)", lineHeight: 1.75 }}>
-                  Before starting Stonebrite, our founder spent years working in the trades — tile setting, plumbing, general remodeling — across Sacramento and the surrounding area. The work was good. But the experience homeowners were having wasn't. Vague quotes. Contractors who disappeared mid-project. Scopes that ballooned. No one communicating.
+                <p style={{ fontSize: 16.5, color: "var(--color-ink-700)", lineHeight: 1.75 }}>
+                  Stonebrite is a bathroom remodeling company in Sacramento. That&apos;s our focus — bathrooms — for homeowners across Greater Sacramento and the Bay Area. We&apos;re family-owned, and we&apos;re small on purpose.
                 </p>
-                <p style={{ fontSize: 16, color: "var(--color-ink-700)", lineHeight: 1.75 }}>
-                  Stonebrite Construction Group was founded in 2018 to do it differently: a family-owned company where the owner is on the job, every project gets a clear written scope, and homeowners always know what's happening. We've grown steadily since — not by chasing volume, but by doing right by every client.
+                <p style={{ fontSize: 16.5, color: "var(--color-ink-700)", lineHeight: 1.75 }}>
+                  We&apos;re a low-volume, custom contractor. We only take on a handful of projects at a time, so the owner is on every job and nothing gets rushed, subbed out to a stranger, or handed off halfway through.
                 </p>
-                <p style={{ fontSize: 16, color: "var(--color-ink-700)", lineHeight: 1.75 }}>
-                  Today we serve homeowners across Greater Sacramento — Roseville, Folsom, Granite Bay, Rocklin, Lincoln, El Dorado Hills, and more — along with select projects in the Bay Area. Every project is owner-led, every crew member is our own, and every estimate is detailed enough that you can make a real decision.
+                <p style={{ fontSize: 16.5, color: "var(--color-ink-700)", lineHeight: 1.75 }}>
+                  Our goal is simple: a custom bathroom you actually love, at a price that makes sense in today&apos;s economy. Affordable luxury — real materials and real craftsmanship — without the things that quietly drive up the cost and drive down the quality. No unvetted subcontractors. No giant, sales-driven remodel companies. No cheap products dressed up with a &ldquo;lifetime warranty.&rdquo;
+                </p>
+                <p style={{ fontSize: 16.5, color: "var(--color-ink-700)", lineHeight: 1.75 }}>
+                  Just a clear scope, a fair price, and a bathroom built to last — from the people who&apos;ll actually be doing the work.
                 </p>
               </div>
 
@@ -221,60 +204,6 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Crew grid */}
-          <div className="about-crew-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
-            {CREW.map((member, i) => (
-              <div
-                key={i}
-                style={{
-                  background: "#fff",
-                  borderRadius: 12,
-                  overflow: "hidden",
-                  border: "1px solid rgba(20,17,13,0.08)",
-                  boxShadow: "var(--shadow-sm)",
-                }}
-              >
-                <div className="sb-photo" style={{ height: 200, borderRadius: 0 }}>
-                  <span className="sb-photo-label">{member.label}</span>
-                </div>
-                <div style={{ padding: "18px 20px 20px" }}>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: "var(--color-navy-900)" }}>{member.name}</div>
-                  <div style={{ fontSize: 12, color: "var(--color-ink-400)", marginTop: 4, fontWeight: 500 }}>{member.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY WE DO THIS ───────────────────────────────────────────── */}
-      <section style={{ background: "var(--color-cream-50)", padding: "96px 0" }}>
-        <div className="sb-container" style={{ textAlign: "center" }}>
-          <span className="sb-eyebrow">Why It Matters</span>
-          <blockquote style={{
-            fontFamily: "var(--font-serif)",
-            fontSize: "clamp(26px, 3vw, 40px)",
-            color: "var(--color-navy-900)",
-            lineHeight: 1.45,
-            maxWidth: 760,
-            margin: "20px auto 0",
-            fontStyle: "italic",
-            fontWeight: 400,
-          }}>
-            "Homeowners deserve to feel confident, not anxious, about the people working in their home. That's not a high bar — it's the minimum. We just think more companies should actually clear it."
-          </blockquote>
-          <div style={{ marginTop: 16, fontSize: 13, color: "var(--color-ink-300)", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 600 }}>
-            — Stonebrite Founder
-          </div>
-          <div style={{ marginTop: 40, display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
-              Get My Free Estimate <ArrowIcon />
-            </Link>
-            <Link href="/#featured-projects" className="sb-btn sb-btn-ghost sb-btn-lg">
-              View Our Work
-            </Link>
           </div>
         </div>
       </section>
