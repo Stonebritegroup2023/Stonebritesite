@@ -311,7 +311,7 @@ export default async function BlogPostPage({
                   </div>
                 </div>
                 <p style={{ fontSize: 13, color: "var(--color-ink-500)", lineHeight: 1.65, margin: 0 }}>
-                  Family-owned remodeling company serving Greater Sacramento and the Bay Area since 2018. Specialists in bathrooms, tub-to-shower conversions, and kitchens.
+                  Family-owned remodeling company serving Greater Sacramento and the Bay Area. Specialists in bathrooms, tub-to-shower conversions, and kitchens.
                 </p>
               </div>
 

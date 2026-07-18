@@ -103,7 +103,7 @@ export default function HomePage() {
                 </div>
                 <div style={{ height: 20, width: 1, background: "rgba(20,17,13,0.16)" }} />
                 <div style={{ fontSize: 13, color: "var(--color-ink-700)" }}>
-                  <strong>120+</strong> completed projects since 2018
+                  <strong>120+</strong> completed projects
                 </div>
               </div>
             </div>
@@ -493,9 +493,6 @@ export default function HomePage() {
               >
                 <span style={{ color: "var(--color-stone-500)", fontWeight: 600 }}>
                   Stonebrite · Sacramento &amp; East Bay
-                </span>
-                <span style={{ color: "var(--color-gold-600)", fontWeight: 700 }}>
-                  Est. 2018
                 </span>
               </div>
             </div>
