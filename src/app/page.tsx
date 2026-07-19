@@ -119,7 +119,7 @@ export default function HomePage() {
                 <img
                   src="/photos/hero-tile.jpg"
                   alt="Walk-in tile shower with black rainfall showerhead"
-                  style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", objectPosition: "center 82%", display: "block" }}
+                  style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", objectPosition: "center 66%", display: "block" }}
                 />
                 <img
                   src="/photos/hero-vanity.jpg"
