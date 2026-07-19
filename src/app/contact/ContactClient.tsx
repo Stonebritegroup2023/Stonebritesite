@@ -46,6 +46,9 @@ const NEXT_STEPS = [
 export default function ContactClient() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
+  const [company, setCompany] = useState(""); // honeypot
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -62,9 +65,33 @@ export default function ContactClient() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    if (submitting) return;
+    if (!form.phone.trim() && !form.email.trim()) {
+      setError(true);
+      return;
+    }
+    setSubmitting(true);
+    setError(false);
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          service: selectedService ?? undefined,
+          source: "Contact page",
+          company,
+        }),
+      });
+      if (!res.ok) throw new Error("failed");
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -326,16 +353,35 @@ export default function ContactClient() {
                     </div>
                   </div>
 
+                  {/* Honeypot — hidden from real users, catches bots */}
+                  <input
+                    type="text"
+                    name="company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    aria-hidden="true"
+                    style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                  />
+
                   {/* Privacy + Submit */}
                   <p style={{ fontSize: 12, color: "var(--color-ink-300)", lineHeight: 1.65, marginBottom: 18 }}>
                     Your information is used only to respond to your estimate request. We never sell or share your data. By submitting, you agree to be contacted by Stonebrite Construction Group regarding your project.
                   </p>
+                  {error && (
+                    <p style={{ fontSize: 13.5, color: "#B23A2E", lineHeight: 1.6, marginBottom: 16, fontWeight: 600 }}>
+                      We couldn&apos;t send your request. Please add a phone or email and try again — or call us at{" "}
+                      <a href="tel:9163476549" style={{ color: "#B23A2E", fontWeight: 700 }}>(916) 347-6549</a>.
+                    </p>
+                  )}
                   <button
                     type="submit"
                     className="sb-btn sb-btn-primary sb-btn-lg"
-                    style={{ width: "100%", justifyContent: "center" }}
+                    disabled={submitting}
+                    style={{ width: "100%", justifyContent: "center", opacity: submitting ? 0.7 : 1, cursor: submitting ? "wait" : "pointer" }}
                   >
-                    Send Estimate Request <ArrowIcon />
+                    {submitting ? "Sending…" : (<>Send Estimate Request <ArrowIcon /></>)}
                   </button>
                 </form>
               )}

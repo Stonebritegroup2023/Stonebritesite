@@ -15,11 +15,28 @@ export default function QuickEstimateForm() {
   const [activeService, setActiveService] = useState("bath");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!phone.trim()) return;
-    setSubmitted(true);
+    if (!phone.trim() || submitting) return;
+    setSubmitting(true);
+    setError(false);
+    const service = SERVICES.find((s) => s.id === activeService)?.label ?? "Bathroom";
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ source: "Homepage quick form", service, phone }),
+      });
+      if (!res.ok) throw new Error("failed");
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -150,11 +167,18 @@ export default function QuickEstimateForm() {
           <button
             type="submit"
             className="sb-btn sb-btn-primary"
-            style={{ borderRadius: 0, padding: "0 20px", fontSize: 13, fontWeight: 700 }}
+            disabled={submitting}
+            style={{ borderRadius: 0, padding: "0 20px", fontSize: 13, fontWeight: 700, opacity: submitting ? 0.7 : 1, cursor: submitting ? "wait" : "pointer" }}
           >
-            Get My Free Estimate
+            {submitting ? "Sending…" : "Get My Free Estimate"}
           </button>
         </div>
+        {error && (
+          <div style={{ marginTop: 10, fontSize: 12.5, color: "#B23A2E", lineHeight: 1.5 }}>
+            Something went wrong sending your request. Please try again, or call us at{" "}
+            <a href="tel:9163476549" style={{ color: "#B23A2E", fontWeight: 700 }}>(916) 347-6549</a>.
+          </div>
+        )}
         <div style={{ marginTop: 10, fontSize: 12, color: "var(--color-ink-500)", display: "flex", alignItems: "center", gap: 10 }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><span style={{ color: "var(--color-gold-600)" }}><CheckIcon /></span> Fast</span>
           <span style={{ color: "rgba(20,17,13,0.16)" }}>·</span>
