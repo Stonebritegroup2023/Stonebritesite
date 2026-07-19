@@ -12,25 +12,29 @@ const SERVICES = [
     title: "Bathroom Remodeling",
     desc: "Full bath remodels — layout, vanity, lighting, fixtures, tile, paint, waterproofing.",
     href: "/bathrooms",
-    photo: "BATHROOM REMODEL · DROP IN PHOTO",
+    img: "/photos/service-bath.jpg",
+    alt: "Full bathroom remodel with green tile tub-shower, wood vanity, and arched gold mirror",
   },
   {
     title: "Tub-to-Shower Conversion",
     desc: "Safer, easier access. Tile or panel walls, framed or frameless glass, grab bars.",
     href: "/tub-to-shower",
-    photo: "TUB → SHOWER · DROP IN PHOTO",
+    img: "/photos/service-tub-shower.jpg",
+    alt: "Walk-in curbless shower with brass fixtures and marble hex floor",
   },
   {
     title: "Kitchen Remodeling",
     desc: "Cabinet, counter, appliance, and lighting upgrades — done right.",
     href: "/kitchens",
-    photo: "KITCHEN REMODEL · DROP IN PHOTO",
+    img: "/photos/service-kitchen.jpg",
+    alt: "Remodeled kitchen with white cabinets, wood island, marble counters, and range hood",
   },
   {
     title: "Aging-in-Place",
     desc: "Curbless showers, grab-bar blocking, safer layouts that still look beautiful.",
     href: "/bathrooms#aging-in-place",
-    photo: "AGING-IN-PLACE · DROP IN PHOTO",
+    img: "/photos/service-aging.jpg",
+    alt: "Accessible bathroom with roll-in shower, grab bars, fold-down seat, and floating vanity",
   },
 ];
 
@@ -161,9 +165,11 @@ export default function HomePage() {
                 boxShadow: "var(--shadow-sm)",
                 display: "flex", flexDirection: "column",
               }}>
-                <div className="sb-photo" style={{ height: 200, borderRadius: 0 }}>
-                  <span className="sb-photo-label">{s.photo}</span>
-                </div>
+                <img
+                  src={s.img}
+                  alt={s.alt}
+                  style={{ height: 200, width: "100%", objectFit: "cover", display: "block" }}
+                />
                 <div style={{ padding: 24, flex: 1, display: "flex", flexDirection: "column" }}>
                   <h3 style={{ fontSize: 22, color: "var(--color-navy-900)" }}>{s.title}</h3>
                   <p style={{ marginTop: 10, fontSize: 14, color: "var(--color-ink-500)", lineHeight: 1.55, flex: 1 }}>{s.desc}</p>
