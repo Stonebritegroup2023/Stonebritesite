@@ -111,15 +111,21 @@ export default function HomePage() {
             {/* Right — photo with floating form */}
             <div className="hero-right" style={{ position: "relative", minHeight: 620 }}>
               <div className="hero-photos" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 14 }}>
-                <div className="sb-photo" style={{ height: 540, gridRow: "1 / span 2", borderRadius: 14 }}>
-                  <span className="sb-photo-label">HERO BATHROOM · DROP IN PHOTO</span>
-                </div>
-                <div className="sb-photo" style={{ height: 263, borderRadius: 14 }}>
-                  <span className="sb-photo-label">VANITY DETAIL · DROP IN PHOTO</span>
-                </div>
-                <div className="sb-photo" style={{ height: 263, borderRadius: 14 }}>
-                  <span className="sb-photo-label">TILE DETAIL · DROP IN PHOTO</span>
-                </div>
+                <img
+                  src="/photos/hero-bath.jpg"
+                  alt="Modern bathroom remodel by Stonebrite — black-framed mirror, wood vanity, and tiled walk-in shower"
+                  style={{ height: 540, gridRow: "1 / span 2", borderRadius: 14, width: "100%", objectFit: "cover", display: "block" }}
+                />
+                <img
+                  src="/photos/hero-vanity.jpg"
+                  alt="Quartz vanity countertop with black widespread faucet and fluted wood cabinet"
+                  style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", display: "block" }}
+                />
+                <img
+                  src="/photos/hero-tile.jpg"
+                  alt="Walk-in tile shower with black rainfall showerhead"
+                  style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", display: "block" }}
+                />
               </div>
               {/* Floating form — absolute on desktop, inline on mobile */}
               <div className="hero-form-float">
