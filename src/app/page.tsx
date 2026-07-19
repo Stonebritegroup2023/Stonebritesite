@@ -99,11 +99,11 @@ export default function HomePage() {
               <div style={{ marginTop: 36, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ color: "var(--color-gold-500)", letterSpacing: 1 }}>★★★★★</span>
-                  <span style={{ fontSize: 13, color: "var(--color-ink-700)" }}><strong>4.9</strong> · Google &amp; Thumbtack</span>
+                  <span style={{ fontSize: 13, color: "var(--color-ink-700)" }}><strong>Top Rated</strong> · Google &amp; Thumbtack</span>
                 </div>
                 <div style={{ height: 20, width: 1, background: "rgba(20,17,13,0.16)" }} />
                 <div style={{ fontSize: 13, color: "var(--color-ink-700)" }}>
-                  <strong>120+</strong> completed projects
+                  <strong>170+</strong> completed projects
                 </div>
               </div>
             </div>
