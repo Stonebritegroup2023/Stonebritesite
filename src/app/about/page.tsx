@@ -197,7 +197,7 @@ export default function AboutPage() {
               </p>
               <div style={{ marginTop: 24, display: "flex", gap: 20, fontSize: 13, color: "var(--color-ink-300)" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                  <PinIcon /> Sacramento, CA
+                  <PinIcon /> Davis, CA
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                   <ShieldIcon /> Licensed &amp; Insured

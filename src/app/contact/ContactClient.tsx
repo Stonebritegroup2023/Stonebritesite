@@ -403,17 +403,17 @@ export default function ContactClient() {
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   <a
-                    href="tel:9165550188"
+                    href="tel:9163476549"
                     style={{ display: "flex", alignItems: "center", gap: 10, color: "var(--color-cream-50)", textDecoration: "none", fontSize: 18, fontWeight: 700 }}
                   >
                     <span style={{ color: "var(--color-gold-400)" }}><PhoneIcon /></span>
-                    (916) 555-0188
+                    (916) 347-6549
                   </a>
                   <a
-                    href="mailto:hello@stonebritecg.com"
+                    href="mailto:info@stonebritecg.com"
                     style={{ display: "flex", alignItems: "center", gap: 10, color: "var(--color-stone-300)", textDecoration: "none", fontSize: 14 }}
                   >
-                    <MailIcon /> hello@stonebritecg.com
+                    <MailIcon /> info@stonebritecg.com
                   </a>
                 </div>
                 <div style={{

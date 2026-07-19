@@ -34,7 +34,7 @@ export default function FinalCTA() {
           </div>
           <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "var(--color-stone-300)" }}>
             <span style={{ color: "var(--color-gold-300)" }}><PhoneIcon /></span>
-            (916) 555-0188 · Typically reply within ~1 hour during business hours
+            (916) 347-6549 · Typically reply within ~1 hour during business hours
           </div>
         </div>
       </div>

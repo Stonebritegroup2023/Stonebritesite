@@ -53,7 +53,7 @@ function NotFound() {
           This proposal link may have expired or been updated. Please contact Stonebrite for an updated link.
         </p>
         <a
-          href="mailto:hello@stonebritecg.com"
+          href="mailto:info@stonebritecg.com"
           className="sb-btn sb-btn-primary"
         >
           Contact Stonebrite
@@ -108,7 +108,7 @@ function ProposalViewerInner() {
   const hasMoreScope = includedItems.length > SCOPE_PREVIEW;
   const visibleScope = scopeExpanded ? includedItems : includedItems.slice(0, SCOPE_PREVIEW);
 
-  const contactEmail = proposal.customerEmail || 'hello@stonebritecg.com';
+  const contactEmail = proposal.customerEmail || 'info@stonebritecg.com';
   const contactSubject = encodeURIComponent(`Question about my proposal — ${proposal.projectTitle}`);
 
   return (
@@ -178,7 +178,7 @@ function ProposalViewerInner() {
             {/* Right actions */}
             <div className="no-print" style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
               <a
-                href={`mailto:hello@stonebritecg.com?subject=${contactSubject}`}
+                href={`mailto:info@stonebritecg.com?subject=${contactSubject}`}
                 style={{
                   fontSize: 12,
                   fontWeight: 500,
@@ -615,7 +615,7 @@ function ProposalViewerInner() {
                         </span>
                       )}
                       <a
-                        href={`mailto:hello@stonebritecg.com?subject=${encodeURIComponent(`Add upgrade: ${upgrade.name} — ${proposal.projectTitle}`)}`}
+                        href={`mailto:info@stonebritecg.com?subject=${encodeURIComponent(`Add upgrade: ${upgrade.name} — ${proposal.projectTitle}`)}`}
                         className="sb-btn sb-btn-ghost sb-btn-sm"
                       >
                         Add to Proposal
@@ -661,19 +661,19 @@ function ProposalViewerInner() {
             </p>
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 24 }}>
               <a
-                href={`mailto:hello@stonebritecg.com?subject=${encodeURIComponent(`APPROVED — ${proposal.projectTitle}`)}&body=${encodeURIComponent(`Hi,\n\nI'd like to approve my proposal for: ${proposal.projectTitle}.\n\nCustomer: ${proposal.customerName}\nEmail: ${proposal.customerEmail}\n\nPlease send me the formal agreement.\n\nThank you!`)}`}
+                href={`mailto:info@stonebritecg.com?subject=${encodeURIComponent(`APPROVED — ${proposal.projectTitle}`)}&body=${encodeURIComponent(`Hi,\n\nI'd like to approve my proposal for: ${proposal.projectTitle}.\n\nCustomer: ${proposal.customerName}\nEmail: ${proposal.customerEmail}\n\nPlease send me the formal agreement.\n\nThank you!`)}`}
                 className="sb-btn sb-btn-primary sb-btn-lg"
               >
                 Approve Proposal
               </a>
               <a
-                href={`mailto:hello@stonebritecg.com?subject=${encodeURIComponent(`Revision Request — ${proposal.projectTitle}`)}&body=${encodeURIComponent(`Hi,\n\nI'd like to request a revision to my proposal for: ${proposal.projectTitle}.\n\nHere's what I'd like to change:\n\n[describe your changes here]\n\nThank you,\n${proposal.customerName}`)}`}
+                href={`mailto:info@stonebritecg.com?subject=${encodeURIComponent(`Revision Request — ${proposal.projectTitle}`)}&body=${encodeURIComponent(`Hi,\n\nI'd like to request a revision to my proposal for: ${proposal.projectTitle}.\n\nHere's what I'd like to change:\n\n[describe your changes here]\n\nThank you,\n${proposal.customerName}`)}`}
                 className="sb-btn sb-btn-ghost-cream sb-btn-lg"
               >
                 Request Revision
               </a>
               <a
-                href={`mailto:hello@stonebritecg.com?subject=${contactSubject}`}
+                href={`mailto:info@stonebritecg.com?subject=${contactSubject}`}
                 className="sb-btn sb-btn-ghost-cream sb-btn-lg"
               >
                 Ask a Question
@@ -692,7 +692,7 @@ function ProposalViewerInner() {
             </svg>
             <p style={{ fontSize: 13, color: 'var(--color-ink-300)', lineHeight: 1.6 }}>
               {proposal.preparedBy || 'Stonebrite Construction Group'}<br />
-              (916) 555-0188 · hello@stonebritecg.com
+              (916) 347-6549 · info@stonebritecg.com
             </p>
           </div>
         </main>

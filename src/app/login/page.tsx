@@ -216,10 +216,10 @@ export default function LoginPage() {
             <div style={{ marginTop: 18, textAlign: "center", fontSize: 12, color: "var(--color-ink-300)", lineHeight: 1.65 }}>
               Need access?{" "}
               <a
-                href="mailto:hello@stonebritecg.com"
+                href="mailto:info@stonebritecg.com"
                 style={{ color: "var(--color-navy-700)", fontWeight: 600, textDecoration: "none" }}
               >
-                Contact hello@stonebritecg.com
+                Contact info@stonebritecg.com
               </a>
             </div>
           </div>

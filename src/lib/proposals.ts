@@ -134,13 +134,13 @@ From the proposal page, you can:
 • Request a revision if you'd like to adjust scope
 • Send us a question directly
 
-If you have any questions before reviewing, just reply to this email or call us at (916) 555-0188. We typically respond within about an hour during business hours.
+If you have any questions before reviewing, just reply to this email or call us at (916) 347-6549. We typically respond within about an hour during business hours.
 
 Looking forward to working with you,
 
 ${proposal.preparedBy}
-(916) 555-0188
-hello@stonebritecg.com`;
+(916) 347-6549
+info@stonebritecg.com`;
 
   return { subject, body };
 }

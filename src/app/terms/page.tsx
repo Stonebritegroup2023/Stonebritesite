@@ -196,13 +196,13 @@ export default function TermsPage() {
             <P>If you have questions about these Terms, please contact us:</P>
             <P>
               Email:{" "}
-              <a href="mailto:hello@stonebritecg.com" style={LINK_STYLE}>
-                hello@stonebritecg.com
+              <a href="mailto:info@stonebritecg.com" style={LINK_STYLE}>
+                info@stonebritecg.com
               </a>
               <br />
               Phone:{" "}
-              <a href="tel:+19165550188" style={LINK_STYLE}>
-                (916) 555-0188
+              <a href="tel:+19163476549" style={LINK_STYLE}>
+                (916) 347-6549
               </a>
             </P>
           </Section>
