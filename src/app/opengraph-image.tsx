@@ -90,7 +90,7 @@ export default function OpengraphImage() {
             display: "flex",
           }}
         >
-          Family-owned remodeling · Greater Sacramento &amp; East Bay
+          Family-owned remodeling · Greater Sacramento &amp; Bay Area
         </div>
       </div>
     ),

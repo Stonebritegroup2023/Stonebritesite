@@ -492,7 +492,7 @@ export default function HomePage() {
                 }}
               >
                 <span style={{ color: "var(--color-stone-500)", fontWeight: 600 }}>
-                  Stonebrite · Sacramento &amp; East Bay
+                  Stonebrite · Sacramento &amp; Bay Area
                 </span>
               </div>
             </div>

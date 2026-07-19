@@ -81,7 +81,7 @@ export default function PrivacyPage() {
               Stonebrite Construction Group (&ldquo;Stonebrite,&rdquo;
               &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is a
               family-owned residential remodeling company serving homeowners
-              throughout Greater Sacramento and the East Bay. We respect your
+              throughout Greater Sacramento and the Bay Area. We respect your
               privacy and are committed to protecting the personal information
               you share with us.
             </P>

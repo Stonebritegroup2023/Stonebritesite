@@ -28,7 +28,7 @@ export default function Footer() {
               }}
             />
             <p style={{ marginTop: 18, color: "var(--color-ink-500)", fontSize: 14, maxWidth: 300, lineHeight: 1.6 }}>
-              Family-owned, owner-led, local crew. Bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the East Bay.
+              Family-owned, owner-led, local crew. Bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the Bay Area.
             </p>
             <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 10, fontSize: 13 }}>
               <a href="tel:9163476549" style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-navy-900)", fontWeight: 600 }}>
