@@ -333,9 +333,11 @@ export default function TubToShowerPage() {
                 flexDirection: "column",
               }}
             >
-              <div className="sb-photo" style={{ height: 220, borderRadius: 0 }}>
-                <span className="sb-photo-label">TILE SHOWER · DROP IN PHOTO</span>
-              </div>
+              <img
+                src="/photos/tile-shower.jpg"
+                alt="Tiled walk-in shower with matte black rainfall head, corner shelves, and marble hex floor"
+                style={{ height: 220, width: "100%", objectFit: "cover", objectPosition: "center 60%", display: "block" }}
+              />
               <div style={{ padding: "26px 28px 28px" }}>
                 <div
                   style={{
