@@ -349,20 +349,22 @@ export default function TubToShowerPage() {
           >
             {/* Tile Shower card */}
             <div
+              className="t2s-card-split"
               style={{
                 background: "#fff",
                 border: "1px solid rgba(20,17,13,0.08)",
                 borderRadius: 14,
                 overflow: "hidden",
                 boxShadow: "var(--shadow-sm)",
-                display: "flex",
-                flexDirection: "column",
+                display: "grid",
+                gridTemplateColumns: "215px 1fr",
               }}
             >
               <img
                 src="/photos/tile-shower-conversion-sacramento.jpg"
-                alt="Tiled walk-in shower with matte black rainfall head, corner shelves, and marble hex floor"
-                style={{ height: 220, width: "100%", objectFit: "cover", objectPosition: "center 60%", display: "block" }}
+                alt="Tiled walk-in shower conversion in Sacramento with matte black rainfall head, corner shelves, and marble hex floor"
+                className="t2s-card-img"
+                style={{ height: "100%", minHeight: 320, width: "100%", objectFit: "cover", display: "block" }}
               />
               <div style={{ padding: "26px 28px 28px" }}>
                 <div
@@ -423,17 +425,18 @@ export default function TubToShowerPage() {
 
             {/* Wall Panel card */}
             <div
+              className="t2s-card-split"
               style={{
                 background: "#fff",
                 border: "1px solid rgba(20,17,13,0.08)",
                 borderRadius: 14,
                 overflow: "hidden",
                 boxShadow: "var(--shadow-sm)",
-                display: "flex",
-                flexDirection: "column",
+                display: "grid",
+                gridTemplateColumns: "215px 1fr",
               }}
             >
-              <div className="sb-photo" style={{ height: 220, borderRadius: 0 }}>
+              <div className="sb-photo t2s-card-img" style={{ height: "100%", minHeight: 320, borderRadius: 0 }}>
                 <span className="sb-photo-label">WALL PANEL SHOWER · DROP IN PHOTO</span>
               </div>
               <div style={{ padding: "26px 28px 28px" }}>

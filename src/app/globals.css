@@ -355,6 +355,17 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
+/* ── Tub-to-shower choice cards (photo on the side) ────────────────────── */
+@media (max-width: 1100px) {
+  .t2s-card-split {
+    grid-template-columns: 1fr !important;
+  }
+  .t2s-card-split .t2s-card-img {
+    height: 240px !important;
+    min-height: 0 !important;
+  }
+}
+
 /* ── Featured remodels (before/after slide) ────────────────────────────── */
 @media (max-width: 860px) {
   .fr-photos {
