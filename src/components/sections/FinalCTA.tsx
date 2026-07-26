@@ -27,9 +27,9 @@ export default function FinalCTA() {
         </div>
         <div className="finalcta-photo" style={{ flexShrink: 0, width: 340, maxWidth: "100%" }}>
           <img
-            src="/photos/owner-onsite.jpg"
-            alt="Stonebrite owner Abel Vaniyev installing a vanity on a bathroom remodel"
-            style={{ height: 280, width: "100%", objectFit: "cover", objectPosition: "center 40%", borderRadius: 14, display: "block" }}
+            src="/photos/why-shower.jpg"
+            alt="Completed curbless walk-in shower with frameless glass panel and large-format tile"
+            style={{ height: 280, width: "100%", objectFit: "cover", objectPosition: "center 55%", borderRadius: 14, display: "block" }}
           />
           <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "var(--color-stone-300)" }}>
             <span style={{ color: "var(--color-gold-300)" }}><PhoneIcon /></span>

@@ -5,11 +5,13 @@ import Link from "next/link";
 
 const PROJECTS = [
   {
-    title: "Hall Bathroom Remodel",
-    city: "Roseville",
+    title: "Primary Bath Remodel",
+    city: "Sacramento",
     type: "Bathroom",
-    scope: "Full bath remodel — new shower, vanity, tile, lighting.",
+    scope: "Dated tub and framed shower removed — new walk-in shower, pebble floor, double floating vanity.",
     photoLabel: "BEFORE / AFTER · DROP IN PHOTO",
+    before: "/photos/project1-before.jpg",
+    after: "/photos/project1-after.jpg",
   },
   {
     title: "Tub-to-Shower Conversion",
@@ -84,7 +86,7 @@ export default function FeaturedRemodels() {
           >
             {/* Before/After split photo */}
             <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
-              <div className="sb-photo" style={{ height: 130, borderRadius: 0, position: "relative" }}>
+              <div className={project.before ? undefined : "sb-photo"} style={{ height: 130, borderRadius: 0, position: "relative", overflow: "hidden" }}>
                 <span style={{
                   position: "absolute",
                   top: 10,
@@ -101,9 +103,14 @@ export default function FeaturedRemodels() {
                 }}>
                   BEFORE
                 </span>
-                <span className="sb-photo-label">{project.photoLabel}</span>
+                {project.before ? (
+                  <img src={project.before} alt={`${project.title} in ${project.city} before the remodel`}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                ) : (
+                  <span className="sb-photo-label">{project.photoLabel}</span>
+                )}
               </div>
-              <div className="sb-photo" style={{ height: 130, borderRadius: 0, position: "relative", borderTop: "2px solid var(--color-gold-500)" }}>
+              <div className={project.after ? undefined : "sb-photo"} style={{ height: 130, borderRadius: 0, position: "relative", overflow: "hidden", borderTop: "2px solid var(--color-gold-500)" }}>
                 <span style={{
                   position: "absolute",
                   top: 10,
@@ -120,7 +127,12 @@ export default function FeaturedRemodels() {
                 }}>
                   AFTER
                 </span>
-                <span className="sb-photo-label">{project.photoLabel}</span>
+                {project.after ? (
+                  <img src={project.after} alt={`${project.title} in ${project.city} after the remodel`}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                ) : (
+                  <span className="sb-photo-label">{project.photoLabel}</span>
+                )}
               </div>
             </div>
 
