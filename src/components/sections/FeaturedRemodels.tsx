@@ -9,227 +9,190 @@ const PROJECTS = [
     city: "Sacramento",
     type: "Bathroom",
     scope: "Dated tub and framed shower removed — new walk-in shower, pebble floor, double floating vanity.",
-    photoLabel: "BEFORE / AFTER · DROP IN PHOTO",
-    before: "/photos/project1-before.jpg",
-    after: "/photos/project1-after.jpg",
+    before: "/photos/primary-bathroom-remodel-sacramento-before.jpg",
+    after: "/photos/primary-bathroom-remodel-sacramento-after.jpg",
+    beforeAlt: "Primary bathroom in Sacramento before remodeling — dated gold-framed shower, garden tub, and brown tile floor",
+    afterAlt: "Primary bathroom remodeling in Sacramento after — walk-in tile shower, pebble floor, and double floating wood vanity",
   },
   {
     title: "Full Bath Remodel",
     city: "Sacramento Area",
     type: "Bathroom",
     scope: "Taken to the studs — new fluted vanity, LED mirror, floating shelves, and tile flooring.",
-    photoLabel: "BEFORE / AFTER · DROP IN PHOTO",
-    before: "/photos/project2-before.jpg",
-    after: "/photos/project2-after.jpg",
+    before: "/photos/full-bathroom-remodel-sacramento-before.jpg",
+    after: "/photos/full-bathroom-remodel-sacramento-after.jpg",
+    beforeAlt: "Full bathroom remodeling in Sacramento during demolition — wallpaper removed and dated cherry vanity torn out",
+    afterAlt: "Full bathroom remodel in Sacramento after — fluted wood vanity, quartz top, LED mirror, and floating shelves",
   },
   {
     title: "Walk-In Shower Remodel",
     city: "Sacramento Area",
     type: "Shower",
     scope: "Dated tile shower replaced — large-format marble-look porcelain, built-in bench, niche, and rainfall fixtures.",
-    photoLabel: "BEFORE / AFTER · DROP IN PHOTO",
-    before: "/photos/project3-before.jpg",
-    after: "/photos/project3-after.jpg",
+    before: "/photos/walk-in-shower-remodel-sacramento-before.jpg",
+    after: "/photos/walk-in-shower-remodel-sacramento-after.jpg",
+    beforeAlt: "Walk-in shower in Sacramento before remodeling — dated beige tile with decorative accent border",
+    afterAlt: "Walk-in shower remodeling in Sacramento after — marble-look porcelain tile, built-in bench, niche, and rainfall shower",
+  },
+  {
+    title: "Tub-to-Shower Conversion",
+    city: "Sacramento Area",
+    type: "Tub-to-Shower",
+    scope: "Old alcove tub removed — full-height tile walls, marble hex floor, and black sliding glass enclosure.",
+    before: "/photos/tub-to-shower-conversion-sacramento-before.jpg",
+    after: "/photos/tub-to-shower-conversion-sacramento-after.jpg",
+    beforeAlt: "Tub-to-shower conversion in Sacramento before — old alcove bathtub with white square tile surround",
+    afterAlt: "Tub-to-shower conversion in Sacramento after — walk-in shower with marble hex floor and black sliding glass door",
   },
 ];
 
-const VISIBLE = 3;
-
 export default function FeaturedRemodels() {
   const [index, setIndex] = useState(0);
-  const maxIndex = Math.max(0, PROJECTS.length - VISIBLE);
+  const maxIndex = PROJECTS.length - 1;
+  const project = PROJECTS[index];
 
   const goPrev = () => setIndex((i) => Math.max(0, i - 1));
   const goNext = () => setIndex((i) => Math.min(maxIndex, i + 1));
 
-  const visible = PROJECTS.slice(index, index + VISIBLE);
-
   return (
     <div>
       {/* Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40, flexWrap: "wrap", gap: 16 }}>
-        <div>
-          <span className="sb-eyebrow">Featured Remodels</span>
-          <h2 style={{ fontSize: "clamp(32px, 3.5vw, 48px)", marginTop: 14, lineHeight: 1.05 }}>
-            See the difference a clear<br />remodel plan can make.
-          </h2>
-          <p style={{ marginTop: 12, fontSize: 14, color: "var(--color-ink-500)", maxWidth: 560 }}>
-            A curated look at recent bathroom, shower, and kitchen conversions — each with a written scope and a 5-year workmanship warranty.
+      <div style={{ marginBottom: 36 }}>
+        <span className="sb-eyebrow">Featured Remodels</span>
+        <h2 style={{ fontSize: "clamp(32px, 3.5vw, 48px)", marginTop: 14, lineHeight: 1.05 }}>
+          See the difference a clear<br />remodel plan can make.
+        </h2>
+        <p style={{ marginTop: 12, fontSize: 14, color: "var(--color-ink-500)", maxWidth: 560 }}>
+          Real Stonebrite projects — every photo below is our own work, shown start to finish.
+        </p>
+      </div>
+
+      {/* Slide */}
+      <div
+        style={{
+          background: "#fff",
+          borderRadius: 16,
+          border: "1px solid rgba(20,17,13,0.08)",
+          boxShadow: "var(--shadow-md)",
+          overflow: "hidden",
+        }}
+      >
+        <div className="fr-photos" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, background: "rgba(20,17,13,0.08)" }}>
+          <figure style={{ margin: 0, position: "relative", background: "var(--color-cream-100)" }}>
+            <span
+              style={{
+                position: "absolute", top: 14, left: 14, zIndex: 2,
+                fontFamily: "monospace", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em",
+                padding: "5px 10px", background: "rgba(11,31,51,0.92)",
+                color: "var(--color-cream-50)", borderRadius: 4,
+              }}
+            >
+              BEFORE
+            </span>
+            <img
+              src={project.before}
+              alt={project.beforeAlt}
+              className="fr-img"
+              style={{ width: "100%", height: 460, objectFit: "contain", display: "block" }}
+            />
+          </figure>
+          <figure style={{ margin: 0, position: "relative", background: "var(--color-cream-100)" }}>
+            <span
+              style={{
+                position: "absolute", top: 14, left: 14, zIndex: 2,
+                fontFamily: "monospace", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em",
+                padding: "5px 10px", background: "var(--color-gold-500)",
+                color: "var(--color-navy-900)", borderRadius: 4,
+              }}
+            >
+              AFTER
+            </span>
+            <img
+              src={project.after}
+              alt={project.afterAlt}
+              className="fr-img"
+              style={{ width: "100%", height: 460, objectFit: "contain", display: "block" }}
+            />
+          </figure>
+        </div>
+
+        {/* Caption */}
+        <div style={{ padding: "26px 32px 30px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
+            <span style={{
+              fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase",
+              color: "var(--color-navy-800)", background: "var(--color-cream-100)",
+              padding: "5px 12px", borderRadius: 999,
+            }}>
+              {project.type}
+            </span>
+            <span style={{ fontSize: 11, color: "var(--color-stone-500)", letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 600 }}>
+              {project.city}
+            </span>
+          </div>
+          <h3 style={{ fontSize: 26, color: "var(--color-navy-900)", lineHeight: 1.15 }}>{project.title}</h3>
+          <p style={{ marginTop: 10, fontSize: 15, color: "var(--color-ink-500)", lineHeight: 1.6, maxWidth: 720 }}>
+            {project.scope}
           </p>
+          <div style={{ marginTop: 20 }}>
+            <Link href="/contact" style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", color: "var(--color-navy-800)", borderBottom: "1px solid var(--color-gold-500)", paddingBottom: 2 }}>
+              START A SIMILAR PROJECT →
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* Carousel */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="featured-grid">
-        {visible.map((project, i) => (
-          <article
-            key={`${index}-${i}`}
-            style={{
-              background: "#fff",
-              borderRadius: 14,
-              overflow: "hidden",
-              border: "1px solid rgba(20,17,13,0.08)",
-              boxShadow: "var(--shadow-sm)",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            {/* Before/After split photo */}
-            <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
-              <div className={project.before ? undefined : "sb-photo"} style={{ height: 130, borderRadius: 0, position: "relative", overflow: "hidden" }}>
-                <span style={{
-                  position: "absolute",
-                  top: 10,
-                  left: 10,
-                  fontFamily: "monospace",
-                  fontSize: 10,
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  padding: "4px 8px",
-                  background: "rgba(11,31,51,0.92)",
-                  color: "var(--color-cream-50)",
-                  borderRadius: 3,
-                  zIndex: 2,
-                }}>
-                  BEFORE
-                </span>
-                {project.before ? (
-                  <img src={project.before} alt={`${project.title} in ${project.city} before the remodel`}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                ) : (
-                  <span className="sb-photo-label">{project.photoLabel}</span>
-                )}
-              </div>
-              <div className={project.after ? undefined : "sb-photo"} style={{ height: 130, borderRadius: 0, position: "relative", overflow: "hidden", borderTop: "2px solid var(--color-gold-500)" }}>
-                <span style={{
-                  position: "absolute",
-                  top: 10,
-                  left: 10,
-                  fontFamily: "monospace",
-                  fontSize: 10,
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  padding: "4px 8px",
-                  background: "var(--color-gold-500)",
-                  color: "var(--color-navy-900)",
-                  borderRadius: 3,
-                  zIndex: 2,
-                }}>
-                  AFTER
-                </span>
-                {project.after ? (
-                  <img src={project.after} alt={`${project.title} in ${project.city} after the remodel`}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                ) : (
-                  <span className="sb-photo-label">{project.photoLabel}</span>
-                )}
-              </div>
-            </div>
-
-            {/* Card content */}
-            <div style={{ padding: 22, flex: 1, display: "flex", flexDirection: "column" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                <span style={{
-                  fontSize: 10,
-                  fontWeight: 700,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "var(--color-navy-800)",
-                  background: "var(--color-cream-100)",
-                  padding: "4px 10px",
-                  borderRadius: 999,
-                }}>
-                  {project.type}
-                </span>
-                <span style={{ fontSize: 11, color: "var(--color-stone-500)", letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 600 }}>
-                  {project.city}
-                </span>
-              </div>
-              <h3 style={{ fontSize: 20, color: "var(--color-navy-900)" }}>{project.title}</h3>
-              <p style={{ marginTop: 8, fontSize: 13, color: "var(--color-ink-500)", lineHeight: 1.5, flex: 1 }}>{project.scope}</p>
-              <div style={{ marginTop: 18 }}>
-                <Link href="/contact" style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-navy-800)", borderBottom: "1px solid var(--color-gold-500)", paddingBottom: 1 }}>
-                  Start a Similar Project →
-                </Link>
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      {/* Pagination */}
-      <div style={{ marginTop: 36, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-        <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+      {/* Controls */}
+      <div style={{ marginTop: 24, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          {PROJECTS.map((p, i) => (
             <button
-              key={i}
+              key={p.title}
               onClick={() => setIndex(i)}
-              aria-label={`Page ${i + 1}`}
+              aria-label={`Show ${p.title}`}
+              aria-current={i === index}
               style={{
-                width: i === index ? 24 : 8,
-                height: 8,
-                border: 0,
-                borderRadius: 4,
-                background: i === index ? "var(--color-gold-500)" : "rgba(20,17,13,0.15)",
-                cursor: "pointer",
-                transition: "all 0.2s",
-                padding: 0,
+                width: i === index ? 26 : 8, height: 8, borderRadius: 999,
+                background: i === index ? "var(--color-gold-500)" : "rgba(20,17,13,0.18)",
+                border: 0, cursor: "pointer", padding: 0, transition: "all .2s",
               }}
             />
           ))}
-          <span style={{ marginLeft: 14, fontSize: 12, color: "var(--color-ink-500)", fontWeight: 500 }}>
-            {index + 1} / {maxIndex + 1}
+          <span style={{ marginLeft: 8, fontSize: 12, color: "var(--color-ink-500)", fontWeight: 600 }}>
+            {index + 1} / {PROJECTS.length}
           </span>
         </div>
-        <div style={{ display: "flex", gap: 8 }}>
+        <div style={{ display: "flex", gap: 10 }}>
           <button
             onClick={goPrev}
             disabled={index === 0}
-            aria-label="Previous"
+            aria-label="Previous project"
             style={{
-              width: 42,
-              height: 42,
-              borderRadius: "50%",
-              border: "1px solid rgba(20,17,13,0.16)",
-              background: "#fff",
-              cursor: index === 0 ? "not-allowed" : "pointer",
-              opacity: index === 0 ? 0.4 : 1,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "var(--color-navy-800)",
-              transition: "all 0.15s",
+              width: 44, height: 44, borderRadius: "50%", cursor: index === 0 ? "default" : "pointer",
+              border: "1px solid rgba(20,17,13,0.16)", background: "#fff",
+              color: "var(--color-navy-900)", opacity: index === 0 ? 0.35 : 1,
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
             }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+            ←
           </button>
           <button
             onClick={goNext}
             disabled={index === maxIndex}
-            aria-label="Next"
+            aria-label="Next project"
             style={{
-              width: 42,
-              height: 42,
-              borderRadius: "50%",
-              border: "1px solid rgba(20,17,13,0.16)",
+              width: 44, height: 44, borderRadius: "50%", cursor: index === maxIndex ? "default" : "pointer",
+              border: "1px solid var(--color-navy-900)",
               background: index === maxIndex ? "#fff" : "var(--color-navy-900)",
-              cursor: index === maxIndex ? "not-allowed" : "pointer",
-              opacity: index === maxIndex ? 0.4 : 1,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: index === maxIndex ? "var(--color-navy-800)" : "var(--color-cream-50)",
-              transition: "all 0.15s",
+              color: index === maxIndex ? "var(--color-navy-900)" : "var(--color-cream-50)",
+              opacity: index === maxIndex ? 0.35 : 1,
+              display: "inline-flex", alignItems: "center", justifyContent: "center",
             }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            →
           </button>
         </div>
       </div>
     </div>
   );
-}
-
-function ArrowIcon() {
-  return <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>;
 }

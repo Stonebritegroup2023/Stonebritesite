@@ -12,28 +12,28 @@ const SERVICES = [
     title: "Bathroom Remodeling",
     desc: "Full bath remodels — layout, vanity, lighting, fixtures, tile, paint, waterproofing.",
     href: "/bathrooms",
-    img: "/photos/service-bath.jpg",
+    img: "/photos/bathroom-remodeling-contractor-sacramento.jpg",
     alt: "Full bathroom remodel with green tile tub-shower, wood vanity, and arched gold mirror",
   },
   {
     title: "Tub-to-Shower Conversion",
     desc: "Safer, easier access. Tile or panel walls, framed or frameless glass, grab bars.",
     href: "/tub-to-shower",
-    img: "/photos/service-tub-shower.jpg",
+    img: "/photos/tub-to-shower-conversion-remodel-sacramento.jpg",
     alt: "Walk-in curbless shower with brass fixtures and marble hex floor",
   },
   {
     title: "Kitchen Remodeling",
     desc: "Cabinet, counter, appliance, and lighting upgrades — done right.",
     href: "/kitchens",
-    img: "/photos/service-kitchen.jpg",
+    img: "/photos/kitchen-remodeling-sacramento.jpg",
     alt: "Remodeled kitchen with white cabinets, wood island, marble counters, and range hood",
   },
   {
     title: "Aging-in-Place",
     desc: "Curbless showers, grab-bar blocking, safer layouts that still look beautiful.",
     href: "/bathrooms#aging-in-place",
-    img: "/photos/service-aging.jpg",
+    img: "/photos/aging-in-place-bathroom-remodel-sacramento.jpg",
     alt: "Accessible bathroom with roll-in shower, grab bars, fold-down seat, and floating vanity",
   },
 ];
@@ -116,17 +116,17 @@ export default function HomePage() {
             <div className="hero-right" style={{ position: "relative", minHeight: 620 }}>
               <div className="hero-photos" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 14 }}>
                 <img
-                  src="/photos/hero-bath.jpg"
+                  src="/photos/bathroom-remodeling-sacramento.jpg"
                   alt="Modern bathroom remodel by Stonebrite — black-framed mirror, wood vanity, and tiled walk-in shower"
                   style={{ height: 540, gridRow: "1 / span 2", borderRadius: 14, width: "100%", objectFit: "cover", display: "block" }}
                 />
                 <img
-                  src="/photos/hero-tile.jpg"
+                  src="/photos/walk-in-tile-shower-remodel-sacramento.jpg"
                   alt="Walk-in tile shower with black rainfall showerhead"
                   style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", objectPosition: "center 66%", display: "block" }}
                 />
                 <img
-                  src="/photos/hero-vanity.jpg"
+                  src="/photos/bathroom-vanity-quartz-countertop-sacramento.jpg"
                   alt="Quartz vanity countertop with black widespread faucet and fluted wood cabinet"
                   style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", display: "block" }}
                 />
@@ -222,17 +222,17 @@ export default function HomePage() {
           </div>
           <div className="home-why-photos" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, height: 580 }}>
             <img
-              src="/photos/owner-caulk.jpg"
+              src="/photos/stonebrite-owner-bathroom-remodel-sacramento.jpg"
               alt="Stonebrite owner Abel Vaniyev sealing a shower glass panel on a finished bathroom remodel"
               style={{ height: 283, width: "100%", objectFit: "cover", objectPosition: "center 28%", borderRadius: 14, display: "block" }}
             />
             <img
-              src="/photos/why-tile.jpg"
+              src="/photos/tiled-shower-waterproofing-sacramento.jpg"
               alt="Tiled shower with brass fixtures, recessed niche, and linear drain"
               style={{ height: 580, gridRow: "1 / span 2", width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
             <img
-              src="/photos/why-fixtures.jpg"
+              src="/photos/matte-black-shower-fixtures-sacramento.jpg"
               alt="Matte black rainfall showerhead, handheld sprayer, and corner shelves in a tiled shower"
               style={{ height: 283, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />

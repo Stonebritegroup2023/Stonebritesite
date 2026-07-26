@@ -362,12 +362,12 @@ export default function BathroomsPage() {
             {/* Left: material & workmanship details */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               <img
-                src="/photos/detail-niche.jpg"
+                src="/photos/shower-niche-tile-detail-sacramento.jpg"
                 alt="Recessed shower niche with mosaic back and stacked tile surround"
                 style={{ height: 300, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
               />
               <img
-                src="/photos/detail-fixtures.jpg"
+                src="/photos/brass-tub-filler-tile-detail-sacramento.jpg"
                 alt="Brushed brass tub spout and valve trim on handmade-look tile"
                 style={{ height: 300, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
               />

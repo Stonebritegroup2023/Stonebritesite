@@ -27,7 +27,7 @@ export default function FinalCTA() {
         </div>
         <div className="finalcta-photo" style={{ flexShrink: 0, width: 340, maxWidth: "100%" }}>
           <img
-            src="/photos/why-shower.jpg"
+            src="/photos/curbless-walk-in-shower-sacramento.jpg"
             alt="Completed curbless walk-in shower with frameless glass panel and large-format tile"
             style={{ height: 280, width: "100%", objectFit: "cover", objectPosition: "center 55%", borderRadius: 14, display: "block" }}
           />

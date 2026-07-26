@@ -176,7 +176,7 @@ export default function AboutPage() {
             marginBottom: 32,
           }} className="about-founder-grid">
             <img
-              src="/photos/owner.jpg"
+              src="/photos/abel-vaniyev-stonebrite-owner-sacramento.jpg"
               alt="Founder and owner of Stonebrite Construction Group"
               style={{
                 minHeight: 320,

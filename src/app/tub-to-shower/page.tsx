@@ -173,18 +173,21 @@ export default function TubToShowerPage() {
               </div>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              <div
-                className="sb-photo"
-                style={{ height: 420, gridRow: "1 / span 2", borderRadius: 14 }}
-              >
-                <span className="sb-photo-label">COMPLETED CONVERSION · DROP IN REAL PROJECT PHOTO</span>
-              </div>
-              <div className="sb-photo" style={{ height: 200, borderRadius: 14 }}>
-                <span className="sb-photo-label">FRAMELESS GLASS DOOR</span>
-              </div>
-              <div className="sb-photo" style={{ height: 200, borderRadius: 14 }}>
-                <span className="sb-photo-label">TILE WALL DETAIL</span>
-              </div>
+              <img
+                src="/photos/tub-to-shower-conversion-sacramento-after.jpg"
+                alt="Completed tub-to-shower conversion in Sacramento — walk-in shower with marble hex floor and black sliding glass door"
+                style={{ height: 420, gridRow: "1 / span 2", width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+              />
+              <img
+                src="/photos/curbless-walk-in-shower-sacramento.jpg"
+                alt="Frameless glass panel on a curbless walk-in shower conversion in Sacramento"
+                style={{ height: 200, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+              />
+              <img
+                src="/photos/shower-niche-tile-detail-sacramento.jpg"
+                alt="Tile wall and recessed niche detail in a Sacramento shower conversion"
+                style={{ height: 200, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+              />
             </div>
           </div>
         </div>
@@ -268,8 +271,31 @@ export default function TubToShowerPage() {
             </div>
           </div>
           <div>
-            <div className="sb-photo" style={{ height: 500, borderRadius: 14 }}>
-              <span className="sb-photo-label">TUB-TO-SHOWER BEFORE / AFTER · DROP IN REAL PROJECT PHOTO</span>
+            <div style={{ display: "grid", gridTemplateRows: "1fr 1fr", gap: 8, borderRadius: 14, overflow: "hidden" }}>
+              <figure style={{ margin: 0, position: "relative", background: "var(--color-cream-100)" }}>
+                <span style={{
+                  position: "absolute", top: 12, left: 12, zIndex: 2, fontFamily: "monospace",
+                  fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", padding: "4px 9px",
+                  background: "rgba(11,31,51,0.92)", color: "var(--color-cream-50)", borderRadius: 4,
+                }}>BEFORE</span>
+                <img
+                  src="/photos/tub-to-shower-conversion-sacramento-before.jpg"
+                  alt="Bathroom before tub-to-shower conversion in Sacramento — old alcove bathtub with white square tile"
+                  style={{ width: "100%", height: 246, objectFit: "contain", display: "block" }}
+                />
+              </figure>
+              <figure style={{ margin: 0, position: "relative", background: "var(--color-cream-100)" }}>
+                <span style={{
+                  position: "absolute", top: 12, left: 12, zIndex: 2, fontFamily: "monospace",
+                  fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", padding: "4px 9px",
+                  background: "var(--color-gold-500)", color: "var(--color-navy-900)", borderRadius: 4,
+                }}>AFTER</span>
+                <img
+                  src="/photos/tub-to-shower-conversion-sacramento-after.jpg"
+                  alt="Bathroom after tub-to-shower conversion in Sacramento — walk-in shower with marble hex floor and black glass door"
+                  style={{ width: "100%", height: 246, objectFit: "contain", display: "block" }}
+                />
+              </figure>
             </div>
             <div
               style={{
@@ -334,7 +360,7 @@ export default function TubToShowerPage() {
               }}
             >
               <img
-                src="/photos/tile-shower.jpg"
+                src="/photos/tile-shower-conversion-sacramento.jpg"
                 alt="Tiled walk-in shower with matte black rainfall head, corner shelves, and marble hex floor"
                 style={{ height: 220, width: "100%", objectFit: "cover", objectPosition: "center 60%", display: "block" }}
               />
@@ -483,7 +509,7 @@ export default function TubToShowerPage() {
             className="t2s-future-grid"
           >
             <img
-              src="/photos/future-ready.jpg"
+              src="/photos/aging-in-place-curbless-shower-sacramento.jpg"
               alt="Future-ready curbless shower with grab bars, fold-down seat, and handheld sprayer"
               style={{ height: 380, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />

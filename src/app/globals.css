@@ -355,6 +355,16 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
+/* ── Featured remodels (before/after slide) ────────────────────────────── */
+@media (max-width: 860px) {
+  .fr-photos {
+    grid-template-columns: 1fr !important;
+  }
+  .fr-img {
+    height: 340px !important;
+  }
+}
+
 /* ── Blog index (editorial rows) ───────────────────────────────────────── */
 .blog-index {
   border-top: 1px solid rgba(20, 17, 13, 0.10);
