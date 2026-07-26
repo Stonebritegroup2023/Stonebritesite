@@ -359,20 +359,18 @@ export default function BathroomsPage() {
             }}
             className="design-grid"
           >
-            {/* Left: 2x2 photo grid */}
+            {/* Left: material & workmanship details */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              <div className="sb-photo" style={{ height: 200, borderRadius: 12 }}>
-                <span className="sb-photo-label">TILE BOARD · DROP IN PHOTO</span>
-              </div>
-              <div className="sb-photo" style={{ height: 200, borderRadius: 12 }}>
-                <span className="sb-photo-label">VANITY DETAIL · DROP IN PHOTO</span>
-              </div>
-              <div className="sb-photo" style={{ height: 200, borderRadius: 12 }}>
-                <span className="sb-photo-label">FIXTURE DETAIL · DROP IN PHOTO</span>
-              </div>
-              <div className="sb-photo" style={{ height: 200, borderRadius: 12 }}>
-                <span className="sb-photo-label">FINISH BOARD · DROP IN PHOTO</span>
-              </div>
+              <img
+                src="/photos/detail-niche.jpg"
+                alt="Recessed shower niche with mosaic back and stacked tile surround"
+                style={{ height: 300, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
+              />
+              <img
+                src="/photos/detail-fixtures.jpg"
+                alt="Brushed brass tub spout and valve trim on handmade-look tile"
+                style={{ height: 300, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
+              />
             </div>
 
             {/* Right: copy + bullets */}
