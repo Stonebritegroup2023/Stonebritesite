@@ -360,16 +360,21 @@ export default function BathroomsPage() {
             className="design-grid"
           >
             {/* Left: material & workmanship details */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <div className="design-photos" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
               <img
                 src="/photos/shower-niche-tile-detail-sacramento.jpg"
-                alt="Recessed shower niche with mosaic back and stacked tile surround"
-                style={{ height: 300, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
+                alt="Recessed shower niche with mosaic back and stacked tile surround in a Sacramento bathroom remodel"
+                style={{ height: 280, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
               />
               <img
                 src="/photos/brass-tub-filler-tile-detail-sacramento.jpg"
-                alt="Brushed brass tub spout and valve trim on handmade-look tile"
-                style={{ height: 300, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
+                alt="Brushed brass tub spout and valve trim on handmade-look tile in a Sacramento bathroom remodel"
+                style={{ height: 280, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
+              />
+              <img
+                src="/photos/marble-hex-shower-pan-drain-sacramento.jpg"
+                alt="Marble hex mosaic shower pan with square drain in a Sacramento shower remodel"
+                style={{ height: 280, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
               />
             </div>
 

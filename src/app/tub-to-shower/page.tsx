@@ -436,9 +436,12 @@ export default function TubToShowerPage() {
                 gridTemplateColumns: "215px 1fr",
               }}
             >
-              <div className="sb-photo t2s-card-img" style={{ height: "100%", minHeight: 320, borderRadius: 0 }}>
-                <span className="sb-photo-label">WALL PANEL SHOWER · DROP IN PHOTO</span>
-              </div>
+              <img
+                src="/photos/solid-surface-shower-walls-sacramento.jpg"
+                alt="Marble-look solid-surface shower wall panels with recessed niche in a Sacramento tub-to-shower conversion"
+                className="t2s-card-img"
+                style={{ height: "100%", minHeight: 320, width: "100%", objectFit: "cover", display: "block" }}
+              />
               <div style={{ padding: "26px 28px 28px" }}>
                 <div
                   style={{

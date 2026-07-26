@@ -15,14 +15,16 @@ const PROJECTS = [
     afterAlt: "Primary bathroom remodeling in Sacramento after — walk-in tile shower, pebble floor, and double floating wood vanity",
   },
   {
-    title: "Full Bath Remodel",
+    title: "Senior-Friendly Full Bath Remodel",
     city: "Sacramento Area",
-    type: "Bathroom",
-    scope: "Taken to the studs — new fluted vanity, LED mirror, floating shelves, and tile flooring.",
+    type: "Aging-in-Place",
+    scope: "We removed a closet and expanded into the hallway to make this bathroom senior-friendly — curbless walk-in shower with grab bar, plus a new fluted vanity, LED mirror, and tile flooring.",
     before: "/photos/full-bathroom-remodel-sacramento-before.jpg",
     after: "/photos/full-bathroom-remodel-sacramento-after.jpg",
+    after2: "/photos/tile-shower-conversion-sacramento.jpg",
     beforeAlt: "Full bathroom remodeling in Sacramento during demolition — wallpaper removed and dated cherry vanity torn out",
-    afterAlt: "Full bathroom remodel in Sacramento after — fluted wood vanity, quartz top, LED mirror, and floating shelves",
+    afterAlt: "Senior-friendly bathroom remodel in Sacramento after — fluted wood vanity, quartz top, LED mirror, and floating shelves",
+    after2Alt: "Senior-friendly curbless walk-in shower in Sacramento with grab bar, matte black rainfall fixtures, and marble hex floor",
   },
   {
     title: "Walk-In Shower Remodel",
@@ -77,7 +79,7 @@ export default function FeaturedRemodels() {
           overflow: "hidden",
         }}
       >
-        <div className="fr-photos" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2, background: "rgba(20,17,13,0.08)" }}>
+        <div className="fr-photos" style={{ display: "grid", gridTemplateColumns: project.after2 ? "1fr 1fr 1fr" : "1fr 1fr", gap: 2, background: "rgba(20,17,13,0.08)" }}>
           <figure style={{ margin: 0, position: "relative", background: "var(--color-cream-100)" }}>
             <span
               style={{
@@ -114,6 +116,26 @@ export default function FeaturedRemodels() {
               style={{ width: "100%", height: 460, objectFit: "contain", display: "block" }}
             />
           </figure>
+          {project.after2 && (
+            <figure style={{ margin: 0, position: "relative", background: "var(--color-cream-100)" }}>
+              <span
+                style={{
+                  position: "absolute", top: 14, left: 14, zIndex: 2,
+                  fontFamily: "monospace", fontSize: 11, fontWeight: 700, letterSpacing: "0.14em",
+                  padding: "5px 10px", background: "var(--color-gold-500)",
+                  color: "var(--color-navy-900)", borderRadius: 4,
+                }}
+              >
+                AFTER
+              </span>
+              <img
+                src={project.after2}
+                alt={project.after2Alt}
+                className="fr-img"
+                style={{ width: "100%", height: 460, objectFit: "contain", display: "block" }}
+              />
+            </figure>
+          )}
         </div>
 
         {/* Caption */}

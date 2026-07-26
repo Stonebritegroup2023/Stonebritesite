@@ -355,6 +355,13 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
+/* ── Bathrooms design & materials detail photos ────────────────────────── */
+@media (max-width: 560px) {
+  .design-photos {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* ── Tub-to-shower choice cards (photo on the side) ────────────────────── */
 @media (max-width: 1100px) {
   .t2s-card-split {
