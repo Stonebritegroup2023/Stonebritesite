@@ -480,9 +480,11 @@ export default function TubToShowerPage() {
             }}
             className="t2s-future-grid"
           >
-            <div className="sb-photo" style={{ height: 380, borderRadius: 14 }}>
-              <span className="sb-photo-label">FUTURE-READY SHOWER · DROP IN PHOTO</span>
-            </div>
+            <img
+              src="/photos/future-ready.jpg"
+              alt="Future-ready curbless shower with grab bars, fold-down seat, and handheld sprayer"
+              style={{ height: 380, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+            />
             <div>
               <span className="sb-eyebrow">Good At Every Stage</span>
               <h2
