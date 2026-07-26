@@ -221,15 +221,21 @@ export default function HomePage() {
             </div>
           </div>
           <div className="home-why-photos" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, height: 580 }}>
-            <div className="sb-photo" style={{ height: 283 }}>
-              <span className="sb-photo-label">OWNER ON SITE · DROP IN REAL PHOTO</span>
-            </div>
-            <div className="sb-photo" style={{ height: 580, gridRow: "1 / span 2", borderRadius: 14 }}>
-              <span className="sb-photo-label">TILE DETAIL · UNSPLASH STOCK</span>
-            </div>
-            <div className="sb-photo" style={{ height: 283 }}>
-              <span className="sb-photo-label">JOBSITE PROTECTION · DROP IN REAL PHOTO</span>
-            </div>
+            <img
+              src="/photos/why-shower.jpg"
+              alt="Curbless walk-in shower with frameless glass panel and large-format tile"
+              style={{ height: 283, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+            />
+            <img
+              src="/photos/why-tile.jpg"
+              alt="Tiled shower with brass fixtures, recessed niche, and linear drain"
+              style={{ height: 580, gridRow: "1 / span 2", width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+            />
+            <img
+              src="/photos/why-accessible.jpg"
+              alt="Accessible bathroom with grab bars, fold-down seat, and roll-in shower"
+              style={{ height: 283, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+            />
           </div>
         </div>
       </section>
