@@ -26,12 +26,11 @@ export default function FinalCTA() {
           </div>
         </div>
         <div className="finalcta-photo" style={{ flexShrink: 0, width: 340, maxWidth: "100%" }}>
-          <div
-            className="sb-photo"
-            style={{ height: 280, borderRadius: 14 }}
-          >
-            <span className="sb-photo-label">OWNER ON SITE · DROP IN REAL PHOTO</span>
-          </div>
+          <img
+            src="/photos/owner-onsite.jpg"
+            alt="Stonebrite owner Abel Vaniyev installing a vanity on a bathroom remodel"
+            style={{ height: 280, width: "100%", objectFit: "cover", objectPosition: "center 40%", borderRadius: 14, display: "block" }}
+          />
           <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "var(--color-stone-300)" }}>
             <span style={{ color: "var(--color-gold-300)" }}><PhoneIcon /></span>
             (916) 347-6549 · Typically reply within ~1 hour during business hours

@@ -222,9 +222,9 @@ export default function HomePage() {
           </div>
           <div className="home-why-photos" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, height: 580 }}>
             <img
-              src="/photos/why-shower.jpg"
-              alt="Curbless walk-in shower with frameless glass panel and large-format tile"
-              style={{ height: 283, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+              src="/photos/owner-caulk.jpg"
+              alt="Stonebrite owner Abel Vaniyev sealing a shower glass panel on a finished bathroom remodel"
+              style={{ height: 283, width: "100%", objectFit: "cover", objectPosition: "center 28%", borderRadius: 14, display: "block" }}
             />
             <img
               src="/photos/why-tile.jpg"
@@ -232,8 +232,8 @@ export default function HomePage() {
               style={{ height: 580, gridRow: "1 / span 2", width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
             <img
-              src="/photos/why-accessible.jpg"
-              alt="Accessible bathroom with grab bars, fold-down seat, and roll-in shower"
+              src="/photos/why-fixtures.jpg"
+              alt="Matte black rainfall showerhead, handheld sprayer, and corner shelves in a tiled shower"
               style={{ height: 283, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
           </div>
