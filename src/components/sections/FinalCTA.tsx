@@ -25,11 +25,11 @@ export default function FinalCTA() {
             </Link>
           </div>
         </div>
-        <div className="finalcta-photo" style={{ flexShrink: 0, width: 340, maxWidth: "100%" }}>
+        <div className="finalcta-photo" style={{ flexShrink: 0, width: 400, maxWidth: "100%" }}>
           <img
             src="/photos/curbless-walk-in-shower-sacramento.jpg"
             alt="Completed curbless walk-in shower with frameless glass panel and large-format tile"
-            style={{ height: 280, width: "100%", objectFit: "cover", objectPosition: "center 55%", borderRadius: 14, display: "block" }}
+            style={{ height: 470, width: "100%", objectFit: "cover", objectPosition: "center 30%", borderRadius: 14, display: "block" }}
           />
           <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "var(--color-stone-300)" }}>
             <span style={{ color: "var(--color-gold-300)" }}><PhoneIcon /></span>
