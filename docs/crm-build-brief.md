@@ -29,7 +29,9 @@ Treat the existing PDF design and product architecture as the **source of truth*
 
 ## 1. What this product is
 
-A **brand-neutral, multi-tenant SaaS CRM for residential contractors** covering the full revenue lifecycle: lead capture → on-site consultation → AI-assisted versioned proposal → e-signed agreement → project execution (Approved Scope, selections, change orders, crew reports) → closeout → review. It is **a separate product from the Stonebrite marketing website** (separate repo, separate deployment). Stonebrite Construction Group is tenant #1 and the design muse, but **nothing Stonebrite-specific may be hard-coded** — the "STONEBRITE · INTERNAL" badge in the mockups is simply tenant #1's branding rendered by the theming layer.
+A **brand-neutral, multi-tenant SaaS CRM for residential contractors** covering the full revenue lifecycle: lead capture → on-site consultation → AI-assisted versioned proposal → e-signed agreement → project execution (Approved Scope, selections, change orders, crew reports) → closeout → review.
+
+It is a **standalone application** — its own repo, its own database, its own auth, its own domain, its own deployment. It is **not integrated with the Stonebrite marketing website** and has **zero runtime dependency on it**: no shared code, no shared Supabase project, no shared hosting, no cross-repo imports. Stonebrite Construction Group is tenant #1 and the design muse, but **nothing Stonebrite-specific may be hard-coded** — the "STONEBRITE · INTERNAL" badge in the mockups is simply tenant #1's branding rendered by the theming layer. (Any company — including Stonebrite — may optionally point its own website's contact form at the CRM's generic inbound-lead API, exactly like any other external lead source. That is a per-tenant integration choice, not product coupling.)
 
 ### Two operating modes (per-company, per-job-type)
 
@@ -125,7 +127,7 @@ Add an integration layer for:
 - **Google Calendar** — appointments and scheduling sync
 - **Email** — customer communications (per-tenant sending domain via Resend or the tenant's mailbox; inbound reply parsing)
 - **AI providers** — configurable AI-provider credentials (default: Anthropic Claude; architecture allows per-tenant keys)
-- **Webhooks & API credentials** — outbound webhooks + a tenant API key for custom integrations (incl. website lead intake)
+- **Webhooks & API credentials** — outbound webhooks + a tenant API key for custom integrations (e.g., any external lead source posting into the generic inbound-lead API)
 
 Rules:
 
@@ -280,7 +282,7 @@ AI answers must: respect company and project boundaries (never cross-tenant, nev
 ## 11. Build order (each phase ships something usable; PDF fidelity throughout)
 
 - **Phase 0 — Foundations:** repo, CI, Supabase, schema + RLS (`company_id` everywhere), auth + invites + roles, app shell (sidebar/topbar/theming per PDF), seed demo company, Settings → Company info.
-- **Phase 1 — CRM core:** customers, properties, leads (board/list/detail per PDF), unified activities timeline, appointments (+ Google Calendar), follow-up queue (manual), global search, website-lead intake endpoint.
+- **Phase 1 — CRM core:** customers, properties, leads (board/list/detail per PDF), unified activities timeline, appointments (+ Google Calendar), follow-up queue (manual), global search, generic inbound-lead API (per-tenant key; any external source).
 - **Phase 2 — Proposals:** builder (all 9 sections, libraries, versioning, pre-send checklist), Proposal Room + view-event tracking, proposal emails, proposals list, Stale detection.
 - **Phase 3 — Consultation + Agreements → Projects:** Consultation Workspace (§6, incl. voice/photo/measurement capture + AI structuring), DocuSign integration + webhooks, agreement from accepted version, **auto project conversion + Approved Scope with citations**, project detail tabs, daily reports (+ mobile), issues.
 - **Phase 4 — Execution depth:** selections & allowances (tracker, reminders, blocking flags, overage approvals), change orders end-to-end (field-note origin → DocuSign → scope update → QBO line item), closeout + reviews, documents hub (+ Google Drive), job packet PDF.
