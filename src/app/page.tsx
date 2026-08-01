@@ -50,9 +50,42 @@ const WHY_ITEMS = [
 ];
 
 const REVIEWS = [
-  { name: "Sarah T.", text: "The process was exactly as described — clear scope, no surprises, and a beautiful result. We couldn't be happier.", stars: 5, source: "Google" },
-  { name: "Mark & Julie R.", text: "Owner-led is real. [Owner] was on the job every single day. Communication was excellent from start to finish.", stars: 5, source: "Thumbtack" },
-  { name: "David C.", text: "The proposal was clear, the timeline held, and the workmanship is exceptional. Worth every dollar.", stars: 5, source: "Google" },
+  {
+    name: "Tom Clapp",
+    text: "Stonebrite remodeled two bathrooms for us and it was a great experience start to finish! Communication was great — they let me know every day what time they would arrive and were always on time. They finished the project two weeks ahead of the promised time frame… Quoted a very competitive and fair price and there were zero change orders.",
+    stars: 5,
+    source: "Google",
+  },
+  {
+    name: "Drew Nicholson",
+    text: "I recently had my bathroom remodeled by Abel and I couldn't be happier with the results. From start to finish, the professionalism, communication, and quality of work were outstanding… The craftsmanship really shows, and the finished bathroom turned out even better than I imagined.",
+    stars: 5,
+    source: "Google",
+  },
+  {
+    name: "Gretchen Gaither",
+    text: "We are very happy with our new bathroom. They pay attention to all the details and don't cut any corners. In fact, we were so happy with the job they did on our first bathroom that we hired them again when it was time to remodel a different bathroom. They are the best!",
+    stars: 5,
+    source: "Google",
+  },
+  {
+    name: "Brenden Lowe",
+    text: "He was always on time, communicated clearly throughout the project, and treated my home with the utmost respect. What really stood out was his honesty and integrity. He went above and beyond by taking care of several extra items without charging me… His craftsmanship is exceptional, and the finished shower looks absolutely amazing.",
+    stars: 5,
+    source: "Google",
+  },
+  {
+    name: "Anetta Scomaroha",
+    text: "He was able to get us in the same week for an appointment and thoroughly walked us through every step of the process, keeping our expectations and wants in mind. He stuck to the timeline that he provided us with… We couldn't have chosen a better contractor for the job!",
+    stars: 5,
+    source: "Google",
+  },
+  {
+    name: "Adin Miller",
+    text: "Abel did a fantastic job remodeling our master bathroom shower! He provided a lot of helpful guidance on what materials we needed to purchase and was very flexible regarding any changes to the design! We would highly recommend him for any remodeling work!",
+    stars: 5,
+    source: "Google",
+  },
 ];
 
 export default function HomePage() {
