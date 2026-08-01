@@ -390,7 +390,7 @@ export default function HomePage() {
           <div style={{ textAlign: "center", marginBottom: 48, display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 20px", background: "rgba(255,255,255,0.06)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.1)" }}>
               <span style={{ color: "var(--color-gold-500)", letterSpacing: 1 }}>★★★★★</span>
-              <span style={{ fontSize: 13, color: "var(--color-cream-200)", fontWeight: 600 }}>4.9</span>
+              <span style={{ fontSize: 13, color: "var(--color-cream-200)", fontWeight: 600 }}>5.0</span>
               <span style={{ fontSize: 12, color: "var(--color-stone-300)" }}>Google</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 20px", background: "rgba(255,255,255,0.06)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.1)" }}>
