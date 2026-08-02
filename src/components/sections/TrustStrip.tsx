@@ -1,7 +1,7 @@
 const TRUST_ITEMS = [
   { icon: <ShieldIcon />, text: "Licensed & Insured" },
-  { icon: <DocIcon />, text: "5-Yr Warranty · Waterproofing, Plumbing, Electrical" },
-  { icon: <RulerIcon />, text: "Family-Owned · Owner-Led · Local Crew" },
+  { icon: <DocIcon />, text: "5-Yr Workmanship Warranty" },
+  { icon: <RulerIcon />, text: "Family-Owned · Owner-Led" },
   { icon: <CheckIcon />, text: "Clear Written Scope" },
   { icon: <PinIcon />, text: "Greater Sacramento & Bay Area" },
 ];
@@ -13,11 +13,11 @@ export default function TrustStrip({ dark = false }: { dark?: boolean }) {
       borderTop: `1px solid ${dark ? "rgba(255,255,255,0.06)" : "rgba(20,17,13,0.08)"}`,
       borderBottom: `1px solid ${dark ? "rgba(255,255,255,0.06)" : "rgba(20,17,13,0.08)"}`,
     }}>
-      <div className="sb-container" style={{ padding: "20px 56px", display: "flex", flexWrap: "wrap", gap: 28, justifyContent: "space-between", alignItems: "center" }}>
+      <div className="sb-container trust-strip-row" style={{ padding: "20px 32px", display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "space-between", alignItems: "center" }}>
         {TRUST_ITEMS.map((item, i) => (
-          <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13, fontWeight: 500, color: dark ? "var(--color-cream-200)" : "var(--color-ink-700)" }}>
+          <div key={i} style={{ display: "flex", alignItems: "center", gap: 9, fontSize: 12.5, fontWeight: 500, whiteSpace: "nowrap", color: dark ? "var(--color-cream-200)" : "var(--color-ink-700)" }}>
             <span style={{
-              width: 28, height: 28, borderRadius: "50%",
+              width: 26, height: 26, borderRadius: "50%",
               background: dark ? "rgba(229,181,58,0.12)" : "var(--color-cream-200)",
               color: "var(--color-gold-500)",
               display: "inline-flex", alignItems: "center", justifyContent: "center",

@@ -629,3 +629,11 @@ button { font-family: inherit; cursor: pointer; }
     min-height: auto !important;
   }
 }
+
+/* ── Trust strip: centered when it must wrap (tablets/phones) ──────────── */
+@media (max-width: 1099px) {
+  .trust-strip-row {
+    justify-content: center !important;
+    row-gap: 12px !important;
+  }
+}
