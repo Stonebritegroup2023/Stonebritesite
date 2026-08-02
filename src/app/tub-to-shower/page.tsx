@@ -656,9 +656,11 @@ export default function TubToShowerPage() {
           </div>
 
           <div>
-            <div className="sb-photo" style={{ height: 440, borderRadius: 14 }}>
-              <span className="sb-photo-label">TUB-TO-SHOWER CONVERSION · DROP IN REAL PROJECT PHOTO</span>
-            </div>
+            <img
+              src="/photos/freestanding-tub-walk-in-shower-remodel-sacramento.jpg"
+              alt="Sacramento bathroom remodel — glass walk-in shower and freestanding tub with two-tone stacked tile and matte black fixtures"
+              style={{ height: 440, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+            />
             <div
               style={{
                 marginTop: 16,

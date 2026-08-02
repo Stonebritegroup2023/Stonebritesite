@@ -91,6 +91,12 @@ const COST_CARDS = [
 ];
 
 // ── Recent bathrooms gallery thumbnails ────────────────────────────────────
+// HIDDEN FOR NOW (owner request, Aug 2026): the gallery rendered as empty
+// placeholder tiles. All code + data are preserved below — when we have a
+// solid set of real before/after pairs, flip SHOW_RECENT_GALLERY to true,
+// replace RECENT's placeholder cities/scopes with real projects, and add
+// photo paths to each entry.
+const SHOW_RECENT_GALLERY = false;
 const RECENT = [
   { city: "Roseville", scope: "Hall Bath" },
   { city: "Folsom", scope: "Tub-to-Shower" },
@@ -543,7 +549,10 @@ export default function BathroomsPage() {
         </div>
       </section>
 
-      {/* ── RECENT BATHROOMS GALLERY (horizontal scroll) ──────────────── */}
+      {/* ── RECENT BATHROOMS GALLERY (horizontal scroll) ──────────────────
+           Hidden until we have real before/after photos — see the
+           SHOW_RECENT_GALLERY flag next to the RECENT data above. */}
+      {SHOW_RECENT_GALLERY && (
       <section style={{ padding: "96px 0 80px", background: "var(--color-cream-50)" }}>
         <div className="sb-container" style={{ padding: "0 56px" }}>
           <div
@@ -651,6 +660,7 @@ export default function BathroomsPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ── FAQ (unchanged) ───────────────────────────────────────────── */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-100)" }}>
