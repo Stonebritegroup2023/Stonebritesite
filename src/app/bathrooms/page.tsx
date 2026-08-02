@@ -229,12 +229,11 @@ export default function BathroomsPage() {
                 </Link>
               </div>
             </div>
-            <div
-              className="sb-photo"
-              style={{ height: 460, borderRadius: 14 }}
-            >
-              <span className="sb-photo-label">FULL BATH REMODEL · DROP IN REAL PROJECT PHOTO</span>
-            </div>
+            <img
+              src="/photos/primary-bathroom-remodel-freestanding-tub-sacramento.jpg"
+              alt="Primary bathroom remodel in Sacramento — skylight, freestanding tub, glass shower with black fixtures, and white oak cabinetry"
+              style={{ height: 460, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+            />
           </div>
         </div>
       </section>
@@ -362,19 +361,24 @@ export default function BathroomsPage() {
             {/* Left: material & workmanship details */}
             <div className="design-photos" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
               <img
+                src="/photos/marble-bathroom-remodel-navy-vanity-sacramento.jpg"
+                alt="Marble bathroom remodel in Sacramento — navy vanity, brass fixtures, freestanding tub, and glass shower"
+                style={{ height: 250, width: "100%", objectFit: "cover", borderRadius: 12, display: "block", gridColumn: "1 / -1" }}
+              />
+              <img
                 src="/photos/shower-niche-tile-detail-sacramento.jpg"
                 alt="Recessed shower niche with mosaic back and stacked tile surround in a Sacramento bathroom remodel"
-                style={{ height: 280, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
+                style={{ height: 190, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
               />
               <img
                 src="/photos/brass-tub-filler-tile-detail-sacramento.jpg"
                 alt="Brushed brass tub spout and valve trim on handmade-look tile in a Sacramento bathroom remodel"
-                style={{ height: 280, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
+                style={{ height: 190, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
               />
               <img
                 src="/photos/marble-hex-shower-pan-drain-sacramento.jpg"
                 alt="Marble hex mosaic shower pan with square drain in a Sacramento shower remodel"
-                style={{ height: 280, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
+                style={{ height: 190, width: "100%", objectFit: "cover", borderRadius: 12, display: "block" }}
               />
             </div>
 
