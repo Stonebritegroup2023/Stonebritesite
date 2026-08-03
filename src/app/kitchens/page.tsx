@@ -113,8 +113,8 @@ export default function KitchensPage() {
               style={{ height: 300, gridRow: "1 / span 2", width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
             <img
-              src="/photos/granite-countertop-brass-faucet-detail-sacramento.jpg"
-              alt="Granite kitchen countertop with brass faucet detail in a Sacramento kitchen remodel"
+              src="/photos/kitchen-brass-faucet-marble-herringbone-sacramento.jpg"
+              alt="Brass pull-down kitchen faucet with marble herringbone backsplash and quartz countertop"
               style={{ height: 143, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
             <img

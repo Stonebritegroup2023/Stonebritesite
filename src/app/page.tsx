@@ -159,8 +159,8 @@ export default function HomePage() {
                   style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", objectPosition: "center 66%", display: "block" }}
                 />
                 <img
-                  src="/photos/bathroom-vanity-quartz-countertop-sacramento.jpg"
-                  alt="Quartz vanity countertop with black widespread faucet and fluted wood cabinet"
+                  src="/photos/gray-bathroom-freestanding-tub-sacramento.jpg"
+                  alt="Bright bathroom remodel with gray floating cabinetry, freestanding tub, and marble-look tile floor"
                   style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", display: "block" }}
                 />
               </div>
@@ -265,8 +265,8 @@ export default function HomePage() {
               style={{ height: 580, gridRow: "1 / span 2", width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
             <img
-              src="/photos/matte-black-shower-fixtures-sacramento.jpg"
-              alt="Matte black rainfall showerhead, handheld sprayer, and corner shelves in a tiled shower"
+              src="/photos/teal-bathroom-remodel-black-fixtures-sacramento.jpg"
+              alt="Teal bathroom remodel with vertical stack tile, patterned tile floor, and matte black fixtures"
               style={{ height: 283, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
           </div>

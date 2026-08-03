@@ -174,18 +174,18 @@ export default function TubToShowerPage() {
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               <img
-                src="/photos/tub-to-shower-conversion-sacramento-after.jpg"
-                alt="Completed tub-to-shower conversion in Sacramento — walk-in shower with marble hex floor and black sliding glass door"
+                src="/photos/marble-walk-in-shower-mosaic-niche-sacramento.jpg"
+                alt="Walk-in shower conversion in Sacramento — marble tile, mosaic accent wall, frameless glass, and built-in bench"
                 style={{ height: 420, gridRow: "1 / span 2", width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
               />
               <img
-                src="/photos/curbless-walk-in-shower-sacramento.jpg"
-                alt="Frameless glass panel on a curbless walk-in shower conversion in Sacramento"
+                src="/photos/double-vanity-blue-zellige-bathroom-sacramento.jpg"
+                alt="Bathroom with marble walk-in shower, blue zellige tile, and white oak double vanity"
                 style={{ height: 200, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
               />
               <img
-                src="/photos/shower-niche-tile-detail-sacramento.jpg"
-                alt="Tile wall and recessed niche detail in a Sacramento shower conversion"
+                src="/photos/blue-herringbone-tile-shower-brass-sacramento.jpg"
+                alt="Blue herringbone tile shower wall with brass rainfall fixtures"
                 style={{ height: 200, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
               />
             </div>
