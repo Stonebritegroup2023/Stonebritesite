@@ -46,6 +46,16 @@ const PROJECTS = [
     beforeAlt: "Tub-to-shower conversion in Sacramento before — old alcove bathtub with white square tile surround",
     afterAlt: "Tub-to-shower conversion in Sacramento after — walk-in shower with marble hex floor and black sliding glass door",
   },
+  {
+    title: "Bathroom Remodel",
+    city: "Davis",
+    type: "Bathroom",
+    scope: "Dated framed corner shower and oak vanity replaced — frameless glass shower with pebble floor, new tile walls, oak shaker vanity, and wood-look tile flooring.",
+    before: "/photos/bathroom-remodel-davis-before.jpg",
+    after: "/photos/bathroom-remodel-davis-after.jpg",
+    beforeAlt: "Bathroom remodeling in Davis before — dated framed corner shower with frosted glass and oak vanity",
+    afterAlt: "Bathroom remodeling in Davis after — frameless glass corner shower with pebble floor, black fixtures, and oak shaker vanity",
+  },
 ];
 
 export default function FeaturedRemodels() {
