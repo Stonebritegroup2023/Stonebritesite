@@ -263,7 +263,8 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
-/* Phone — stop floating; let form sit at the bottom of the natural flow */
+/* Phone — stop floating; let form sit at the bottom of the natural flow.
+   The photo collage is hidden on phones — headline goes straight to the form. */
 @media (max-width: 560px) {
   .hero-form-float {
     position: static;
@@ -276,6 +277,9 @@ button { font-family: inherit; cursor: pointer; }
   }
   .hero-right {
     min-height: auto !important;
+  }
+  .hero-photos {
+    display: none !important;
   }
 }
 
