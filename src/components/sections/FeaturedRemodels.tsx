@@ -6,13 +6,13 @@ import Link from "next/link";
 const PROJECTS = [
   {
     title: "Primary Bath Remodel",
-    city: "Sacramento",
+    city: "Vacaville",
     type: "Bathroom",
     scope: "Dated tub and framed shower removed — new walk-in shower, pebble floor, double floating vanity.",
-    before: "/photos/primary-bathroom-remodel-sacramento-before.jpg",
-    after: "/photos/primary-bathroom-remodel-sacramento-after.jpg",
-    beforeAlt: "Primary bathroom in Sacramento before remodeling — dated gold-framed shower, garden tub, and brown tile floor",
-    afterAlt: "Primary bathroom remodeling in Sacramento after — walk-in tile shower, pebble floor, and double floating wood vanity",
+    before: "/photos/primary-bathroom-remodel-vacaville-before.jpg",
+    after: "/photos/primary-bathroom-remodel-vacaville-after.jpg",
+    beforeAlt: "Primary bathroom in Vacaville before remodeling — dated gold-framed shower, garden tub, and brown tile floor",
+    afterAlt: "Primary bathroom remodeling in Vacaville after — walk-in tile shower, pebble floor, and double floating wood vanity",
   },
   {
     title: "Senior-Friendly Full Bath Remodel",
