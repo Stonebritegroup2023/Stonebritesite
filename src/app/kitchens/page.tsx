@@ -157,8 +157,8 @@ export default function KitchensPage() {
             </div>
           </div>
           <img
-            src="/photos/kitchen-remodel-walnut-cabinets-granite-sacramento.jpg"
-            alt="Kitchen remodel in Sacramento — walnut shaker cabinets, granite counters, stainless hood, and brass fixtures"
+            src="/photos/green-kitchen-remodel-marble-brass-sacramento.jpg"
+            alt="Green shaker kitchen remodel in Sacramento — marble backsplash, brass faucet, island with seating, and wood-look floor"
             style={{ height: 540, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
           />
         </div>
