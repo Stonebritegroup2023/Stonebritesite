@@ -517,6 +517,7 @@ export default function TubToShowerPage() {
             <img
               src="/photos/aging-in-place-curbless-shower-sacramento.jpg"
               alt="Future-ready curbless shower with grab bars, fold-down seat, and handheld sprayer"
+              className="t2s-future-photo"
               style={{ height: 380, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
             <div>

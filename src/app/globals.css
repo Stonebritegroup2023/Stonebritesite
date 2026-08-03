@@ -327,6 +327,10 @@ button { font-family: inherit; cursor: pointer; }
     grid-template-columns: 1fr !important;
     gap: 36px !important;
   }
+  /* Landscape photo shows uncropped when the grid stacks */
+  .t2s-future-photo {
+    height: auto !important;
+  }
   .t2s-choice-grid {
     grid-template-columns: 1fr !important;
   }
