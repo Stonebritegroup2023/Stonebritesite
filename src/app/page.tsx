@@ -160,8 +160,8 @@ export default function HomePage() {
                 />
                 <img
                   src="/photos/gray-bathroom-freestanding-tub-sacramento.jpg"
-                  alt="Bright bathroom remodel with gray floating cabinetry, freestanding tub, and marble-look tile floor"
-                  style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", display: "block" }}
+                  alt="Bright bathroom remodel with freestanding tub and marble-look tile floor"
+                  style={{ height: 263, borderRadius: 14, width: "100%", objectFit: "cover", objectPosition: "center 62%", display: "block" }}
                 />
               </div>
               {/* Floating form — absolute on desktop, inline on mobile */}
