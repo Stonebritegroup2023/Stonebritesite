@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
-import { BLOG_POSTS, BLOG_CATEGORIES, type BlogPost } from "@/lib/blog-data";
+import { PUBLISHED_POSTS, BLOG_CATEGORIES, type BlogPost } from "@/lib/blog-data";
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
@@ -80,7 +80,7 @@ export default function BlogPage() {
   const [search, setSearch] = useState("");
 
   const filtered = useMemo(() => {
-    return BLOG_POSTS.filter((p) => {
+    return PUBLISHED_POSTS.filter((p) => {
       const catMatch = activeCategory === "All" || p.category === activeCategory;
       const q = search.trim().toLowerCase();
       const searchMatch = !q || p.title.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);

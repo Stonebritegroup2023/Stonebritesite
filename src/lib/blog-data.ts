@@ -6,6 +6,9 @@ export interface BlogPost {
   readTime: string;
   publishedAt: string;
   featured?: boolean;
+  /** Only published posts (with a body in blog-content.ts) appear on the site.
+      The rest stay here as the editorial backlog — write, then flip to true. */
+  published?: boolean;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -14,17 +17,19 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Bathroom Remodel Cost in Sacramento?",
     description: "A clear breakdown of what affects bathroom remodel pricing in the Greater Sacramento area — materials, scope, layout changes, and how to evaluate estimates.",
     category: "Cost & Budgeting",
-    readTime: "6 min",
+    readTime: "7 min",
     publishedAt: "2026-05-01",
     featured: true,
+    published: true,
   },
   {
     slug: "tub-to-shower-conversion-what-homeowners-should-know",
     title: "Tub-to-Shower Conversion: What Homeowners Should Know",
     description: "What's actually involved in a tub-to-shower conversion — timeline, plumbing, waterproofing, wall options, and what affects the cost.",
     category: "Conversions",
-    readTime: "5 min",
+    readTime: "6 min",
     publishedAt: "2026-04-22",
+    published: true,
   },
   {
     slug: "tile-shower-vs-manufactured-stone-walls",
@@ -33,6 +38,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Materials & Design",
     readTime: "5 min",
     publishedAt: "2026-04-15",
+    published: true,
   },
   {
     slug: "what-is-included-in-full-bathroom-remodel",
@@ -47,8 +53,9 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Long Does a Bathroom Remodel Usually Take?",
     description: "Honest timelines for bathroom remodels in Sacramento — what affects the schedule, what can cause delays, and how to plan around the disruption.",
     category: "Planning & Process",
-    readTime: "4 min",
+    readTime: "6 min",
     publishedAt: "2026-04-03",
+    published: true,
   },
   {
     slug: "what-makes-bathroom-remodel-more-expensive",
@@ -71,8 +78,9 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "What to Ask Before Hiring a Bathroom Remodeling Contractor",
     description: "The questions that separate experienced, accountable contractors from the ones who will cost you more in the long run.",
     category: "Contractor Tips",
-    readTime: "6 min",
+    readTime: "7 min",
     publishedAt: "2026-03-12",
+    published: true,
   },
   {
     slug: "how-to-plan-finish-selections-bathroom-remodel",
@@ -137,6 +145,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Cost & Budgeting",
     readTime: "6 min",
     publishedAt: "2026-01-15",
+    published: true,
   },
   {
     slug: "shower-glass-options-framed-semi-frameless-frameless",
@@ -171,6 +180,8 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "2025-12-04",
   },
 ];
+
+export const PUBLISHED_POSTS: BlogPost[] = BLOG_POSTS.filter((p) => p.published);
 
 export const BLOG_CATEGORIES = [
   "All",

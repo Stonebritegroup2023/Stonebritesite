@@ -1,20 +1,13 @@
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
-import { BLOG_POSTS } from "@/lib/blog-data";
+import { BLOG_POSTS, PUBLISHED_POSTS } from "@/lib/blog-data";
+import { BLOG_CONTENT } from "@/lib/blog-content";
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
   return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 }
-
-const TOC_ITEMS = [
-  { id: "introduction", label: "Introduction" },
-  { id: "what-to-expect", label: "What to Expect" },
-  { id: "cost-factors", label: "Cost Factors" },
-  { id: "how-to-choose", label: "How to Choose" },
-  { id: "next-steps", label: "Next Steps" },
-];
 
 export default async function BlogPostPage({
   params,
@@ -23,9 +16,10 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
   const post = BLOG_POSTS.find((p) => p.slug === slug);
-  const related = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
+  const content = post?.published ? BLOG_CONTENT[slug] : undefined;
+  const related = PUBLISHED_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
 
-  if (!post) {
+  if (!post || !content) {
     return (
       <>
         <Nav activeHref="/blog" />
@@ -47,29 +41,6 @@ export default async function BlogPostPage({
       </>
     );
   }
-
-  const faqs = [
-    {
-      q: `How much does a ${post.category === "Cost & Budgeting" ? "bathroom remodel" : "project like this"} typically cost in Sacramento?`,
-      a: "Costs vary widely based on scope, materials, and layout complexity. A standard bathroom remodel in the Greater Sacramento area typically ranges from $15,000–$60,000+. We provide a detailed written estimate so you know exactly what's included before work starts.",
-    },
-    {
-      q: "How long will my project take?",
-      a: "Most full bathroom remodels take 7–14 business days once materials are on-site and work begins. We build a week-by-week schedule into your proposal so there are no surprises.",
-    },
-    {
-      q: "Do I need to find my own materials and fixtures?",
-      a: "No — we guide you through every selection. We have preferred suppliers and can source everything, or we can work with materials you've already chosen. We'll make sure your selections are confirmed before work begins.",
-    },
-    {
-      q: "What is covered by your workmanship warranty?",
-      a: "Our 5-year limited workmanship warranty covers the waterproofing system, plumbing connections, and electrical work performed by our crew. Manufacturer warranties apply separately to fixtures, tile, and materials.",
-    },
-    {
-      q: "How do I get started?",
-      a: "The first step is a free in-home estimate. We'll walk through your space, understand your goals, and put together a clear written scope and proposal — usually within a few days of the visit.",
-    },
-  ];
 
   return (
     <>
@@ -105,11 +76,11 @@ export default async function BlogPostPage({
                 display: "inline-flex", alignItems: "center", justifyContent: "center",
                 fontSize: 14, fontFamily: "var(--font-serif)",
               }}>
-                S
+                A
               </div>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 600, color: "var(--color-ink-900)" }}>Stonebrite Team</div>
-                <div style={{ fontSize: 12, color: "var(--color-ink-300)" }}>Remodeling Specialists</div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: "var(--color-ink-900)" }}>Abel Vaniyev</div>
+                <div style={{ fontSize: 12, color: "var(--color-ink-300)" }}>Owner, Stonebrite</div>
               </div>
             </div>
             <span style={{ width: 1, height: 28, background: "rgba(20,17,13,0.12)" }} />
@@ -136,7 +107,7 @@ export default async function BlogPostPage({
               Quick Answer
             </div>
             <p style={{ fontSize: 15, color: "var(--color-ink-700)", lineHeight: 1.7 }}>
-              {post.description} Understanding the key factors before you start will help you set a realistic budget, choose the right contractor, and avoid the most common pitfalls. This guide walks through everything you need to know in plain language — no jargon, no sales pitch.
+              {content.quickAnswer}
             </p>
           </div>
         </div>
@@ -162,13 +133,13 @@ export default async function BlogPostPage({
                   In This Article
                 </div>
                 <ol style={{ margin: 0, paddingLeft: 20, display: "flex", flexDirection: "column", gap: 10 }}>
-                  {TOC_ITEMS.map((item) => (
-                    <li key={item.id}>
+                  {content.sections.map((sec) => (
+                    <li key={sec.id}>
                       <a
-                        href={`#${item.id}`}
+                        href={`#${sec.id}`}
                         style={{ fontSize: 14, fontWeight: 500, color: "var(--color-navy-800)", textDecoration: "none", borderBottom: "1px solid var(--color-gold-300)", paddingBottom: 1 }}
                       >
-                        {item.label}
+                        {sec.heading}
                       </a>
                     </li>
                   ))}
@@ -177,59 +148,26 @@ export default async function BlogPostPage({
 
               {/* Article Body */}
               <div style={{ fontSize: 16, color: "var(--color-ink-700)", lineHeight: 1.8 }}>
-
-                <h2 id="introduction" style={{ fontSize: 28, marginBottom: 16, marginTop: 48, color: "var(--color-navy-900)" }}>Introduction</h2>
-                <p style={{ marginBottom: 20 }}>
-                  For Sacramento homeowners, planning a remodel can feel like navigating unfamiliar territory. There are contractor quotes that vary wildly, finishes to choose, timelines to manage, and the underlying anxiety of having workers in your home. The good news: with the right information up front, the process becomes significantly less stressful.
-                </p>
-                <p style={{ marginBottom: 20 }}>
-                  This guide is written for homeowners — not contractors. We've kept the language clear and skipped the industry jargon. By the end, you'll know what to expect, what questions to ask, and how to approach the process with confidence.
-                </p>
-
-                <h2 id="what-to-expect" style={{ fontSize: 28, marginBottom: 16, marginTop: 48, color: "var(--color-navy-900)" }}>What to Expect</h2>
-                <p style={{ marginBottom: 20 }}>
-                  Every remodel follows a general arc: planning and selections, demolition, rough work (plumbing, electrical, waterproofing), finish installation, and final walkthrough. How long each phase takes depends on the scope and complexity of your project.
-                </p>
-                <p style={{ marginBottom: 20 }}>
-                  For most homeowners, the selection phase is where delays happen. Tile, fixtures, vanity, hardware — these all need to be confirmed before work begins. A good contractor will guide you through these decisions in the right order so nothing blocks the schedule.
-                </p>
-                <p style={{ marginBottom: 20 }}>
-                  Communication is the other major factor. You should receive daily updates during active work — what was done, what's happening tomorrow, and any decisions needed from you. If a contractor isn't communicating, that's a red flag.
-                </p>
-
-                <h2 id="cost-factors" style={{ fontSize: 28, marginBottom: 16, marginTop: 48, color: "var(--color-navy-900)" }}>Cost Factors</h2>
-                <p style={{ marginBottom: 20 }}>
-                  The biggest cost drivers are usually scope changes (moving plumbing or walls), waterproofing system choice, tile vs. panel walls, and the grade of fixtures and finishes you select. Labor in the Greater Sacramento area reflects a skilled, licensed crew — and that's where you don't want to cut corners.
-                </p>
-                <p style={{ marginBottom: 20 }}>
-                  Be cautious of estimates that seem unusually low. They often omit waterproofing, use allowances that won't cover your actual selections, or exclude items like demo disposal, permits, or the final finish details that make a remodel feel complete.
-                </p>
-                <p style={{ marginBottom: 20 }}>
-                  A clear written scope — with specific line items, allowances identified, and exclusions listed — is the only reliable way to compare estimates. If a contractor gives you a single-line quote, that's not enough information to make a sound decision.
-                </p>
-
-                <h2 id="how-to-choose" style={{ fontSize: 28, marginBottom: 16, marginTop: 48, color: "var(--color-navy-900)" }}>How to Choose the Right Approach</h2>
-                <p style={{ marginBottom: 20 }}>
-                  Start by defining your goals clearly. Are you replacing like-for-like, or making layout changes? Do you want the lowest possible cost, or are you building something you'll live with for 15+ years? Your answers should guide both scope and contractor selection.
-                </p>
-                <p style={{ marginBottom: 20 }}>
-                  When reviewing proposals, look at what's included versus what's an allowance. Allowances are estimates for items not yet specified — and they're often set too low. Ask the contractor to walk through each line item and confirm what's guaranteed versus what could shift.
-                </p>
-                <p style={{ marginBottom: 20 }}>
-                  References matter. Ask for recent project references in Sacramento specifically — different markets have different labor costs, code requirements, and supplier availability. A contractor with local experience will navigate those nuances more smoothly.
-                </p>
-
-                <h2 id="next-steps" style={{ fontSize: 28, marginBottom: 16, marginTop: 48, color: "var(--color-navy-900)" }}>Next Steps</h2>
-                <p style={{ marginBottom: 20 }}>
-                  Once you've done your research, the best next step is usually an in-home consultation. This gives you a chance to see how the contractor communicates, ask specific questions about your space, and get a feel for whether it's a good fit — before any money changes hands.
-                </p>
-                <p style={{ marginBottom: 20 }}>
-                  A well-run estimate visit should feel like a conversation, not a sales pitch. The contractor should listen more than they talk, ask about your goals, and follow up with a written proposal that you can read carefully at your own pace.
-                </p>
-                <p style={{ marginBottom: 20 }}>
-                  If you're in the Greater Sacramento area, we'd be glad to do a free estimate visit. There's no obligation — just an honest conversation about your project and what it would take to do it well.
-                </p>
-
+                {content.sections.map((sec) => (
+                  <div key={sec.id}>
+                    <h2 id={sec.id} style={{ fontSize: 28, marginBottom: 16, marginTop: 48, color: "var(--color-navy-900)", scrollMarginTop: 96 }}>
+                      {sec.heading}
+                    </h2>
+                    {sec.paras.map((para, i) => (
+                      <p key={i} style={{ marginBottom: 20 }}>{para}</p>
+                    ))}
+                    {sec.list && (
+                      <ul style={{ margin: "0 0 20px", paddingLeft: 24, display: "flex", flexDirection: "column", gap: 12 }}>
+                        {sec.list.map((item, i) => (
+                          <li key={i} style={{ lineHeight: 1.7 }}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {sec.afterList?.map((para, i) => (
+                      <p key={i} style={{ marginBottom: 20 }}>{para}</p>
+                    ))}
+                  </div>
+                ))}
               </div>
 
               {/* FAQ Section */}
@@ -238,13 +176,13 @@ export default async function BlogPostPage({
                   Frequently Asked Questions
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-                  {faqs.map((faq, i) => (
+                  {content.faqs.map((faq, i) => (
                     <div
                       key={i}
                       style={{
                         borderTop: "1px solid rgba(20,17,13,0.10)",
                         padding: "24px 0",
-                        ...(i === faqs.length - 1 ? { borderBottom: "1px solid rgba(20,17,13,0.10)" } : {}),
+                        ...(i === content.faqs.length - 1 ? { borderBottom: "1px solid rgba(20,17,13,0.10)" } : {}),
                       }}
                     >
                       <div style={{ fontSize: 16, fontWeight: 600, color: "var(--color-navy-900)", marginBottom: 10 }}>
@@ -302,16 +240,18 @@ export default async function BlogPostPage({
                   Written By
                 </div>
                 <div style={{ display: "flex", gap: 14, alignItems: "center", marginBottom: 14 }}>
-                  <div className="sb-photo" style={{ width: 56, height: 56, borderRadius: "50%", flexShrink: 0 }}>
-                    <span className="sb-photo-label" style={{ display: "none" }} />
-                  </div>
+                  <img
+                    src="/photos/abel-vaniyev-stonebrite-owner-sacramento.jpg"
+                    alt="Abel Vaniyev, owner of Stonebrite Construction Group"
+                    style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
+                  />
                   <div>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: "var(--color-navy-900)" }}>Stonebrite Team</div>
-                    <div style={{ fontSize: 13, color: "var(--color-ink-400)", marginTop: 2 }}>Greater Sacramento, CA</div>
+                    <div style={{ fontSize: 15, fontWeight: 700, color: "var(--color-navy-900)" }}>Abel Vaniyev</div>
+                    <div style={{ fontSize: 13, color: "var(--color-ink-400)", marginTop: 2 }}>Owner · Davis, CA</div>
                   </div>
                 </div>
                 <p style={{ fontSize: 13, color: "var(--color-ink-500)", lineHeight: 1.65, margin: 0 }}>
-                  Family-owned remodeling company serving Greater Sacramento and the Bay Area. Specialists in bathrooms, tub-to-shower conversions, and kitchens.
+                  Abel owns and leads Stonebrite Construction Group, a family-owned remodeling company serving Greater Sacramento and the Bay Area. He writes the way he explains things at your kitchen table — CSLB #1113488.
                 </p>
               </div>
 
