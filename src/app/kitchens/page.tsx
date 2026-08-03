@@ -107,15 +107,21 @@ export default function KitchensPage() {
             </div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-            <div className="sb-photo" style={{ height: 300, gridRow: "1 / span 2", borderRadius: 14 }}>
-              <span className="sb-photo-label">KITCHEN REMODEL · DROP IN REAL PHOTO</span>
-            </div>
-            <div className="sb-photo" style={{ height: 143, borderRadius: 14 }}>
-              <span className="sb-photo-label">COUNTERTOP DETAIL · STOCK</span>
-            </div>
-            <div className="sb-photo" style={{ height: 143, borderRadius: 14 }}>
-              <span className="sb-photo-label">CABINET DETAIL · STOCK</span>
-            </div>
+            <img
+              src="/photos/white-kitchen-remodel-marble-backsplash-sacramento.jpg"
+              alt="White kitchen remodel in Sacramento — shaker cabinets, marble subway backsplash, granite counters, and dark wood island"
+              style={{ height: 300, gridRow: "1 / span 2", width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+            />
+            <img
+              src="/photos/granite-countertop-brass-faucet-detail-sacramento.jpg"
+              alt="Granite kitchen countertop with brass faucet detail in a Sacramento kitchen remodel"
+              style={{ height: 143, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+            />
+            <img
+              src="/photos/walnut-shaker-cabinet-detail-sacramento.jpg"
+              alt="Walnut shaker kitchen cabinets with brass pulls in a Sacramento kitchen remodel"
+              style={{ height: 143, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+            />
           </div>
           </div>
         </div>
@@ -150,9 +156,11 @@ export default function KitchensPage() {
               </Link>
             </div>
           </div>
-          <div className="sb-photo" style={{ height: 540, borderRadius: 14 }}>
-            <span className="sb-photo-label">KITCHEN REMODEL · DROP IN REAL PROJECT PHOTO</span>
-          </div>
+          <img
+            src="/photos/kitchen-remodel-walnut-cabinets-granite-sacramento.jpg"
+            alt="Kitchen remodel in Sacramento — walnut shaker cabinets, granite counters, stainless hood, and brass fixtures"
+            style={{ height: 540, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
+          />
         </div>
       </section>
 

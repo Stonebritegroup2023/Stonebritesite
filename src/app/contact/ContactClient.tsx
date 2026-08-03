@@ -327,32 +327,6 @@ export default function ContactClient() {
                     </div>
                   </div>
 
-                  {/* Photo Upload */}
-                  <div style={{ marginBottom: 28 }}>
-                    <label className="sb-label">Project Photos <span style={{ fontWeight: 400, textTransform: "none", letterSpacing: 0 }}>(optional)</span></label>
-                    <div style={{
-                      border: "1.5px dashed rgba(20,17,13,0.22)",
-                      borderRadius: 10,
-                      padding: "28px",
-                      textAlign: "center",
-                      cursor: "pointer",
-                      transition: "border-color 0.15s, background 0.15s",
-                      background: "var(--color-cream-50)",
-                    }}
-                      onClick={() => {}}
-                    >
-                      <div style={{ marginBottom: 8 }}>
-                        <UploadIcon />
-                      </div>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: "var(--color-ink-700)", marginBottom: 4 }}>
-                        Click to browse photos
-                      </div>
-                      <div style={{ fontSize: 12, color: "var(--color-ink-300)" }}>
-                        JPG, PNG up to 10MB · Helps us understand your space
-                      </div>
-                    </div>
-                  </div>
-
                   {/* Honeypot — hidden from real users, catches bots */}
                   <input
                     type="text"
@@ -528,13 +502,4 @@ function PhoneIcon() {
 }
 function MailIcon() {
   return <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>;
-}
-function UploadIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-stone-500)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <polyline points="17 8 12 3 7 8" />
-      <line x1="12" y1="3" x2="12" y2="15" />
-    </svg>
-  );
 }
