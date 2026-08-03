@@ -1,8 +1,9 @@
 /**
- * Real article bodies, written in the owner's voice — the way Abel explains
- * things to a homeowner at their kitchen table after looking at their bathroom.
- * A post only appears on the site when it has an entry here AND
- * `published: true` in blog-data.ts.
+ * Real article bodies, written in the owner's plain first-person voice.
+ * Primary goals: SEO + LLM optimization — direct answers, real numbers,
+ * Sacramento-area entities, and per-post FAQs (also emitted as FAQPage
+ * structured data). A post only appears on the site when it has an entry
+ * here AND `published: true` in blog-data.ts.
  */
 
 export interface PostSection {
@@ -29,7 +30,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
         id: "the-honest-answer",
         heading: "The honest answer, with real numbers",
         paras: [
-          "When I sit down with homeowners after walking through their bathroom, the first question is almost always the same: what's this going to cost? So let me answer it the way I would at your kitchen table, with real numbers instead of \"it depends.\"",
+          "When I sit down with homeowners after walking through their bathroom, the first question is almost always the same: what is this going to cost? So let me answer it the way I do in person — with real numbers instead of \"it depends.\"",
           "For a bathroom where we keep the layout — the tub stays where the tub is, the toilet stays where the toilet is — and replace everything with quality mid-range materials, you're usually looking at $15,000 to $25,000. That covers new tile or panel walls in the shower, proper waterproofing, a new vanity and top, flooring, lighting, paint, and fixtures.",
           "For a full remodel of a typical hall bath or primary bath — everything down to the studs, new everything, maybe a tub-to-shower conversion — most of our projects land between $25,000 and $45,000.",
           "Once you get into layout changes, custom tile work, curbless showers, heated floors, or expanding the room (we once removed a closet and pushed a bathroom into the hallway to make it senior-friendly), you're in the $45,000 to $60,000+ range.",
@@ -108,7 +109,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
         heading: "The bottom line",
         paras: [
           "If you take one thing from this article, take this: the cost of a bathroom remodel is knowable. A contractor who has done this hundreds of times can walk your bathroom, listen to what you want, and give you a written scope with a real number on it — not a range designed to get a foot in the door.",
-          "If you're in Davis, Sacramento, or anywhere nearby, I'm glad to do exactly that. The estimate is free, it happens at your house, and it ends with a written proposal you can read on your own time — not a signature I'm pushing for at your kitchen table.",
+          "If you're in Davis, Sacramento, or anywhere nearby, I'm glad to do exactly that. The estimate is free, it happens at your house, and it ends with a written proposal you can read on your own time — not a signature anyone should be pressuring you for on the spot.",
         ],
       },
     ],
@@ -232,7 +233,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
         id: "the-short-version",
         heading: "The short version",
         paras: [
-          "I install both systems, so unlike a company that only sells one, I don't need to convince you of anything. At your kitchen table I'd put it this way: tile is for homeowners who care most about design; panels are for homeowners who care most about easy living. Neither is \"the cheap one\" when done right, and both fail the same way when waterproofing is done wrong.",
+          "I install both systems, so unlike a company that only sells one, I don't need to convince you of anything. I'd put it this way: tile is for homeowners who care most about design; panels are for homeowners who care most about easy living. Neither is \"the cheap one\" when done right, and both fail the same way when waterproofing is done wrong.",
         ],
       },
       {
@@ -311,7 +312,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
         id: "real-numbers",
         heading: "The real numbers",
         paras: [
-          "Here's what I tell homeowners at the table, based on how our projects actually run:",
+          "Here's what I tell homeowners, based on how our projects actually run:",
         ],
         list: [
           "Tub-to-shower conversion: 5–10 business days of work.",
@@ -351,7 +352,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
         paras: [
           "No magic — just discipline that's visible in how a contractor behaves before you've paid them anything. Everything selected and delivered before demo. A written day-by-day plan in the proposal. A daily update on what happened and what's next, including what time we arrive tomorrow.",
           "I'll let one of our clients say it: they told us the communication was great, they knew arrival times every day, and the project finished two weeks ahead of the promised window with zero change orders. That's not luck — that's what front-loading the decisions buys you.",
-          "One related honesty note: I give estimated windows, not promised dates, and I put soft language in proposals on purpose. Anyone promising you an exact completion date before demo has either torn out your walls with X-ray vision or is telling you what you want to hear.",
+          "One related honesty note: I give estimated windows, not promised dates, and I put soft language in proposals on purpose. Anyone promising an exact completion date before demolition is telling you what you want to hear, not what the walls will allow.",
         ],
       },
       {
@@ -494,7 +495,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
         id: "why-these-questions",
         heading: "Why these questions work",
         paras: [
-          "When I'm at a kitchen table and a homeowner tells me a horror story about their last contractor, the story almost always traces back to a question that never got asked — who's actually showing up, what happens when something changes, what exactly does the warranty cover.",
+          "When a homeowner tells me a horror story about their last contractor, the story almost always traces back to a question that never got asked — who's actually showing up, what happens when something changes, what exactly does the warranty cover.",
           "None of the questions below require construction knowledge. They work because of how they're answered, not just what's answered. Specific, comfortable, documented answers predict a good project. Vague, defensive, or \"don't worry about that\" answers predict the other kind.",
         ],
       },
@@ -502,8 +503,8 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
         id: "who-does-the-work",
         heading: "\"Who will actually be in my house every day?\"",
         paras: [
-          "This is the single most revealing question in remodeling. Many companies send a polished salesperson to your table, then hand the job to whichever subcontractor crew is available that month. The person you liked and trusted never touches your bathroom.",
-          "Ask directly: who performs the work, who supervises it daily, and will I meet them before demo day? At Stonebrite the answer is short — you're talking to the person who'll be doing the work, and our own local crew, not a rotating cast of strangers. Whatever the answer is at your table, make sure you're evaluating the people who'll actually hold the trowel.",
+          "This is the single most revealing question in remodeling. Many companies send a polished salesperson to your home, then hand the job to whichever subcontractor crew is available that month. The person you liked and trusted never touches your bathroom.",
+          "Ask directly: who performs the work, who supervises it daily, and will I meet them before demo day? At Stonebrite the answer is short — you're talking to the person who'll be doing the work, and our own local crew, not a rotating cast of strangers. Whoever you're talking to, make sure you're evaluating the people who'll actually hold the trowel.",
         ],
       },
       {
@@ -527,7 +528,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
         heading: "\"Will all of this be in writing?\"",
         paras: [
           "The scope, the exclusions, the allowances and what they're based on, the payment schedule, the estimated timeline, the warranty — every one of those belongs on paper before any money moves. Not because anyone plans to be dishonest, but because memory is a terrible contract.",
-          "Related and worth knowing: California caps the down payment at $1,000 or 10% of the contract, whichever is less. And a proposal isn't a hostage negotiation — you should be able to take it home and read it without someone's \"tonight-only discount\" expiring on your kitchen table. Pressure at the estimate is a preview of pressure during the project.",
+          "Related and worth knowing: California caps the down payment at $1,000 or 10% of the contract, whichever is less. And a proposal isn't a hostage negotiation — you should be able to read it on your own time, without a \"tonight-only discount\" expiring while you decide. Pressure at the estimate is a preview of pressure during the project.",
         ],
       },
       {
@@ -582,7 +583,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         q: "Should I expect to meet the crew before work starts?",
-        a: "You should at least know exactly who is showing up and who supervises daily. With owner-led companies like ours that's automatic — the person at your kitchen table is the person on the job. With larger companies, ask, because the answer often surprises people.",
+        a: "You should at least know exactly who is showing up and who supervises daily. With owner-led companies like ours that's automatic — the person who gives you the estimate is the person on the job. With larger companies, ask, because the answer often surprises people.",
       },
     ],
   },

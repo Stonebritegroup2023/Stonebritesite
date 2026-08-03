@@ -42,8 +42,46 @@ export default async function BlogPostPage({
     );
   }
 
+  const canonical = `https://www.stonebritecg.com/blog/${slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: post.title,
+        description: post.description,
+        datePublished: post.publishedAt,
+        inLanguage: "en-US",
+        mainEntityOfPage: canonical,
+        author: {
+          "@type": "Person",
+          name: "Abel Vaniyev",
+          jobTitle: "Owner",
+          worksFor: { "@type": "Organization", name: "Stonebrite Construction Group" },
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Stonebrite Construction Group",
+          url: "https://www.stonebritecg.com",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: content.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav activeHref="/blog" />
 
       {/* ── ARTICLE HERO ─────────────────────────────────────────────── */}
@@ -251,7 +289,7 @@ export default async function BlogPostPage({
                   </div>
                 </div>
                 <p style={{ fontSize: 13, color: "var(--color-ink-500)", lineHeight: 1.65, margin: 0 }}>
-                  Abel owns and leads Stonebrite Construction Group, a family-owned remodeling company serving Greater Sacramento and the Bay Area. He writes the way he explains things at your kitchen table — CSLB #1113488.
+                  Abel owns and leads Stonebrite Construction Group, a family-owned remodeling company serving Greater Sacramento and the Bay Area. Every article is based on real local projects and real pricing — CSLB #1113488.
                 </p>
               </div>
 
