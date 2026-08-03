@@ -371,9 +371,12 @@ button { font-family: inherit; cursor: pointer; }
   .t2s-card-split {
     grid-template-columns: 1fr !important;
   }
+  /* Stacked cards show the full photo — no cover-cropping portrait shots */
   .t2s-card-split .t2s-card-img {
-    height: 240px !important;
+    height: auto !important;
     min-height: 0 !important;
+    max-height: 520px;
+    object-fit: cover;
   }
 }
 
