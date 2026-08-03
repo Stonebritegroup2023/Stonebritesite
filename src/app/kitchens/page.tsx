@@ -131,7 +131,7 @@ export default function KitchensPage() {
 
       {/* WHAT'S INCLUDED */}
       <section style={{ padding: "96px 0", background: "var(--color-cream-50)" }}>
-        <div className="sb-container" style={{ padding: "0 56px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+        <div className="sb-container kitchens-scope-grid" style={{ padding: "0 56px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
           <div>
             <span className="sb-eyebrow">Scope of Work</span>
             <h2 style={{ fontSize: "clamp(32px, 3vw, 48px)", marginTop: 14, lineHeight: 1.05 }}>
@@ -159,6 +159,7 @@ export default function KitchensPage() {
           <img
             src="/photos/kitchen-remodel-walnut-cabinets-granite-sacramento.jpg"
             alt="Kitchen remodel in Sacramento — walnut shaker cabinets, granite counters, stainless hood, and brass fixtures"
+            className="kitchens-scope-photo"
             style={{ height: 540, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
           />
         </div>

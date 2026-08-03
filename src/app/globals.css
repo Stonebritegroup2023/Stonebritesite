@@ -530,19 +530,24 @@ button { font-family: inherit; cursor: pointer; }
   .home-services-grid { grid-template-columns: 1fr !important; }
 }
 
-/* "Why homeowners choose Stonebrite" — text + photo collage stack */
+/* "Why homeowners choose Stonebrite" — text + photo collage stack.
+   On small screens the collage keeps its shape (tall photo + two small),
+   just compact — never three stacked full-height photos. */
 @media (max-width: 900px) {
   .home-why-grid {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
   .home-why-photos {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
     height: auto !important;
+    gap: 10px !important;
   }
-  .home-why-photos > div {
-    height: 200px !important;
-    grid-row: auto !important;
+  .home-why-photos > img {
+    height: 150px !important;
+  }
+  .home-why-photos > img:nth-child(2) {
+    height: 310px !important;
   }
 }
 
@@ -639,5 +644,16 @@ button { font-family: inherit; cursor: pointer; }
   .trust-strip-row {
     justify-content: center !important;
     row-gap: 12px !important;
+  }
+}
+
+/* ── Kitchens "Scope of Work" — stack on small screens ─────────────────── */
+@media (max-width: 900px) {
+  .kitchens-scope-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .kitchens-scope-photo {
+    height: 300px !important;
   }
 }
