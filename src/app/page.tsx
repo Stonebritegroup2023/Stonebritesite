@@ -136,7 +136,7 @@ export default function HomePage() {
               <div style={{ marginTop: 36, display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ color: "var(--color-gold-500)", letterSpacing: 1 }}>★★★★★</span>
-                  <span style={{ fontSize: 13, color: "var(--color-ink-700)" }}><strong>Top Rated</strong> · Google &amp; Thumbtack</span>
+                  <span style={{ fontSize: 13, color: "var(--color-ink-700)" }}><strong>Top Rated</strong> · Google, Thumbtack &amp; Yelp</span>
                 </div>
                 <div style={{ height: 20, width: 1, background: "rgba(20,17,13,0.16)" }} />
                 <div style={{ fontSize: 13, color: "var(--color-ink-700)" }}>
@@ -400,6 +400,12 @@ export default function HomePage() {
               <span style={{ color: "var(--color-gold-500)", letterSpacing: 1 }}>★★★★★</span>
               <span style={{ fontSize: 13, color: "var(--color-cream-200)", fontWeight: 600 }}>5.0</span>
             </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 20px", background: "rgba(255,255,255,0.06)", borderRadius: 10, border: "1px solid rgba(255,255,255,0.1)" }}>
+              <YelpIcon size={18} />
+              <span style={{ fontSize: 13, color: "var(--color-cream-200)", fontWeight: 600 }}>Yelp</span>
+              <span style={{ color: "var(--color-gold-500)", letterSpacing: 1 }}>★★★★★</span>
+              <span style={{ fontSize: 13, color: "var(--color-cream-200)", fontWeight: 600 }}>5.0</span>
+            </div>
           </div>
           <div className="home-reviews-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
             {REVIEWS.map((r) => (
@@ -569,6 +575,13 @@ function GoogleIcon({ size = 16 }: { size?: number }) {
       <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
       <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.28-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
       <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+    </svg>
+  );
+}
+function YelpIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true" fill="#FF1A1A">
+      <path d="M11.1 2.2c.5-.3 1.2-.1 1.4.5l2.6 6.7c.3.7-.4 1.4-1.1 1.2l-2.3-.8a1 1 0 0 1-.7-1V3c0-.3.1-.6.1-.8zM4.3 8.6l5 2.9c.6.4.6 1.3-.1 1.6l-5 2.2c-.6.3-1.2-.1-1.3-.7a9.6 9.6 0 0 1 .2-5.4c.2-.6.8-.9 1.2-.6zm7.4 6.9 1.9 1.5c.5.4.5 1.2 0 1.6l-3.3 2.7c-.5.4-1.3.2-1.4-.5l-.6-4.2c-.1-.7.6-1.2 1.2-1l2.2-.1zm3-1.6 4.2-.8c.7-.1 1.2.5 1 1.1a9.7 9.7 0 0 1-2.2 3.5c-.4.5-1.2.4-1.5-.2l-2-2.4c-.4-.5-.1-1.1.5-1.2zm.2-2.8 2.1-3.8c.3-.6 1.1-.6 1.5-.1a9.7 9.7 0 0 1 1.6 3.9c.1.6-.4 1.2-1 1.1l-3.6-.1c-.7 0-1-.6-.6-1z"/>
     </svg>
   );
 }
