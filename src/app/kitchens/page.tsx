@@ -118,8 +118,8 @@ export default function KitchensPage() {
               style={{ height: 143, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
             <img
-              src="/photos/walnut-shaker-cabinet-detail-sacramento.jpg"
-              alt="Walnut shaker kitchen cabinets with brass pulls in a Sacramento kitchen remodel"
+              src="/photos/kitchen-range-marble-backsplash-detail-sacramento.jpg"
+              alt="Arched marble herringbone backsplash over the range with white hood corbels in a Sacramento kitchen remodel"
               style={{ height: 143, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
           </div>
