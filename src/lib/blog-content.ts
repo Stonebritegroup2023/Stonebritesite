@@ -12,6 +12,8 @@ export interface PostSection {
   paras: string[];
   list?: string[];
   afterList?: string[];
+  /** Contextual internal links shown under the section (SEO + navigation). */
+  links?: { label: string; href: string }[];
 }
 
 export interface PostContent {
@@ -28,6 +30,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
     sections: [
       {
         id: "the-honest-answer",
+        links: [{ label: "Tub-to-Shower Conversion: What to Know", href: "/blog/tub-to-shower-conversion-what-homeowners-should-know" }, { label: "Our Bathroom Remodeling Services", href: "/bathrooms" }],
         heading: "The honest answer, with real numbers",
         paras: [
           "When I sit down with homeowners after walking through their bathroom, the first question is almost always the same: what is this going to cost? So let me answer it the way I do in person — with real numbers instead of \"it depends.\"",
@@ -62,6 +65,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "why-bids-differ",
+        links: [{ label: "How to Compare Bathroom Remodel Estimates", href: "/blog/how-to-compare-bathroom-remodel-estimates" }],
         heading: "Why one bid says $18,000 and another says $38,000",
         paras: [
           "This is the part I wish every homeowner knew before collecting quotes. When two bids for the \"same\" bathroom are $20,000 apart, they are almost never bidding the same project.",
@@ -81,6 +85,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "how-to-save",
+        links: [{ label: "Tile vs. Manufactured Stone Shower Walls", href: "/blog/tile-shower-vs-manufactured-stone-walls" }],
         heading: "Where you can save — and where you shouldn't",
         paras: [
           "There are smart ways to bring the number down, and I'll happily help you find them:",
@@ -106,6 +111,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "bottom-line",
+        links: [{ label: "Get a Free In-Home Estimate", href: "/contact" }],
         heading: "The bottom line",
         paras: [
           "If you take one thing from this article, take this: the cost of a bathroom remodel is knowable. A contractor who has done this hundreds of times can walk your bathroom, listen to what you want, and give you a written scope with a real number on it — not a range designed to get a foot in the door.",
@@ -170,6 +176,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "walls-tile-or-panels",
+        links: [{ label: "Tile vs. Manufactured Stone Shower Walls", href: "/blog/tile-shower-vs-manufactured-stone-walls" }],
         heading: "The big choice: tile or panels",
         paras: [
           "Your shower walls will be either tile or a solid-surface panel system, and this drives both the look and part of the price. Tile gives you unlimited design — patterns, niches, accent bands. Panels give you a seamless marble-look wall with zero grout lines to scrub, installed in a day or two.",
@@ -186,6 +193,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "what-it-costs",
+        links: [{ label: "Bathroom Remodel Cost in Sacramento", href: "/blog/bathroom-remodel-cost-sacramento" }],
         heading: "What it costs",
         paras: [
           "In the Sacramento area, most quality tub-to-shower conversions run $12,000 to $25,000. The spread comes down to: tile versus panels, the glass (framed sliders versus custom frameless), fixture grade, whether we're doing curbless entry, and what we find when the tub comes out — in older homes, the floor under a 40-year-old tub occasionally has stories to tell.",
@@ -194,6 +202,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "wrap-up",
+        links: [{ label: "Our Tub-to-Shower Conversion Service", href: "/tub-to-shower" }, { label: "Get a Free Estimate", href: "/contact" }],
         heading: "Where to start",
         paras: [
           "If you're circling this decision, the useful first step is having someone who does these weekly look at your actual bathroom — where the plumbing runs, what the floor is doing, what's possible in your space. That's a free visit with us, and you'll get a written scope with a real number, not a pitch.",
@@ -231,6 +240,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
     sections: [
       {
         id: "the-short-version",
+        links: [{ label: "Our Tub-to-Shower Conversion Service", href: "/tub-to-shower" }],
         heading: "The short version",
         paras: [
           "I install both systems, so unlike a company that only sells one, I don't need to convince you of anything. I'd put it this way: tile is for homeowners who care most about design; panels are for homeowners who care most about easy living. Neither is \"the cheap one\" when done right, and both fail the same way when waterproofing is done wrong.",
@@ -264,6 +274,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "cost-truth",
+        links: [{ label: "Bathroom Remodel Cost in Sacramento", href: "/blog/bathroom-remodel-cost-sacramento" }],
         heading: "The cost truth",
         paras: [
           "People assume panels are the budget option. Sometimes — but quality solid-surface panels cost roughly what mid-range tile costs once labor is counted. Panels save on installation days; the material itself isn't cheap. Where the math swings: intricate custom tile work costs more than panels, and bargain-bin ceramic tile costs less — though the labor to set it doesn't shrink much.",
@@ -272,6 +283,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "how-i-help-people-decide",
+        links: [{ label: "Our Bathroom Remodeling Services", href: "/bathrooms" }, { label: "Get a Free Estimate", href: "/contact" }],
         heading: "How I help people decide",
         paras: [
           "Standing in your bathroom, I ask three questions. Who cleans this shower? If the answer comes with an eye-roll, panels earn serious consideration. Is this bathroom a design statement or a workhorse? Statement leans tile. And how long are you staying? A forever-home primary bath tips toward exactly what you want; a five-year plan tips toward broadly appealing and low-maintenance.",
@@ -310,6 +322,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
     sections: [
       {
         id: "real-numbers",
+        links: [{ label: "Tub-to-Shower Conversion: What to Know", href: "/blog/tub-to-shower-conversion-what-homeowners-should-know" }, { label: "Bathroom Remodel Cost in Sacramento", href: "/blog/bathroom-remodel-cost-sacramento" }],
         heading: "The real numbers",
         paras: [
           "Here's what I tell homeowners, based on how our projects actually run:",
@@ -348,6 +361,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "how-we-keep-schedule",
+        links: [{ label: "What to Ask Before Hiring a Contractor", href: "/blog/what-to-ask-before-hiring-bathroom-remodeling-contractor" }],
         heading: "How a project stays on schedule",
         paras: [
           "No magic — just discipline that's visible in how a contractor behaves before you've paid them anything. Everything selected and delivered before demo. A written day-by-day plan in the proposal. A daily update on what happened and what's next, including what time we arrive tomorrow.",
@@ -357,6 +371,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "planning-around-it",
+        links: [{ label: "Start With a Free Estimate", href: "/contact" }],
         heading: "Planning your life around it",
         paras: [
           "Yes, you can live at home — almost all of our clients do. The real question is bathroom count. If it's your only bathroom, tell us; we sequence the work to keep the toilet functional as long as possible and we treat the schedule with one-bathroom urgency. If you've got a second bath, the disruption is honestly modest: some noise, some dust control in the hallway, and a parade of deliveries.",
@@ -395,6 +410,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
     sections: [
       {
         id: "same-project-test",
+        links: [{ label: "Bathroom Remodel Cost in Sacramento", href: "/blog/bathroom-remodel-cost-sacramento" }],
         heading: "First: are they even bidding the same project?",
         paras: [
           "Here's the uncomfortable truth about collecting three bids: you almost never get three prices for the same project. You get three different projects wearing the same bathroom.",
@@ -447,6 +463,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "verify-basics",
+        links: [{ label: "What to Ask Before Hiring a Contractor", href: "/blog/what-to-ask-before-hiring-bathroom-remodeling-contractor" }],
         heading: "Verify the boring stuff — it takes five minutes",
         paras: [
           "Every California contractor's license can be checked at the CSLB website in about a minute — status, bond, and workers' comp coverage. Do it for every bidder, including us (we're #1113488, and I'd rather you check than take my word).",
@@ -455,6 +472,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "cheap-bid-math",
+        links: [{ label: "Our Bathroom Remodeling Services", href: "/bathrooms" }, { label: "Get a Written Estimate From Us", href: "/contact" }],
         heading: "The math of the cheap bid",
         paras: [
           "After everything above, do this final exercise: take the low bid, mentally add realistic allowances, the missing glass, the haul-away, the permit, and one hidden-condition change order — and see where it lands. In my experience it lands at or above the honest bid, except now you've paid it to the contractor who was willing to hide it from you at the start.",
@@ -493,6 +511,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
     sections: [
       {
         id: "why-these-questions",
+        links: [{ label: "How to Compare Bathroom Remodel Estimates", href: "/blog/how-to-compare-bathroom-remodel-estimates" }],
         heading: "Why these questions work",
         paras: [
           "When a homeowner tells me a horror story about their last contractor, the story almost always traces back to a question that never got asked — who's actually showing up, what happens when something changes, what exactly does the warranty cover.",
@@ -517,6 +536,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "waterproofing",
+        links: [{ label: "Tile vs. Manufactured Stone Shower Walls", href: "/blog/tile-shower-vs-manufactured-stone-walls" }],
         heading: "\"What waterproofing system do you use — specifically?\"",
         paras: [
           "This is my favorite filter question because it separates professionals from everyone else in one sentence. Your shower's finish — tile or panels — is not the waterproofing. The membrane system behind it is, and it's the difference between a shower that's perfect in year fifteen and a rotted wall you discover from the ceiling below.",
@@ -557,6 +577,7 @@ export const BLOG_CONTENT: Record<string, PostContent> = {
       },
       {
         id: "the-feel-test",
+        links: [{ label: "Our Bathroom Remodeling Services", href: "/bathrooms" }, { label: "Book a Free Estimate Visit", href: "/contact" }],
         heading: "The last test doesn't need a checklist",
         paras: [
           "After the questions, sit with the simplest one: how did the visit feel? Did they listen more than they pitched? Did they measure and look at your actual bathroom, or recite a script? Could you imagine this person in your home for two weeks?",

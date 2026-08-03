@@ -9,6 +9,33 @@ function formatDate(dateStr: string) {
   return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  if (!post?.published || !BLOG_CONTENT[slug]) {
+    return { title: "Article Coming Soon | Stonebrite", robots: { index: false } };
+  }
+  const url = `https://www.stonebritecg.com/blog/${slug}`;
+  return {
+    title: `${post.title} | Stonebrite`,
+    description: post.description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.description,
+      url,
+      publishedTime: post.publishedAt,
+      authors: ["Abel Vaniyev"],
+    },
+    twitter: { card: "summary_large_image", title: post.title, description: post.description },
+  };
+}
+
 export default async function BlogPostPage({
   params,
 }: {
@@ -204,6 +231,22 @@ export default async function BlogPostPage({
                     {sec.afterList?.map((para, i) => (
                       <p key={i} style={{ marginBottom: 20 }}>{para}</p>
                     ))}
+                    {sec.links && (
+                      <div style={{ margin: "4px 0 8px", display: "flex", flexWrap: "wrap", gap: "8px 14px", alignItems: "center" }}>
+                        <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-ink-300)" }}>
+                          Related
+                        </span>
+                        {sec.links.map((l) => (
+                          <Link
+                            key={l.href}
+                            href={l.href}
+                            style={{ fontSize: 13.5, fontWeight: 600, color: "var(--color-navy-800)", borderBottom: "1px solid var(--color-gold-500)", paddingBottom: 1 }}
+                          >
+                            {l.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
