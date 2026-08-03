@@ -154,8 +154,8 @@ export default function AccessibilityPage() {
               </a>
               <br />
               Phone:{" "}
-              <a href="tel:+19163476549" style={LINK_STYLE}>
-                (916) 347-6549
+              <a href="tel:+15307716025" style={LINK_STYLE}>
+                (530) 771-6025
               </a>
             </P>
           </Section>

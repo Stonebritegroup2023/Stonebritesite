@@ -346,7 +346,7 @@ export default function ContactClient() {
                   {error && (
                     <p style={{ fontSize: 13.5, color: "#B23A2E", lineHeight: 1.6, marginBottom: 16, fontWeight: 600 }}>
                       We couldn&apos;t send your request. Please add a phone or email and try again — or call us at{" "}
-                      <a href="tel:9163476549" style={{ color: "#B23A2E", fontWeight: 700 }}>(916) 347-6549</a>.
+                      <a href="tel:5307716025" style={{ color: "#B23A2E", fontWeight: 700 }}>(530) 771-6025</a>.
                     </p>
                   )}
                   <button
@@ -423,11 +423,11 @@ export default function ContactClient() {
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                   <a
-                    href="tel:9163476549"
+                    href="tel:5307716025"
                     style={{ display: "flex", alignItems: "center", gap: 10, color: "var(--color-cream-50)", textDecoration: "none", fontSize: 18, fontWeight: 700 }}
                   >
                     <span style={{ color: "var(--color-gold-400)" }}><PhoneIcon /></span>
-                    (916) 347-6549
+                    (530) 771-6025
                   </a>
                   <a
                     href="mailto:info@stonebritecg.com"

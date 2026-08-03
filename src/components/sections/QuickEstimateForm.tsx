@@ -176,7 +176,7 @@ export default function QuickEstimateForm() {
         {error && (
           <div style={{ marginTop: 10, fontSize: 12.5, color: "#B23A2E", lineHeight: 1.5 }}>
             Something went wrong sending your request. Please try again, or call us at{" "}
-            <a href="tel:9163476549" style={{ color: "#B23A2E", fontWeight: 700 }}>(916) 347-6549</a>.
+            <a href="tel:5307716025" style={{ color: "#B23A2E", fontWeight: 700 }}>(530) 771-6025</a>.
           </div>
         )}
         <div style={{ marginTop: 10, fontSize: 12, color: "var(--color-ink-500)", display: "flex", alignItems: "center", gap: 10 }}>

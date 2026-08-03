@@ -31,8 +31,8 @@ export default function Footer() {
               Family-owned, owner-led, local crew. Bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the Bay Area.
             </p>
             <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 10, fontSize: 13 }}>
-              <a href="tel:9163476549" style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-navy-900)", fontWeight: 600 }}>
-                <PhoneIcon /> (916) 347-6549
+              <a href="tel:5307716025" style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-navy-900)", fontWeight: 600 }}>
+                <PhoneIcon /> (530) 771-6025
               </a>
               <a href="mailto:info@stonebritecg.com" style={{ display: "inline-flex", gap: 8, alignItems: "center", color: "var(--color-navy-900)", fontWeight: 600 }}>
                 <MailIcon /> info@stonebritecg.com

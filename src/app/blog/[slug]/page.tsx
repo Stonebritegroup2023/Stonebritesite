@@ -336,7 +336,7 @@ export default async function BlogPostPage({
                 </Link>
                 <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "var(--color-stone-500)" }}>
                   <PhoneIcon />
-                  <a href="tel:9163476549" style={{ color: "var(--color-stone-300)", fontWeight: 600 }}>(916) 347-6549</a>
+                  <a href="tel:5307716025" style={{ color: "var(--color-stone-300)", fontWeight: 600 }}>(530) 771-6025</a>
                 </div>
               </div>
 

@@ -83,12 +83,12 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
         {/* Right side */}
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 18 }}>
           <a
-            href="tel:9163476549"
+            href="tel:5307716025"
             className="sb-nav-phone"
             style={{ gap: 8, fontSize: 13, fontWeight: 600, color: dark ? "var(--color-cream-100)" : "var(--color-navy-900)", whiteSpace: "nowrap" }}
           >
             <PhoneIcon />
-            (916) 347-6549
+            (530) 771-6025
           </a>
           <Link
             href="/login"

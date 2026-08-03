@@ -692,7 +692,7 @@ function ProposalViewerInner() {
             </svg>
             <p style={{ fontSize: 13, color: 'var(--color-ink-300)', lineHeight: 1.6 }}>
               {proposal.preparedBy || 'Stonebrite Construction Group'}<br />
-              (916) 347-6549 · info@stonebritecg.com
+              (530) 771-6025 · info@stonebritecg.com
             </p>
           </div>
         </main>
