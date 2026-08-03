@@ -118,8 +118,8 @@ export default function KitchensPage() {
               style={{ height: 143, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
             <img
-              src="/photos/kitchen-range-marble-backsplash-detail-sacramento.jpg"
-              alt="Arched marble herringbone backsplash over the range with white hood corbels in a Sacramento kitchen remodel"
+              src="/photos/green-kitchen-remodel-marble-brass-sacramento.jpg"
+              alt="Green shaker kitchen remodel in Sacramento — marble backsplash, brass faucet, and island with seating"
               style={{ height: 143, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
             />
           </div>
@@ -157,8 +157,8 @@ export default function KitchensPage() {
             </div>
           </div>
           <img
-            src="/photos/green-kitchen-remodel-marble-brass-sacramento.jpg"
-            alt="Green shaker kitchen remodel in Sacramento — marble backsplash, brass faucet, island with seating, and wood-look floor"
+            src="/photos/kitchen-remodel-walnut-cabinets-granite-sacramento.jpg"
+            alt="Kitchen remodel in Sacramento — walnut shaker cabinets, granite counters, stainless hood, and brass fixtures"
             style={{ height: 540, width: "100%", objectFit: "cover", borderRadius: 14, display: "block" }}
           />
         </div>
