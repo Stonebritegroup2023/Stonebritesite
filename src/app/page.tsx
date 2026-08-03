@@ -109,7 +109,7 @@ export default function HomePage() {
                 border: "1px solid rgba(20,17,13,0.08)", fontSize: 12, color: "var(--color-ink-700)",
               }}>
                 <span style={{ width: 8, height: 8, borderRadius: 4, background: "var(--color-success)", display: "inline-block" }} />
-                <span style={{ fontWeight: 600 }}>Now booking — Spring/Summer 2026</span>
+                <span style={{ fontWeight: 600 }}>Now booking — November/December 2026</span>
               </div>
 
               <h1 style={{ fontSize: "clamp(44px, 5vw, 72px)", marginTop: 22, lineHeight: 1.02, letterSpacing: "-0.015em" }}>
