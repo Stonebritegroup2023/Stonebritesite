@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!post?.published || !BLOG_CONTENT[slug]) {
     return { title: "Article Coming Soon | Stonebrite", robots: { index: false } };
   }
-  const url = `https://www.stonebritecg.com/blog/${slug}`;
+  const url = `https://stonebritecg.com/blog/${slug}`;
   return {
     title: `${post.title} | Stonebrite`,
     description: post.description,
@@ -69,7 +69,7 @@ export default async function BlogPostPage({
     );
   }
 
-  const canonical = `https://www.stonebritecg.com/blog/${slug}`;
+  const canonical = `https://stonebritecg.com/blog/${slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -89,7 +89,7 @@ export default async function BlogPostPage({
         publisher: {
           "@type": "Organization",
           name: "Stonebrite Construction Group",
-          url: "https://www.stonebritecg.com",
+          url: "https://stonebritecg.com",
         },
       },
       {
