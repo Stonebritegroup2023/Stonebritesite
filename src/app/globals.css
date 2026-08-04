@@ -664,3 +664,57 @@ button { font-family: inherit; cursor: pointer; }
     height: 300px !important;
   }
 }
+
+/* ── FAQ accordion (native details/summary) ────────────────────────────── */
+.sb-faq-item {
+  background: #fff;
+  border: 1px solid rgba(20, 17, 13, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.sb-faq-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 28px;
+  cursor: pointer;
+  list-style: none;
+}
+.sb-faq-summary::-webkit-details-marker { display: none; }
+.sb-faq-q {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--color-navy-900);
+  line-height: 1.25;
+}
+.sb-faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-cream-200);
+  color: var(--color-ink-500);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+.sb-faq-icon::before { content: "+"; }
+.sb-faq-item[open] > .sb-faq-summary .sb-faq-icon {
+  background: var(--color-navy-900);
+  color: var(--color-gold-300);
+}
+.sb-faq-item[open] > .sb-faq-summary .sb-faq-icon::before { content: "−"; }
+.sb-faq-a {
+  padding: 18px 28px 24px;
+  font-size: 15px;
+  color: var(--color-ink-700);
+  line-height: 1.7;
+  border-top: 1px solid rgba(20, 17, 13, 0.06);
+}

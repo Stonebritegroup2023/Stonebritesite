@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { serviceJsonLd } from "@/lib/schema";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
+import FaqAccordion from "@/components/sections/FaqAccordion";
 import Footer from "@/components/layout/Footer";
 import TrustStrip from "@/components/sections/TrustStrip";
 import Process from "@/components/sections/Process";
@@ -897,72 +898,7 @@ export default function TubToShowerPage() {
             </h2>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {FAQS.map((faq) => (
-              <div
-                key={faq.q}
-                style={{
-                  background: "#fff",
-                  border: "1px solid rgba(20,17,13,0.08)",
-                  borderRadius: 10,
-                  overflow: "hidden",
-                  boxShadow: "var(--shadow-sm)",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "22px 28px",
-                    gap: 20,
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: 19,
-                      fontWeight: 500,
-                      color: "var(--color-navy-900)",
-                      lineHeight: 1.25,
-                    }}
-                  >
-                    {faq.q}
-                  </span>
-                  <span
-                    style={{
-                      width: 28,
-                      height: 28,
-                      borderRadius: "50%",
-                      background: faq.open ? "var(--color-navy-900)" : "var(--color-cream-200)",
-                      color: faq.open ? "var(--color-gold-300)" : "var(--color-ink-500)",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                      fontSize: 18,
-                      fontWeight: 300,
-                      lineHeight: 1,
-                    }}
-                  >
-                    {faq.open ? "−" : "+"}
-                  </span>
-                </div>
-                {faq.open && (
-                  <div
-                    style={{
-                      padding: "0 28px 24px",
-                      paddingTop: 18,
-                      fontSize: 15,
-                      color: "var(--color-ink-700)",
-                      lineHeight: 1.7,
-                      borderTop: "1px solid rgba(20,17,13,0.06)",
-                    }}
-                  >
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
+            <FaqAccordion faqs={FAQS} />
           </div>
           <p
             style={{

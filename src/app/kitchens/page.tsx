@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { serviceJsonLd } from "@/lib/schema";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
+import FaqAccordion from "@/components/sections/FaqAccordion";
 import Footer from "@/components/layout/Footer";
 import TrustStrip from "@/components/sections/TrustStrip";
 
@@ -217,22 +218,7 @@ export default function KitchensPage() {
             Kitchen remodel FAQ.
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {FAQS.map((faq) => (
-              <div key={faq.q} style={{ background: "#fff", border: "1px solid rgba(20,17,13,0.08)", borderRadius: 10, padding: "20px 24px" }}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
-                  <h3 style={{ fontSize: 18, color: "var(--color-navy-900)" }}>{faq.q}</h3>
-                  <span style={{
-                    width: 28, height: 28, borderRadius: "50%", flexShrink: 0,
-                    background: faq.open ? "var(--color-navy-800)" : "var(--color-cream-100)",
-                    color: faq.open ? "var(--color-gold-300)" : "var(--color-navy-800)",
-                    display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  }}>
-                    {faq.open ? <MinusIcon /> : <PlusIcon />}
-                  </span>
-                </div>
-                {faq.open && <p style={{ marginTop: 12, color: "var(--color-ink-500)", lineHeight: 1.65, fontSize: 15 }}>{faq.a}</p>}
-              </div>
-            ))}
+            <FaqAccordion faqs={FAQS} />
           </div>
         </div>
       </section>
