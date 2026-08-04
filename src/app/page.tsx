@@ -103,16 +103,7 @@ export default function HomePage() {
           <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
             {/* Left — copy */}
             <div>
-              <div style={{
-                display: "inline-flex", alignItems: "center", gap: 10,
-                padding: "7px 14px", background: "#fff", borderRadius: 999,
-                border: "1px solid rgba(20,17,13,0.08)", fontSize: 12, color: "var(--color-ink-700)",
-              }}>
-                <span style={{ width: 8, height: 8, borderRadius: 4, background: "var(--color-success)", display: "inline-block" }} />
-                <span style={{ fontWeight: 600 }}>Now booking — November/December 2026</span>
-              </div>
-
-              <h1 style={{ fontSize: "clamp(44px, 5vw, 72px)", marginTop: 22, lineHeight: 1.02, letterSpacing: "-0.015em" }}>
+              <h1 style={{ fontSize: "clamp(44px, 5vw, 72px)", lineHeight: 1.02, letterSpacing: "-0.015em" }}>
                 Bathrooms &amp; Kitchens<br />
                 <span style={{ color: "var(--color-gold-600)" }}>Built to Last.</span>
                 <span style={{ display: "block", fontSize: "clamp(28px, 3vw, 44px)", marginTop: 16, fontStyle: "italic", color: "var(--color-navy-700)", lineHeight: 1.1, fontWeight: 400 }}>
