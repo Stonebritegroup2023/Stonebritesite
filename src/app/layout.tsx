@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { BUSINESS_JSON_LD } from "@/lib/schema";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -53,6 +54,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(BUSINESS_JSON_LD) }}
+        />
         {children}
         <Analytics />
       </body>

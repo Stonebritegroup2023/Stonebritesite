@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { serviceJsonLd } from "@/lib/schema";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
@@ -54,6 +55,16 @@ const FAQS = [
 export default function KitchensPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({
+          path: "/kitchens",
+          name: "Kitchen Remodeling",
+          description: "Kitchen remodeling in Greater Sacramento — cabinets, countertops, backsplash, lighting, plumbing, and electrical handled under one written scope.",
+          breadcrumbName: "Kitchens",
+          faqs: FAQS,
+        })) }}
+      />
       <Nav activeHref="/kitchens" />
 
       {/* HERO */}

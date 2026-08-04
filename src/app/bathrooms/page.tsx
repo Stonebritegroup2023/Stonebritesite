@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { serviceJsonLd } from "@/lib/schema";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
@@ -143,6 +144,16 @@ const FAQS = [
 export default function BathroomsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({
+          path: "/bathrooms",
+          name: "Bathroom Remodeling",
+          description: "Full bathroom remodels in Greater Sacramento — demolition, waterproofing, plumbing, electrical, tile, vanity, and finish work with a 5-year workmanship warranty.",
+          breadcrumbName: "Bathrooms",
+          faqs: FAQS,
+        })) }}
+      />
       <Nav activeHref="/bathrooms" />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}

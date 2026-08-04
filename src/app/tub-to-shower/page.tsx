@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { serviceJsonLd } from "@/lib/schema";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
@@ -80,6 +81,16 @@ const FAQS = [
 export default function TubToShowerPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd({
+          path: "/tub-to-shower",
+          name: "Tub-to-Shower Conversion",
+          description: "Tub-to-shower conversions in Greater Sacramento — tub removal, shower pan, full waterproofing, tile or panel walls, and glass, typically completed in 5-10 business days.",
+          breadcrumbName: "Tub-to-Shower Conversion",
+          faqs: FAQS,
+        })) }}
+      />
       <Nav activeHref="/tub-to-shower" />
 
       {/* ── HERO ──────────────────────────────────────────────────────── */}
