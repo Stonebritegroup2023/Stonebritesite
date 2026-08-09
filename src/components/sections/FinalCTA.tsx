@@ -1,41 +1,85 @@
 import Link from "next/link";
 
+/**
+ * Full-bleed photo CTA band — real project photo behind a dark navy scrim,
+ * one headline, one button, one reassurance line.
+ */
 export default function FinalCTA() {
   return (
-    <section style={{ background: "var(--color-navy-900)", color: "var(--color-cream-50)", position: "relative", overflow: "hidden" }}>
-      <div style={{
-        position: "absolute", inset: 0,
-        backgroundImage: "radial-gradient(circle at 80% 50%, rgba(229,181,58,0.18), transparent 50%), radial-gradient(circle at 10% 100%, rgba(229,181,58,0.08), transparent 50%)",
-      }} />
-      <div className="sb-container" style={{ padding: "96px 56px", position: "relative", display: "flex", alignItems: "center", gap: 64, flexWrap: "wrap" }}>
-        <div style={{ flex: 1, minWidth: 280 }}>
-          <span className="sb-eyebrow" style={{ color: "var(--color-gold-300)" }}>The Next Step</span>
-          <h2 style={{ fontSize: "clamp(32px, 6vw, 56px)", marginTop: 16, color: "var(--color-cream-50)", lineHeight: 1.05 }}>
-            Ready to talk through<br />your remodel?
-          </h2>
-          <p style={{ marginTop: 18, color: "var(--color-stone-300)", fontSize: 17, maxWidth: 520, lineHeight: 1.65 }}>
-            Tell us what you're planning, and we'll help you understand your options, scope, and the next step. No pressure, no sales script.
-          </p>
-          <div style={{ marginTop: 32, display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
-              Get My Free Estimate <ArrowIcon />
-            </Link>
-            <Link href="/#featured-projects" className="sb-btn sb-btn-ghost-cream sb-btn-lg">
-              View Our Work
-            </Link>
-          </div>
+    <section
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        backgroundImage: "url(/photos/primary-bathroom-remodel-freestanding-tub-sacramento.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center 55%",
+      }}
+    >
+      {/* Navy scrim so the type always reads */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(rgba(11,31,51,0.82), rgba(11,31,51,0.86))",
+        }}
+      />
+      <div
+        className="sb-container"
+        style={{
+          position: "relative",
+          padding: "110px 56px 104px",
+          textAlign: "center",
+          color: "var(--color-cream-50)",
+        }}
+      >
+        <h2
+          style={{
+            fontSize: "clamp(34px, 5vw, 58px)",
+            color: "var(--color-cream-50)",
+            lineHeight: 1.06,
+            maxWidth: 760,
+            margin: "0 auto",
+          }}
+        >
+          Stonebrite does bathrooms right.
+        </h2>
+        <p
+          style={{
+            marginTop: 18,
+            fontSize: "clamp(17px, 2.2vw, 22px)",
+            color: "var(--color-cream-200)",
+            lineHeight: 1.5,
+            maxWidth: 620,
+            margin: "18px auto 0",
+          }}
+        >
+          The last remodeling company you&apos;ll ever need to find.
+        </p>
+        <div style={{ marginTop: 36 }}>
+          <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-lg">
+            Get My Free Estimate <ArrowIcon />
+          </Link>
         </div>
-        <div className="finalcta-photo" style={{ flexShrink: 0, width: 400, maxWidth: "100%" }}>
-          <img
-            src="/photos/curbless-walk-in-shower-sacramento.jpg"
-            alt="Completed curbless walk-in shower with frameless glass panel and large-format tile"
-            style={{ height: 470, width: "100%", objectFit: "cover", objectPosition: "center 30%", borderRadius: 14, display: "block" }}
-          />
-          <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "var(--color-stone-300)" }}>
-            <span style={{ color: "var(--color-gold-300)" }}><PhoneIcon /></span>
-            (530) 771-6025 · Typically reply within ~1 hour during business hours
-          </div>
-        </div>
+        <p
+          style={{
+            marginTop: 18,
+            fontSize: 14,
+            fontWeight: 600,
+            letterSpacing: "0.04em",
+            color: "var(--color-stone-300)",
+          }}
+        >
+          No pressure · No sales script · No obligation
+        </p>
+        <p style={{ marginTop: 26, fontSize: 13, color: "var(--color-stone-300)" }}>
+          Or call{" "}
+          <a href="tel:5307716025" style={{ color: "var(--color-gold-300)", fontWeight: 700 }}>
+            (530) 771-6025
+          </a>{" "}
+          · Typically reply within ~1 hour during business hours
+        </p>
       </div>
     </section>
   );
@@ -43,7 +87,4 @@ export default function FinalCTA() {
 
 function ArrowIcon() {
   return <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>;
-}
-function PhoneIcon() {
-  return <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>;
 }
