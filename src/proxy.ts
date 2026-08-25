@@ -16,6 +16,19 @@ import {
  * completely unaffected.
  */
 export async function proxy(request: NextRequest) {
+  // Geo-block: this is a US-only local business, so non-US page traffic gets
+  // a 403. Vercel sets x-vercel-ip-country at the edge; requests without the
+  // header (local dev / `next start`) are allowed through so nothing breaks
+  // off-platform. /api routes are excluded from the block.
+  const country = request.headers.get("x-vercel-ip-country");
+  if (
+    country &&
+    country !== "US" &&
+    !request.nextUrl.pathname.startsWith("/api")
+  ) {
+    return new NextResponse("Access restricted.", { status: 403 });
+  }
+
   if (!isSupabaseConfigured()) {
     return NextResponse.next();
   }
