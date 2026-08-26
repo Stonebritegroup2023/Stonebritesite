@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { BUSINESS_JSON_LD } from "@/lib/schema";
 import "./globals.css";
@@ -60,6 +61,14 @@ export default function RootLayout({
         />
         {children}
         <Analytics />
+        {/* Google tag (gtag.js) — Google Ads account AW-16715892283 */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16715892283" />
+        <Script id="google-tag">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-16715892283');`}
+        </Script>
       </body>
     </html>
   );
