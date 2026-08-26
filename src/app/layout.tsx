@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import StickyCallBar from "@/components/layout/StickyCallBar";
 import { BUSINESS_JSON_LD } from "@/lib/schema";
 import "./globals.css";
 
@@ -60,6 +61,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BUSINESS_JSON_LD) }}
         />
         {children}
+        <StickyCallBar />
         <Analytics />
         {/* Google tag (gtag.js) — Google Ads account AW-16715892283 */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16715892283" />

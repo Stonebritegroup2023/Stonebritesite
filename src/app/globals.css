@@ -718,3 +718,43 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.7;
   border-top: 1px solid rgba(20, 17, 13, 0.06);
 }
+
+/* ── Mobile sticky call bar ──────────────────────────────────────────
+   Whole bar is one tel: tap target. Hidden ≥768px; slides in after the
+   user scrolls past the hero (JS toggles .is-visible). The spacer
+   reserves the bar's height at the page bottom so it never overlaps
+   the footer or forms. Bottom padding respects iPhone home-indicator
+   safe area. */
+.sticky-call-spacer { display: none; }
+.sticky-call-bar { display: none; }
+@media (max-width: 767px) {
+  .sticky-call-spacer {
+    display: block;
+    height: calc(60px + env(safe-area-inset-bottom));
+  }
+  .sticky-call-bar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 60px;
+    padding: 0 16px env(safe-area-inset-bottom);
+    background: var(--color-gold-500);
+    color: var(--color-navy-900);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    border-top: 1px solid var(--color-gold-600);
+    box-shadow: 0 -6px 18px rgba(20, 17, 13, 0.18);
+    transform: translateY(110%);
+    transition: transform 0.25s ease;
+  }
+  .sticky-call-bar.is-visible { transform: translateY(0); }
+}
