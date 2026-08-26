@@ -38,7 +38,7 @@ export default function StickyCallBar() {
       <div className="sticky-call-spacer" aria-hidden="true" />
       <a href="tel:5307716025" className={`sticky-call-bar${visible ? " is-visible" : ""}`}>
         <PhoneIcon />
-        Talk to the Owner — (530) 771-6025
+        Talk to the Owner
       </a>
     </>
   );
