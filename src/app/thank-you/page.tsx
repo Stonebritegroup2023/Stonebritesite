@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 
@@ -104,6 +105,11 @@ export default function ThankYouPage() {
               <PhoneIcon />
               (530) 771-6025
             </a>
+          </div>
+          <div style={{ marginTop: 20 }}>
+            <Link href="/" className="sb-btn sb-btn-ghost">
+              Return to Home
+            </Link>
           </div>
         </div>
       </section>
