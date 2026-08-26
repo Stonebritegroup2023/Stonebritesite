@@ -14,7 +14,6 @@ const SERVICES = [
 export default function QuickEstimateForm() {
   const [activeService, setActiveService] = useState("bath");
   const [phone, setPhone] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
 
@@ -31,36 +30,13 @@ export default function QuickEstimateForm() {
         body: JSON.stringify({ source: "Homepage quick form", service, phone }),
       });
       if (!res.ok) throw new Error("failed");
-      setSubmitted(true);
+      // Full navigation (not router.push) so the Google tag fires a real page
+      // load on /thank-you — the Ads conversion is a page-load trigger.
+      window.location.assign("/thank-you");
     } catch {
       setError(true);
-    } finally {
       setSubmitting(false);
     }
-  }
-
-  if (submitted) {
-    return (
-      <div style={{
-        background: "var(--color-cream-50)",
-        borderRadius: 14,
-        boxShadow: "var(--shadow-lg)",
-        border: "1px solid rgba(20,17,13,0.08)",
-        padding: 48,
-        textAlign: "center",
-      }}>
-        <div style={{ width: 56, height: 56, borderRadius: "50%", background: "var(--color-success)", color: "#fff", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
-          <CheckIcon />
-        </div>
-        <h3 style={{ fontSize: 28, color: "var(--color-navy-900)" }}>We received your request.</h3>
-        <p style={{ marginTop: 12, color: "var(--color-ink-500)", fontSize: 15, lineHeight: 1.6 }}>
-          We'll review your project and reach out within about an hour. No obligation.
-        </p>
-        <p style={{ marginTop: 16, color: "var(--color-ink-300)", fontSize: 13 }}>
-          Want to share more details? <Link href="/contact" style={{ color: "var(--color-gold-600)", fontWeight: 600 }}>Send full project info →</Link>
-        </p>
-      </div>
-    );
   }
 
   const activeLabel = SERVICES.find(s => s.id === activeService)?.label?.toLowerCase() ?? "bathroom";

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import TrustStrip from "@/components/sections/TrustStrip";
@@ -45,7 +44,6 @@ const NEXT_STEPS = [
 
 export default function ContactClient() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
   const [company, setCompany] = useState(""); // honeypot
@@ -86,10 +84,11 @@ export default function ContactClient() {
         }),
       });
       if (!res.ok) throw new Error("failed");
-      setSubmitted(true);
+      // Full navigation (not router.push) so the Google tag fires a real page
+      // load on /thank-you — the Ads conversion is a page-load trigger.
+      window.location.assign("/thank-you");
     } catch {
       setError(true);
-    } finally {
       setSubmitting(false);
     }
   }
@@ -126,31 +125,7 @@ export default function ContactClient() {
               boxShadow: "var(--shadow-lg)",
               border: "1px solid rgba(20,17,13,0.06)",
             }}>
-              {submitted ? (
-                /* Thank-you state */
-                <div style={{ textAlign: "center", padding: "40px 0" }}>
-                  <div style={{
-                    width: 64, height: 64, borderRadius: "50%",
-                    background: "linear-gradient(135deg, #2E7D5B, #3a9e73)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    margin: "0 auto 24px",
-                  }}>
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 13 9 18 20 6" /></svg>
-                  </div>
-                  <h2 style={{ fontSize: 28, color: "var(--color-navy-900)", marginBottom: 14 }}>
-                    Request Received
-                  </h2>
-                  <p style={{ fontSize: 16, color: "var(--color-ink-500)", lineHeight: 1.7, maxWidth: 420, margin: "0 auto" }}>
-                    Thanks — we received your request. We'll review your project details and reach out to discuss the next step. Usually within ~1 hour during business hours.
-                  </p>
-                  <div style={{ marginTop: 32 }}>
-                    <Link href="/" className="sb-btn sb-btn-ghost">
-                      Back to Home
-                    </Link>
-                  </div>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                   <h2 style={{ fontSize: 26, color: "var(--color-navy-900)", marginBottom: 6 }}>
                     Tell us about your remodel
                   </h2>
@@ -358,7 +333,6 @@ export default function ContactClient() {
                     {submitting ? "Sending…" : (<>Send Estimate Request <ArrowIcon /></>)}
                   </button>
                 </form>
-              )}
             </div>
 
             {/* ── RIGHT SIDEBAR ─────────────────────────────────────── */}
