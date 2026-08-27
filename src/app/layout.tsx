@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import StickyCallBar from "@/components/layout/StickyCallBar";
 import { BUSINESS_JSON_LD } from "@/lib/schema";
@@ -56,6 +55,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
       <body className="min-h-screen flex flex-col">
+        {/* Google tag (gtag.js) — Google Ads account AW-16715892283. Plain
+            script tags (not next/script) so the snippet is present in the
+            initial HTML source, where Google's tag checker looks for it;
+            React hoists the async loader into <head>. */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16715892283"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-16715892283');`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BUSINESS_JSON_LD) }}
@@ -63,14 +78,6 @@ export default function RootLayout({
         {children}
         <StickyCallBar />
         <Analytics />
-        {/* Google tag (gtag.js) — Google Ads account AW-16715892283 */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16715892283" />
-        <Script id="google-tag">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-16715892283');`}
-        </Script>
       </body>
     </html>
   );
