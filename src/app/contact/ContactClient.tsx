@@ -46,7 +46,7 @@ export default function ContactClient() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
-  const [company, setCompany] = useState(""); // honeypot
+  const [topic, setTopic] = useState(""); // honeypot
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -80,7 +80,7 @@ export default function ContactClient() {
           ...form,
           service: selectedService ?? undefined,
           source: "Contact page",
-          company,
+          topic,
         }),
       });
       if (!res.ok) throw new Error("failed");
@@ -302,14 +302,17 @@ export default function ContactClient() {
                     </div>
                   </div>
 
-                  {/* Honeypot — hidden from real users, catches bots */}
+                  {/* Honeypot — hidden from real users, catches bots. Named so
+                      browser autofill never matches it: a field named "company"
+                      gets autofilled from saved contact info, tripping the trap
+                      for real customers. */}
                   <input
                     type="text"
-                    name="company"
+                    name="topic"
                     tabIndex={-1}
                     autoComplete="off"
-                    value={company}
-                    onChange={(e) => setCompany(e.target.value)}
+                    value={topic}
+                    onChange={(e) => setTopic(e.target.value)}
                     aria-hidden="true"
                     style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
                   />

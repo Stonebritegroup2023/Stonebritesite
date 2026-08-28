@@ -23,8 +23,10 @@ const LeadSchema = z.object({
   timeline: z.string().max(120).optional(),
   budget: z.string().max(120).optional(),
   contactTime: z.string().max(120).optional(),
-  // Honeypot — real users never fill this; bots often do.
-  company: z.string().max(200).optional(),
+  // Honeypot — real users never fill this; bots often do. Non-autofill name:
+  // browsers autofill recognized hidden fields (like "company") from saved
+  // contact info, which would trip the trap for real customers.
+  topic: z.string().max(200).optional(),
 });
 
 type Lead = z.infer<typeof LeadSchema>;
@@ -98,10 +100,9 @@ export async function POST(req: NextRequest) {
     return Response.json({ ok: false, error: "invalid" }, { status: 400 });
   }
 
-  // Silently accept honeypot hits so bots don't retry, but don't send.
-  if (data.company && data.company.length > 0) {
-    return Response.json({ ok: true });
-  }
+  // Honeypot hits are flagged, never dropped: autofill can trip the trap for
+  // a real customer, and a lost lead costs far more than a spam email.
+  const suspectedSpam = Boolean(data.topic?.trim());
 
   // Require at least one way to reach the customer.
   if (!data.phone?.trim() && !data.email?.trim()) {
@@ -116,6 +117,7 @@ export async function POST(req: NextRequest) {
   }
 
   const subject =
+    (suspectedSpam ? "[Possible spam] " : "") +
     "New estimate request" +
     (data.service ? ` — ${data.service}` : "") +
     (data.name ? ` — ${data.name}` : "");
