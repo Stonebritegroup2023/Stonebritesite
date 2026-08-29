@@ -719,12 +719,11 @@ button { font-family: inherit; cursor: pointer; }
   border-top: 1px solid rgba(20, 17, 13, 0.06);
 }
 
-/* ── Mobile sticky call bar ──────────────────────────────────────────
-   Whole bar is one tel: tap target. Hidden ≥768px; slides in after the
-   user scrolls past the hero (JS toggles .is-visible). The spacer
-   reserves the bar's height at the page bottom so it never overlaps
-   the footer or forms. Bottom padding respects iPhone home-indicator
-   safe area. */
+/* ── Mobile sticky text/call bar ─────────────────────────────────────
+   Response note plus Text Us (sms:) and Call (tel:) buttons. Hidden
+   ≥768px; visible from page load. The spacer reserves the bar's height
+   at the page bottom so it never overlaps the footer or forms. Bottom
+   padding respects iPhone home-indicator safe area. */
 .sticky-call-spacer { display: none; }
 .sticky-call-bar { display: none; }
 @media (max-width: 767px) {
@@ -745,10 +744,7 @@ button { font-family: inherit; cursor: pointer; }
     background: var(--color-cream-50);
     border-top: 1px solid rgba(20, 17, 13, 0.1);
     box-shadow: 0 -6px 18px rgba(20, 17, 13, 0.14);
-    transform: translateY(110%);
-    transition: transform 0.25s ease;
   }
-  .sticky-call-bar.is-visible { transform: translateY(0); }
   .sticky-call-note {
     display: flex;
     align-items: center;
