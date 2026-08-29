@@ -33,14 +33,44 @@ export default function StickyCallBar() {
     return null;
   }
 
+  // Pre-filled text matches the page the visitor is on.
+  const smsBody = pathname.startsWith("/tub-to-shower")
+    ? "Hi, I'm interested in a tub-to-shower conversion"
+    : pathname.startsWith("/kitchens")
+      ? "Hi, I'm interested in a kitchen remodel"
+      : "Hi, I'm interested in a bathroom remodel";
+  // `?&body=` is the one separator both iOS and Android honor in sms: links.
+  const smsHref = `sms:+15307716025?&body=${encodeURIComponent(smsBody)}`;
+
   return (
     <>
       <div className="sticky-call-spacer" aria-hidden="true" />
-      <a href="tel:5307716025" className={`sticky-call-bar${visible ? " is-visible" : ""}`}>
-        <PhoneIcon />
-        Talk to the Owner
-      </a>
+      <div className={`sticky-call-bar${visible ? " is-visible" : ""}`}>
+        <div className="sticky-call-note">
+          <span className="sticky-call-note-dot" aria-hidden="true" />
+          We respond immediately — even after hours
+        </div>
+        <div className="sticky-call-buttons">
+          <a href={smsHref} className="sticky-call-text">
+            <MessageIcon />
+            Text Us
+          </a>
+          <a href="tel:5307716025" className="sticky-call-phone">
+            <PhoneIcon />
+            Call
+          </a>
+        </div>
+      </div>
     </>
+  );
+}
+
+function MessageIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z" />
+      <path d="M8 11h8M8 14h5" />
+    </svg>
   );
 }
 
