@@ -5,6 +5,7 @@ import Nav from "@/components/layout/Nav";
 import FaqAccordion from "@/components/sections/FaqAccordion";
 import Footer from "@/components/layout/Footer";
 import TrustStrip from "@/components/sections/TrustStrip";
+import EstimateBand from "@/components/sections/EstimateBand";
 import Process from "@/components/sections/Process";
 
 export const metadata: Metadata = {
@@ -257,6 +258,8 @@ export default function BathroomsPage() {
       </section>
 
       {/* ── TRUST STRIP ───────────────────────────────────────────────── */}
+      <EstimateBand defaultService="bath" source="Bathrooms page" />
+
       <TrustStrip />
 
       {/* ── WHAT'S INCLUDED — 9 cards ─────────────────────────────────── */}

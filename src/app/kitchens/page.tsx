@@ -5,6 +5,7 @@ import Nav from "@/components/layout/Nav";
 import FaqAccordion from "@/components/sections/FaqAccordion";
 import Footer from "@/components/layout/Footer";
 import TrustStrip from "@/components/sections/TrustStrip";
+import EstimateBand from "@/components/sections/EstimateBand";
 
 export const metadata: Metadata = {
   title: "Kitchen Remodeling | Stonebrite Construction Group",
@@ -138,6 +139,8 @@ export default function KitchensPage() {
           </div>
         </div>
       </section>
+
+      <EstimateBand defaultService="kitchen" source="Kitchens page" />
 
       <TrustStrip />
 
