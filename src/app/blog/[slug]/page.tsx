@@ -3,6 +3,7 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import { BLOG_POSTS, PUBLISHED_POSTS } from "@/lib/blog-data";
 import { BLOG_CONTENT } from "@/lib/blog-content";
+import { OG_IMAGE } from "@/lib/seo";
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr);
@@ -31,8 +32,14 @@ export async function generateMetadata({
       url,
       publishedTime: post.publishedAt,
       authors: ["Abel Vaniyev"],
+      images: [OG_IMAGE],
     },
-    twitter: { card: "summary_large_image", title: post.title, description: post.description },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [OG_IMAGE],
+    },
   };
 }
 

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 
-export const metadata: Metadata = {
-  title: "Terms of Service | Stonebrite Construction Group",
+export const metadata: Metadata = pageMetadata({
+  title: "Terms of Service",
   description:
     "The terms and conditions that govern your use of the Stonebrite Construction Group website and its content.",
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

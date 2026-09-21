@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
@@ -6,6 +7,25 @@ import Process from "@/components/sections/Process";
 import FinalCTA from "@/components/sections/FinalCTA";
 import QuickEstimateForm from "@/components/sections/QuickEstimateForm";
 import FeaturedRemodels from "@/components/sections/FeaturedRemodels";
+import { SITE_URL } from "@/lib/seo";
+
+const HOME_TITLE = "Stonebrite Construction Group | Bathroom & Kitchen Remodeling";
+const HOME_DESCRIPTION =
+  "Family-owned bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the Bay Area. Clear scope, thoughtful design support, 5-year workmanship warranty.";
+
+export const metadata: Metadata = {
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Stonebrite Construction Group",
+    locale: "en_US",
+    url: SITE_URL,
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+  },
+};
 
 const SERVICES = [
   {

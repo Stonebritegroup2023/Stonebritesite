@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Request Received",
+  description:
+    "Thanks for reaching out to Stonebrite Construction Group. We'll review your project and follow up to schedule your free estimate.",
+  path: "/thank-you",
   // Conversion-tracking page — reachable only from a form submit, never search.
-  robots: { index: false, follow: false },
-};
+  noindex: true,
+});
 
 const NEXT_STEPS = [
   {

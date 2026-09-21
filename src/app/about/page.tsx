@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import FinalCTA from "@/components/sections/FinalCTA";
 
-export const metadata: Metadata = {
-  title: "About Stonebrite Construction Group | Sacramento Remodeling",
+export const metadata: Metadata = pageMetadata({
+  title: "About Us | Sacramento Remodeling",
   description:
     "Family-owned remodeling company serving Greater Sacramento and the Bay Area. We built Stonebrite around clarity, care, and craftsmanship — because remodeling shouldn't feel confusing.",
-};
+  path: "/about",
+});
 
 const VALUES = [
   {

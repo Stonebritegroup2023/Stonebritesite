@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 
-export const metadata: Metadata = {
-  title: "Accessibility Statement | Stonebrite Construction Group",
+export const metadata: Metadata = pageMetadata({
+  title: "Accessibility Statement",
   description:
     "Stonebrite Construction Group is committed to making its website accessible to everyone. Learn about our efforts and how to request help.",
-};
+  path: "/accessibility",
+});
 
 export default function AccessibilityPage() {
   return (
