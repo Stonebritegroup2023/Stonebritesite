@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { serviceJsonLd } from "@/lib/schema";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
@@ -8,13 +9,14 @@ import TrustStrip from "@/components/sections/TrustStrip";
 import EstimateBand from "@/components/sections/EstimateBand";
 import Process from "@/components/sections/Process";
 
-export const metadata: Metadata = {
-  title: "Tub-to-Shower Conversions | Stonebrite Construction Group",
+export const metadata: Metadata = pageMetadata({
+  title: "Tub-to-Shower Conversions",
   description:
     "Tub-to-shower conversions in Greater Sacramento — safer access, better use of space. Tile or panel walls, framed or frameless glass, grab bars. Family-owned, owner-led, 5-year warranty.",
   keywords:
     "tub to shower conversion Sacramento, tub removal shower installation, walk-in shower conversion Roseville, aging in place shower Folsom, shower conversion contractor",
-};
+  path: "/tub-to-shower",
+});
 
 const BENEFITS = [
   "More usable daily space — showers are used far more than tubs",

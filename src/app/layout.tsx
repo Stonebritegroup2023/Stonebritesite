@@ -31,14 +31,17 @@ export const metadata: Metadata = {
     "Family-owned bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the Bay Area. Clear scope, thoughtful design support, 5-year workmanship warranty.",
   keywords:
     "bathroom remodeling Sacramento, tub to shower conversion, kitchen remodel, aging in place bathroom",
-  alternates: { canonical: "/" },
+  // No `alternates.canonical` or `openGraph.url` here on purpose: nested
+  // metadata is inherited by every page that doesn't override it, which made
+  // every page claim the homepage as its canonical URL. Each page sets its
+  // own via `pageMetadata()` in src/lib/seo.ts; the homepage does so in
+  // src/app/page.tsx.
   openGraph: {
     type: "website",
     siteName: "Stonebrite Construction Group",
     title: "Stonebrite Construction Group | Bathroom & Kitchen Remodeling",
     description:
       "Family-owned bathroom, tub-to-shower, and kitchen remodeling for Greater Sacramento and the Bay Area.",
-    url: SITE_URL,
     locale: "en_US",
   },
   twitter: {

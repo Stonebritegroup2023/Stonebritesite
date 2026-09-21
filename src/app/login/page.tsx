@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Client Login | Stonebrite Construction Group",
+export const metadata: Metadata = pageMetadata({
+  title: "Client Login",
   description: "Access your project portal — proposals, project updates, selections, and documents.",
-};
+  path: "/login",
+});
 
 export default function LoginPage() {
   return (

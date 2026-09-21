@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Stonebrite Construction Group",
+export const metadata: Metadata = pageMetadata({
+  title: "Privacy Policy",
   description:
     "How Stonebrite Construction Group collects, uses, and protects the information you share with us through our website and estimate requests.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

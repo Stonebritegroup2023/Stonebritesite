@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { serviceJsonLd } from "@/lib/schema";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
@@ -7,11 +8,12 @@ import Footer from "@/components/layout/Footer";
 import TrustStrip from "@/components/sections/TrustStrip";
 import EstimateBand from "@/components/sections/EstimateBand";
 
-export const metadata: Metadata = {
-  title: "Kitchen Remodeling | Stonebrite Construction Group",
+export const metadata: Metadata = pageMetadata({
+  title: "Kitchen Remodeling",
   description:
     "Kitchen remodeling in Greater Sacramento — cabinet, countertop, appliance, and lighting upgrades done right. Family-owned, owner-led. Get a free estimate.",
-};
+  path: "/kitchens",
+});
 
 const SCOPE_ITEMS = [
   "Cabinet replacement or refacing",

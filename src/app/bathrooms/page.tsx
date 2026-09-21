@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { serviceJsonLd } from "@/lib/schema";
 import Link from "next/link";
 import Nav from "@/components/layout/Nav";
@@ -8,13 +9,14 @@ import TrustStrip from "@/components/sections/TrustStrip";
 import EstimateBand from "@/components/sections/EstimateBand";
 import Process from "@/components/sections/Process";
 
-export const metadata: Metadata = {
-  title: "Bathroom Remodeling | Stonebrite Construction Group",
+export const metadata: Metadata = pageMetadata({
+  title: "Bathroom Remodeling",
   description:
     "Full bathroom remodels in Greater Sacramento — clear scope, waterproofing, tile, vanity, fixtures, and a 5-year workmanship warranty. Family-owned, owner-led.",
   keywords:
     "bathroom remodeling Sacramento, bathroom renovation Roseville, full bathroom remodel Folsom, tile shower installation, bathroom contractor",
-};
+  path: "/bathrooms",
+});
 
 // ── What's Included — 9-card grid ──────────────────────────────────────────
 const INCLUDED = [
