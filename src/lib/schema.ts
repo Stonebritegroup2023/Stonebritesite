@@ -88,3 +88,77 @@ export function serviceJsonLd({ path, name, description, breadcrumbName, faqs }:
     ],
   };
 }
+
+interface ServiceAreaSchemaInput {
+  path: string;
+  city: string;
+  county: string;
+  title: string;
+  description: string;
+  datePublished: string;
+  dateModified: string;
+  image: string;
+  faqs: { q: string; a: string }[];
+}
+
+/** Service (scoped to one city) + WebPage + BreadcrumbList + FAQPage graph
+    for a service-area (city) page. */
+export function serviceAreaJsonLd({
+  path, city, county, title, description, datePublished, dateModified, image, faqs,
+}: ServiceAreaSchemaInput) {
+  const url = `${SITE_URL}${path}`;
+  const area = {
+    "@type": "City",
+    name: city,
+    containedInPlace: { "@type": "AdministrativeArea", name: `${county}, California` },
+  };
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: `Bathroom Remodeling in ${city}, CA`,
+        serviceType: "Bathroom Remodeling",
+        description,
+        url,
+        provider: { "@id": `${SITE_URL}/#business` },
+        areaServed: area,
+      },
+      {
+        "@type": "WebPage",
+        "@id": url,
+        url,
+        name: title,
+        description,
+        inLanguage: "en-US",
+        datePublished,
+        dateModified,
+        image: `${SITE_URL}${image}`,
+        about: area,
+        isPartOf: { "@id": `${SITE_URL}/#business` },
+        author: {
+          "@type": "Person",
+          name: "Abel Vaniyev",
+          jobTitle: "Owner",
+          worksFor: { "@id": `${SITE_URL}/#business` },
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/service-areas` },
+          { "@type": "ListItem", position: 3, name: `${city}, CA`, item: url },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+}
