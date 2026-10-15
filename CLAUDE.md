@@ -58,4 +58,26 @@ Owner: Abel Vaniyev. He is non-technical — explain outcomes, not internals.
   `SHOW_RECENT_GALLERY = false` (needs real before/after pairs).
 - Admin/proposals area is a localStorage prototype; superseded by a separate
   CRM product spec'd in `docs/crm-build-brief.md` (own repo — do not build here).
+  **Off in production**: `/login`, `/admin/*`, `/proposal/*` 404 and the
+  "Client Login" links are hidden unless `NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE=true`
+  (`src/lib/flags.ts`). The login form never signed anyone in, and the proposal
+  viewer renders whatever the link encodes — a phishing vector on the real domain.
+
+## Security posture (Oct 2026 hardening — keep it this way)
+- Security headers + CSP live in `next.config.ts` (`SECURITY_HEADERS`). Adding a
+  new third-party script/pixel/embed means adding its host to the CSP or it
+  will be silently blocked — check the browser console after.
+- `/api/lead`: same-origin check (Origin / Sec-Fetch-Site), 16 KB body cap,
+  in-memory rate limits (5 per IP / 10 min, 60 per instance / min →
+  `src/lib/rate-limit.ts`), subject sanitised, Reply-To only if the address is
+  well-formed (a typo'd email still delivers the lead — never drop a lead).
+- Secrets: only `RESEND_API_KEY`, `LEAD_FROM_EMAIL`, `SUPABASE_SERVICE_ROLE_KEY`
+  are server-only. Anything `NEXT_PUBLIC_` ships to the browser by design.
+  `.env*` is git-ignored and has never been committed.
+- Dependencies: keep `next` on the latest 16.x; `npm audit --omit=dev` should
+  report 0. (A dev-only `braces` advisory via eslint-config-next has no fix.)
+- Not applicable here (no accounts, uploads, subscriptions, user content, or
+  marketing email): webhooks, storage buckets, upload limits, 2FA in-app, age
+  gate/COPPA, DMCA agent, unsubscribe links, renewal terms. Fonts are
+  self-hosted by `next/font`; Vercel Analytics is not session replay.
 - `docs/BACKLOG.md` = current open items · `docs/PHOTOS.md` = photo inventory.
