@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { PORTAL_PROTOTYPE_ENABLED } from "@/lib/flags";
 
 const NAV_ITEMS = [
   { href: "/bathrooms", label: "Bathrooms" },
@@ -90,13 +91,15 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
             <PhoneIcon />
             (530) 771-6025
           </a>
-          <Link
-            href="/login"
-            className="sb-nav-login"
-            style={{ fontSize: 12, color: dark ? "var(--color-cream-200)" : "var(--color-ink-500)", letterSpacing: "0.05em", whiteSpace: "nowrap" }}
-          >
-            Client Login
-          </Link>
+          {PORTAL_PROTOTYPE_ENABLED && (
+            <Link
+              href="/login"
+              className="sb-nav-login"
+              style={{ fontSize: 12, color: dark ? "var(--color-cream-200)" : "var(--color-ink-500)", letterSpacing: "0.05em", whiteSpace: "nowrap" }}
+            >
+              Client Login
+            </Link>
+          )}
           <Link href="/contact" className="sb-btn sb-btn-primary sb-btn-sm sb-nav-cta">
             Get My Free Estimate
           </Link>
@@ -142,9 +145,11 @@ export default function Nav({ activeHref, dark = false }: NavProps) {
             <Link href="/contact" onClick={() => setMenuOpen(false)} className="sb-btn sb-btn-primary" style={{ justifyContent: "center" }}>
               Get My Free Estimate
             </Link>
-            <Link href="/login" onClick={() => setMenuOpen(false)} style={{ textAlign: "center", fontSize: 13, color: "var(--color-ink-500)", padding: "10px 0" }}>
-              Client Login
-            </Link>
+            {PORTAL_PROTOTYPE_ENABLED && (
+              <Link href="/login" onClick={() => setMenuOpen(false)} style={{ textAlign: "center", fontSize: 13, color: "var(--color-ink-500)", padding: "10px 0" }}>
+                Client Login
+              </Link>
+            )}
           </div>
         </div>
       )}

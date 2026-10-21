@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { pageMetadata } from "@/lib/seo";
+import { PORTAL_PROTOTYPE_ENABLED } from "@/lib/flags";
 import Link from "next/link";
 
 export const metadata: Metadata = pageMetadata({
   title: "Client Login",
   description: "Access your project portal — proposals, project updates, selections, and documents.",
   path: "/login",
+  noindex: true,
 });
 
 export default function LoginPage() {
+  // The form below is a visual prototype with no sign-in behind it. Keep it
+  // off the live site until the real portal exists (see src/lib/flags.ts).
+  if (!PORTAL_PROTOTYPE_ENABLED) notFound();
+
   return (
     <div className="login-split" style={{ display: "flex", minHeight: "100vh" }}>
 

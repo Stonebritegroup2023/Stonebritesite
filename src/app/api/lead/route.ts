@@ -1,5 +1,7 @@
 import type { NextRequest } from "next/server";
 import { z } from "zod";
+import { createRateLimiter, clientIp } from "@/lib/rate-limit";
+import { SITE_URL } from "@/lib/seo";
 
 // Run on Node.js runtime (not edge) for maximum compatibility.
 export const runtime = "nodejs";
@@ -10,6 +12,56 @@ const TO_EMAIL = "info@stonebritecg.com";
 // from Resend's shared onboarding address. Once verified, set LEAD_FROM_EMAIL
 // to something like "Stonebrite Website <leads@stonebritecg.com>".
 const FROM_EMAIL = process.env.LEAD_FROM_EMAIL || "Stonebrite Website <onboarding@resend.dev>";
+
+// Largest JSON body we will read. Every field is capped by the schema below,
+// and the sum of those caps is well under this.
+const MAX_BODY_BYTES = 16 * 1024;
+
+// Abuse limits. A real household sends one or two requests; a bot script
+// sends hundreds. Per-IP: 5 per 10 minutes. Per-instance global: 60 per
+// minute, so a distributed flood cannot burn through the Resend quota.
+const perIpLimit = createRateLimiter({ limit: 5, windowMs: 10 * 60 * 1000 });
+const globalLimit = createRateLimiter({ limit: 60, windowMs: 60 * 1000 });
+
+/**
+ * Only accept submissions from our own pages. Browsers send `Origin` on
+ * cross-site POSTs and `Sec-Fetch-Site` on every fetch, so a form on another
+ * domain (or a hotlinked script) is refused. Requests from the same host
+ * (production, Vercel previews, localhost) and from the apex/www site pass.
+ */
+function isAllowedOrigin(req: NextRequest): boolean {
+  const origin = req.headers.get("origin");
+  const secFetchSite = req.headers.get("sec-fetch-site");
+  const host = req.headers.get("host");
+
+  if (origin) {
+    let originHost: string;
+    try {
+      originHost = new URL(origin).host;
+    } catch {
+      return false;
+    }
+    if (host && originHost === host) return true;
+    const siteHost = new URL(SITE_URL).host;
+    return originHost === siteHost || originHost === `www.${siteHost}`;
+  }
+
+  // No Origin header: non-browser client, or an old browser. Sec-Fetch-Site
+  // (when present) still tells us whether a browser made a cross-site call.
+  if (secFetchSite && secFetchSite !== "same-origin" && secFetchSite !== "none") {
+    return false;
+  }
+  return true;
+}
+
+// Loose but safe: one "@", no whitespace, something after the dot. Used only
+// to decide whether the address can be a Reply-To — never to reject a lead.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/** One line, no control characters — for the email subject. */
+function oneLine(s: string): string {
+  return s.replace(/[\u0000-\u001F\u007F]+/g, " ").replace(/\s+/g, " ").trim();
+}
 
 const LeadSchema = z.object({
   source: z.string().max(60).optional(),
@@ -93,9 +145,33 @@ function buildText(data: Lead): string {
 }
 
 export async function POST(req: NextRequest) {
+  if (!isAllowedOrigin(req)) {
+    return Response.json({ ok: false, error: "forbidden" }, { status: 403 });
+  }
+
+  const declaredLength = Number(req.headers.get("content-length") ?? 0);
+  if (declaredLength > MAX_BODY_BYTES) {
+    return Response.json({ ok: false, error: "too_large" }, { status: 413 });
+  }
+
+  const ip = clientIp(req.headers);
+  const perIp = perIpLimit(ip);
+  const overall = globalLimit("all");
+  if (!perIp.ok || !overall.ok) {
+    const retryAfter = Math.max(perIp.retryAfterSec, overall.retryAfterSec);
+    return Response.json(
+      { ok: false, error: "rate_limited" },
+      { status: 429, headers: { "Retry-After": String(retryAfter) } },
+    );
+  }
+
   let data: Lead;
   try {
-    data = LeadSchema.parse(await req.json());
+    const raw = await req.text();
+    if (raw.length > MAX_BODY_BYTES) {
+      return Response.json({ ok: false, error: "too_large" }, { status: 413 });
+    }
+    data = LeadSchema.parse(JSON.parse(raw));
   } catch {
     return Response.json({ ok: false, error: "invalid" }, { status: 400 });
   }
@@ -119,8 +195,13 @@ export async function POST(req: NextRequest) {
   const subject =
     (suspectedSpam ? "[Possible spam] " : "") +
     "New estimate request" +
-    (data.service ? ` — ${data.service}` : "") +
-    (data.name ? ` — ${data.name}` : "");
+    (data.service ? ` — ${oneLine(data.service)}` : "") +
+    (data.name ? ` — ${oneLine(data.name)}` : "");
+
+  // Only a well-formed address becomes the Reply-To; a typo'd one still
+  // reaches Abel in the email body, so no lead is lost over it.
+  const replyTo = data.email?.trim() ?? "";
+  const replyToValid = replyTo !== "" && EMAIL_RE.test(replyTo);
 
   try {
     const res = await fetch("https://api.resend.com/emails", {
@@ -135,7 +216,7 @@ export async function POST(req: NextRequest) {
         subject,
         html: buildHtml(data),
         text: buildText(data),
-        ...(data.email?.trim() ? { reply_to: data.email.trim() } : {}),
+        ...(replyToValid ? { reply_to: replyTo } : {}),
       }),
     });
 

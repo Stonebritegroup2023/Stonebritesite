@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { PORTAL_PROTOTYPE_ENABLED } from "@/lib/flags";
 
 export default function Footer() {
   return (
@@ -74,12 +75,14 @@ export default function Footer() {
           </div>
 
           {/* Client */}
-          <div>
-            <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-600)", textTransform: "uppercase", fontWeight: 700 }}>Client</h4>
-            <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-ink-700)" }}>
-              <li><Link href="/login">Client Login</Link></li>
-            </ul>
-          </div>
+          {PORTAL_PROTOTYPE_ENABLED && (
+            <div>
+              <h4 style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: "0.18em", color: "var(--color-gold-600)", textTransform: "uppercase", fontWeight: 700 }}>Client</h4>
+              <ul style={{ marginTop: 18, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, fontSize: 13, color: "var(--color-ink-700)" }}>
+                <li><Link href="/login">Client Login</Link></li>
+              </ul>
+            </div>
+          )}
 
           {/* Newsletter */}
           <div>

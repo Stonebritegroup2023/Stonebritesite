@@ -11,6 +11,12 @@
 4. **Resend domain verification** — then switch `/api/lead` FROM address to
    e.g. `leads@stonebritecg.com` (env `LEAD_FROM_EMAIL` already supported).
 5. **Review velocity** — one new Google review/month; GBP posts with before/afters.
+6. **Turn on 2-step verification** on the accounts that control the site:
+   Vercel, GitHub, Google (Ads + Business Profile), Resend, Squarespace DNS,
+   and Supabase if/when used. The code can't do this for you.
+7. **Vercel Firewall rate limit** (Vercel dashboard → Firewall → Rules): limit
+   `POST /api/lead` to ~5 requests per 10 minutes per IP. The site already
+   rate-limits in code, but a dashboard rule holds across all server instances.
 
 ## Content (code + Abel input)
 - Real cities for the three "Sacramento Area" Featured Projects cards.
