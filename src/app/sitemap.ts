@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { PUBLISHED_POSTS } from "@/lib/blog-data";
+import { PUBLISHED_AREAS } from "@/lib/service-areas";
+import { SERVICE_AREA_CONTENT } from "@/lib/service-area-content";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://stonebritecg.com";
 
@@ -63,6 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/tub-to-shower", priority: 0.9, freq: "monthly" },
     { path: "/kitchens", priority: 0.9, freq: "monthly" },
     { path: "/blog", priority: 0.7, freq: "weekly" },
+    { path: "/service-areas", priority: 0.7, freq: "monthly" },
     { path: "/about", priority: 0.6, freq: "monthly" },
     { path: "/contact", priority: 0.8, freq: "monthly" },
     { path: "/privacy", priority: 0.2, freq: "yearly" },
@@ -87,5 +90,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...postEntries];
+  // City guides — only those with a published body. Each carries its hero and
+  // real-project photos as image sitemap entries under the city landing page.
+  const areaEntries: MetadataRoute.Sitemap = PUBLISHED_AREAS.filter((a) => SERVICE_AREA_CONTENT[a.slug]).map((a) => ({
+    url: `${BASE_URL}/service-areas/${a.slug}`,
+    lastModified: new Date(a.updatedAt),
+    changeFrequency: "monthly",
+    priority: 0.8,
+    images: Array.from(new Set([a.heroPhoto.src, a.project?.before, a.project?.after].filter((p): p is string => !!p))).map((p) => `${BASE_URL}${p}`),
+  }));
+
+  return [...staticEntries, ...areaEntries, ...postEntries];
 }
