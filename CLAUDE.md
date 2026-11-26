@@ -63,6 +63,11 @@ Owner: Abel Vaniyev. He is non-technical — explain outcomes, not internals.
   (`src/lib/flags.ts`). The login form never signed anyone in, and the proposal
   viewer renders whatever the link encodes — a phishing vector on the real domain.
 
+- Tracking: Google tag `AW-16715892283` and Meta Pixel `1140318112037629`, both
+  inline in `src/app/layout.tsx`. Conversions are page-load triggers on
+  `/thank-you` (Google Ads) + `fbq('track','Lead')` there (Meta). Forms do a full
+  navigation to `/thank-you` on success for this reason — keep it that way.
+
 ## Security posture (Oct 2026 hardening — keep it this way)
 - Security headers + CSP live in `next.config.ts` (`SECURITY_HEADERS`). Adding a
   new third-party script/pixel/embed means adding its host to the CSP or it
