@@ -34,6 +34,14 @@ const NEXT_STEPS = [
 export default function ThankYouPage() {
   return (
     <>
+      {/* Meta Pixel conversion: the forms land here only after a successful
+          submission, so a Lead on this page = one estimate request. `fbq` is
+          defined by the inline stub in the root layout before this runs. */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.fbq && fbq('track', 'Lead');`,
+        }}
+      />
       <Nav />
 
       {/* ── CONFIRMATION HERO ────────────────────────────────────────── */}

@@ -20,6 +20,7 @@ const manrope = Manrope({
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://stonebritecg.com";
+const META_PIXEL_ID = "1140318112037629";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -74,6 +75,35 @@ gtag('js', new Date());
 gtag('config', 'AW-16715892283');`,
           }}
         />
+        {/* Meta Pixel — dataset 1140318112037629 (Meta Ads leads campaign).
+            Same approach as the Google tag: plain inline script so Meta's
+            pixel checker finds it in the page source. PageView fires on every
+            page; the Lead event fires on /thank-you (see that page). Hosts
+            connect.facebook.net and www.facebook.com are allowed in the CSP. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '${META_PIXEL_ID}');
+fbq('track', 'PageView');`,
+          }}
+        />
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(BUSINESS_JSON_LD) }}

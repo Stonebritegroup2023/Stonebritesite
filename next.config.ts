@@ -5,6 +5,7 @@ import type { NextConfig } from "next";
  *
  * Third parties the site actually loads:
  * - Google tag (gtag.js) + Google Ads conversion tracking
+ * - Meta Pixel (fbevents.js) for the Meta Ads leads campaign
  * - Vercel Analytics (served same-origin under /_vercel/) and the Vercel
  *   preview toolbar (vercel.live, preview deployments only)
  * - Supabase (only once NEXT_PUBLIC_SUPABASE_URL is set)
@@ -25,14 +26,18 @@ const GOOGLE_HOSTS = [
   "https://*.google.com",
 ].join(" ");
 
+// Meta Pixel: the loader comes from connect.facebook.net; events are sent to
+// www.facebook.com/tr as image/beacon/fetch requests.
+const META_HOSTS = "https://connect.facebook.net https://www.facebook.com";
+
 const CSP = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' ${GOOGLE_HOSTS} https://va.vercel-scripts.com https://vercel.live`,
+  `script-src 'self' 'unsafe-inline' ${GOOGLE_HOSTS} ${META_HOSTS} https://va.vercel-scripts.com https://vercel.live`,
   "style-src 'self' 'unsafe-inline'",
-  `img-src 'self' data: blob: https://images.unsplash.com ${GOOGLE_HOSTS}`,
+  `img-src 'self' data: blob: https://images.unsplash.com ${GOOGLE_HOSTS} ${META_HOSTS}`,
   "font-src 'self' data:",
-  `connect-src 'self' ${GOOGLE_HOSTS} https://vitals.vercel-insights.com https://vercel.live wss://*.pusher.com https://*.supabase.co wss://*.supabase.co`,
-  `frame-src ${GOOGLE_HOSTS} https://vercel.live`,
+  `connect-src 'self' ${GOOGLE_HOSTS} ${META_HOSTS} https://vitals.vercel-insights.com https://vercel.live wss://*.pusher.com https://*.supabase.co wss://*.supabase.co`,
+  `frame-src ${GOOGLE_HOSTS} ${META_HOSTS} https://vercel.live`,
   "worker-src 'self' blob:",
   "manifest-src 'self'",
   "media-src 'self'",
